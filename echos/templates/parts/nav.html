@@ -1,9 +1,9 @@
 {% load tags %}
 
-<nav class="caviar">
+<nav class="caviar rightCol">
     <ul id="mainList">
         <li class="echos">
-            <img class="vertLine" src="{{ STATIC_URL }}img/layout/vertLine.jpg" />
+            <img class="vertLine" src="{{ STATIC_URL }}img/layout/vertLine.2014.png" />
             <ul class="menuItem">
                 <li class="{% active request "^/echos/pres" %}">
                     <a href="/echos/presentation">Présentation</a>
@@ -11,11 +11,14 @@
                 <li class="{% active request "^/echos/prog" %}">
                     <a href="/echos/programmation">Programmation</a>
                 </li>
+                <li class="{% active request "^/echos/res" %}">
+                    <a>Merci à tous !</a>
+                </li>
             </ul>
-            <div class="header caps {% active request "^/echos" %}">échos</div>
+            <div class="header {% active request "^/echos" %}">échos</div>
         </li>
         <li class="lieu">
-            <img class="vertLine" src="{{ STATIC_URL }}img/layout/vertLine.jpg" />
+            <img class="vertLine" src="{{ STATIC_URL }}img/layout/vertLine.2014.png" />
             <ul class="menuItem">
                 <li>
                     <a href="/lieu/ferme">La Ferme du Faï</a>
@@ -24,10 +27,10 @@
                     <a href="/lieu/trompes">Le système acoustique</a>
                 </li>
             </ul>
-            <div class="header caps {% active request "^/echos" %}">le lieu</div>
+            <div class="header {% active request "^/echos" %}">le lieu</div>
         </li>
         <li class="mod">
-            <img class="vertLine" src="{{ STATIC_URL }}img/layout/vertLine.jpg" />
+            <img class="vertLine" src="{{ STATIC_URL }}img/layout/vertLine.2014.png" />
             <ul class="menuItem">
                 <li class="{% active request "^/echos/res" %}">
                     <a href="/modalites/acces">Comment venir ?</a>
@@ -36,13 +39,13 @@
                     <a href="/modalites/zzz">Se loger / Se restaurer</a>
                 </li>
             </ul>
-            <div class="header caps {% active request "^/echos" %}">modalités</div>
+            <div class="header {% active request "^/echos" %}">modalités</div>
         </li>
         <li class="dome">
-            <a href="/dome"><div class="header caps {% active request "^/dome" %}">dôme</div></a>
+            <a href="/dome"><div class="header {% active request "^/dome" %}">dôme</div></a>
         </li>
         <li class="contact">
-            <a href="/contact"><div class="header caps {% active request "^/contact" %}">contact</div></a>
+            <a href="/contact"><div class="header {% active request "^/contact" %}">contact</div></a>
         </li>
     </ul>
 </nav>

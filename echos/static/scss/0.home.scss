@@ -1,18 +1,23 @@
-@import "tools";
+@import "mixins";
 
 section#page {
   position: relative;
 
-  width: 62%;
-  min-width: 800px;
+  width: 50%;
+  min-width: 600px;
   margin: auto;
 
-  opacity: .65;
+  opacity: .75;
 
   cursor: pointer;
+  @include transition(all .15s ease);
+  -moz-backface-visibility: hidden;
 }
 
 section#page:hover {
+  a {
+    display: block;
+  }
   opacity: 1;
 }
 
@@ -66,14 +71,11 @@ footer {
   @include hGroup;
   hgroup {
     margin: auto;
-    position: absolute;
-    width: 30%;
-    left: 0; right: 0;
   }
 
   section#fai {
     position: absolute;
-    right: 0;
+    right: 0; top: 0;
   }
 }
 

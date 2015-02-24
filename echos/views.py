@@ -15,7 +15,7 @@ def home(request):
 
 def presentation(request):
     params = dict(
-        contentTitle ='présentation',
+        contentTitle ='Présentation',
         request=request,
         banner= "1"
     )
@@ -28,7 +28,7 @@ def presentation(request):
 
 def contact(request):
     params = dict(
-        contentTitle ='contact',
+        contentTitle ='Contact',
         request = request,
         banner= "2"
     )
@@ -41,7 +41,7 @@ def contact(request):
 
 def progra(request):
     params = dict(
-        contentTitle ='programmation',
+        contentTitle ='Programmation',
         request=request,
         banner="3"
     )
@@ -54,7 +54,7 @@ def progra(request):
 
 def qui(request):
     params = dict(
-        contentTitle ='qui sommes-nous ?',
+        contentTitle ='Dôme',
         request = request,
         banner = "4",
         page = "qui"
@@ -68,7 +68,7 @@ def qui(request):
 
 def acces(request):
     params = dict(
-        contentTitle ='comment venir ?',
+        contentTitle ='Comment venir',
         request = request,
         banner = "5"
     )
@@ -81,7 +81,7 @@ def acces(request):
 
 def resa(request):
     params = dict(
-        contentTitle ='réservation',
+        contentTitle ='Réservation',
         request=request,
         banner = "6"
     )
@@ -92,9 +92,22 @@ def resa(request):
         context_instance=RequestContext(request)
     )
 
+def win(request):
+    params = dict(
+        contentTitle ='Merci !',
+        request=request,
+        banner = "6" # ?
+    )
+
+    return render_to_response(
+        '10.thx.html',
+        params,
+        context_instance=RequestContext(request)
+    )
+
 def ferme(request):
     params = dict(
-        contentTitle ='la ferme du faï',
+        contentTitle ='La Ferme du Faï',
         request=request,
         banner = "7"
     )
@@ -107,7 +120,7 @@ def ferme(request):
 
 def trompes(request):
     params = dict(
-        contentTitle ='le système acoustique',
+        contentTitle ='Le système acoustique',
         request=request,
         banner = "8"
     )
@@ -120,7 +133,7 @@ def trompes(request):
 
 def zzz(request):
     params = dict(
-        contentTitle ='quoi dormir / où manger',
+        contentTitle ='Quoi dormir / Où manger',
         request=request,
         banner = "9"
     )

@@ -24,18 +24,3 @@ $(document).ready(function(){
         });
     }
 });
-
-if (window.onload == null) {
-    window.onload = loadPage;
-} else {
-    var preLoad = window.onload;
-    window.onload = function() {
-        preLoad();
-        loadPage();
-    }
-}
-
-
-function loadPage() {
-}
-

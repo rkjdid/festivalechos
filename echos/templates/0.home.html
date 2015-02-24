@@ -1,41 +1,25 @@
 {% extends 'base.html' %}
 
 {% block extracss %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/0.home.css" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/0.home.css"/>
 {% endblock %}
 
 {% block extrajs %}
-    <script type="text/javascript" src="{{ STATIC_URL }}js/0.home.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/0.home.js"></script>
 {% endblock %}
 
 
 {% block body %}
-    <header>
-        <section id="artists" class="caps noie">
-            <p class="tcenter caviar">CASCADE / SAÅAD / YANN GOURDON / INSIDEN / ANTEZ / TAMAGAWA</p>
-        </section>
-    </header>
-
-    <section id="photo">
-        <a href="echos/presentation/">
-            <img src="{{ STATIC_URL }}img/1.home/home_artists.v2.jpg" />
-        </a>
+  <header>
+    <section id="artists" class="caps noie">
+      <p class="tcenter caviar">DUO ANNE-LAURE PIGACHE ET PASCAL THOLLET / AUTRENOIR / ROMAIN DE FERRON / TANZ MEIN HERZ
+        / WATT / XAVIER CHARLES / YANNIS FRIER</p>
     </section>
+  </header>
 
-    <footer>
-        <section id="presents">
-            <p class="caps tleft caviar white">
-                <a href="/echos/presentation">dôme présente</a>
-            </p>
-        </section>
-        <hgroup class="caviar white">
-            <h1 id="echos"><a href="echos/presentation/">échos</a></h1>
-            <h2 id="date"><a href="echos/presentation/">samedi 29 juin 2013</a></h2>
-        </hgroup>
-        <section id="fai">
-            <p class="caps tright caviar white">
-                <a href="/echos/presentation">le saix, hautes-alpes</a>
-            </p>
-        </section>
-    </footer>
+  <section id="photo">
+    <a href="echos/presentation/">
+      <img src="{{ STATIC_URL }}img/1.home/home.jpg"/>
+    </a>
+  </section>
 {% endblock %}

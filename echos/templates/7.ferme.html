@@ -1,61 +1,86 @@
 {% extends "layout.html" %}
 
+{% block extracss %}
+  {{ block.super }}
+  <link href="{{ STATIC_URL }}js/lib/fancybox/jquery.fancybox.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block extrajs %}
+  {{ block.super }}
+  <script src="{{ STATIC_URL }}js/lib/fancybox/jdidbox.v0.1.pack.js"></script>
+{% endblock %}
+
 {% block content %}
-    <p>
-        C'est au-dessus du <a target="_blank" href="https://maps.google.fr/maps?oe=utf-8&client=firefox-a&q=le+saix&ie=UTF-8&hq=&hnear=0x12cb1bc3670710d3:0x40819a5fd97a190,Le+Saix&gl=fr&ei=bRBHUafdGdCh7AaN6oFo&ved=0CKgBELYD">village du Saix</a>,
-        petit village Haut-Alpin niché au pied de la montagne d'Aujour,
-        que se trouve <mark>la Ferme-gîte du Faï</mark>. À plus de 1000 mètres d'altitude, dans un environnement naturel et sauvage,
-        le lieu fait face à une large falaise circulaire d'une beauté vertigineuse.
-    </p><br>
-    <p>
-        Un endroit isolé de tout où vous serez libre de déambuler pour profiter à votre manière de
-        l’événement <mark>échos</mark>.
-    </p><br>
-    <p>
-        <img class="col85" src="{{ STATIC_URL }}img/7.ferme/1.jpg" />
-    </p><br>
-    <p>
-        Sur le chemin de l'abbaye de Clausonne ou du lac de Peyssier, son emplacement privilégié en fait un point
-        d'étape idéal pour les randonneurs. Pour agrémenter votre venue, nous vous conseillons à ce titre plusieurs
-        <mark>balades</mark> dans le secteur, présentées de manière détaillée sur le
-        <a target="_blank" href="http://www.le-saix-village.fr">site du village du Saix</a> dans
-        « randonnées pédestres » (à droite). Également possible dans les environs : <a href="http://vttrack.fr/" target="_blank">balades en VTT</a> ou <mark>baignade</mark>
-        dans la Maraize.
-    </p><br>
-    <p>
-        <img class="col85" src="{{ STATIC_URL }}img/7.ferme/2.jpg" />
-    </p><br>
-    <p>
-        L'association <a target="_blank" href="http://villagesdesjeunes.org/">Villages des Jeunes</a> a fait
-        de la Ferme du Faï au fil des années un lieu d'accueil alternatif et dynamique dont les principales
-        activités sont réparties en trois domaines :
-    </p><br>
-    <p>
-        <mark>La rénovation, l'entretien et le développement de la ferme</mark> ainsi que de l'abbaye de Clausonne
-        située à proximité. Cela essentiellement grâce à des chantiers de jeunes internationaux, dans le cadre de
-        programmes d'échange basés sur le volontariat.
-    </p><br>
-    <p>
-        <mark>L'accueil et l'accompagnement de personnes en situation difficile et/ou handicapées</mark>,
-        par le biais de chantiers de réinsertion ou de séjours à vocation sociale.
-    </p><br>
-    <p>
-        <mark>La valorisation d'activités culturelles</mark>, en accueillant plusieurs événements artistiques,
-        résidences et festivals chaque année. <mark>échos</mark> bénéficie à ce titre d'un soutien tout particulier des
-        responsables locaux sans qui rien n’aurait été possible.
-    </p><br>
-    <p>
-        <img class="col85" src="{{ STATIC_URL }}img/7.ferme/3.jpg" />
-    </p><br>
-    <p>
-        L'emplacement et la configuration topologique singulière de la ferme en font un véritable puits d'inspiration
-        suscitant, avec le concours d'esprits sans limites, la création de diverses curiosités parmi lesquelles le
-        « théâtre de verdure ». Cette scène en extérieur, sur pilotis au-dessus d'un petit étang, fait face à des
-        gradins taillés directement dans le sol, offrant un cadre hors du commun et des possibilités scéniques
-        exceptionnelles.
-    </p><br>
-    <p class="sbreak">
-        Mais la plus importante de ces curiosités est sans conteste ce qui est à l'origine même de l’événement
-        <mark>échos</mark> : <a href="/lieu/trompes">les trompes</a>.
-    </p>
+  <p class="sair">
+    L’évènement <mark>Échos</mark> se déroule autour de la Ferme-gîte du Faï, à plus de 1000 mètres d’altitude.
+    Au-dessus du <a target="_blank" href="http://www.le-saix-village.fr/">village du Saix</a>, le site est un lieu
+    ouvert, niché au pied de la falaise et de la montagne d’Aujour, que vous serez libres d’arpenter tout au long du
+    festival.
+  </p>
+  <p class="sair">
+    Vous découvrirez un grand environnement sauvage, qui entoure le gîte, son esplanade, et ses <a
+     href="/lieu/trompes/">trompes</a>.<br>Vous pourrez vous baigner dans la rivière, située à deux pas de la
+    ferme, ou profiter des nombreux itinéraires de balade et de randonnée, sur le chemin de l’abbaye de Clausonne ou du
+    lac de Peyssier.
+  </p>
+  <div class="air break gallery box">
+    <a rel="ferme" href="{{ STATIC_URL }}img/7.ferme/1.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/1.jpg">
+    </a>
+    <a rel="ferme" href="{{ STATIC_URL }}img/7.ferme/2.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/2.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyright <em>As Human Pattern</em>" href="{{ STATIC_URL }}img/7.ferme/3.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/3.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyright <em>As Human Pattern</em>" href="{{ STATIC_URL }}img/7.ferme/4.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/4.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Une oeuvre de la compagnie <em>La Rumeur</em><br>Copyright <em>As Human Pattern</em>"
+       href="{{ STATIC_URL }}img/7.ferme/5.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/5.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyright <em>As Human Pattern</em>" href="{{ STATIC_URL }}img/7.ferme/6.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/6.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="La Ferme du Faï<br>Copyrigth <em>VDJ</em>" href="{{ STATIC_URL }}img/7.ferme/7.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/7.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyrigth <em>As Human Pattern</em>" href="{{ STATIC_URL }}img/7.ferme/8.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/8.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="La Ferme du Faï<br>Copyrigth <em>VDJ</em>" href="{{ STATIC_URL }}img/7.ferme/9.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/9.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Jean-Michel Pillone et René Dupré, deux figures emblématiques du lieu" href="{{ STATIC_URL }}img/7.ferme/10.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/10.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyrigth <em>As Human Pattern</em>" href="{{ STATIC_URL }}img/7.ferme/11.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/11.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyrigth <em>As Human Pattern</em>" href="{{ STATIC_URL }}img/7.ferme/12.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/12.jpg">
+    </a>
+    <a rel="ferme" data-boxtitle="Lac de Peyssier" href="{{ STATIC_URL }}img/7.ferme/13.jpg">
+      <img src="{{ STATIC_URL }}img/7.ferme/thumb/13.jpg">
+    </a>
+  </div>
+  <p class="sair">
+    Grâce à l’association <a target="_blank" href="http://villagesdesjeunes.org/">Villages des Jeunes</a>, la Ferme du Faï est devenue
+    un lieu d'accueil alternatif et dynamique dont les principales activités sont réparties en trois domaines :
+  </p>
+  <p class="sair">
+    <mark>La rénovation, l'entretien et le développement de la ferme</mark> ainsi que de l'abbaye de Clausonne située à proximité.
+    L’association pilote des chantiers de jeunes internationaux, dans le cadre de programmes d'échange basés sur le
+    volontariat.
+  </p>
+  <p class="sair">
+    <mark>L'accueil et l'accompagnement de personnes en situation difficile et/ou handicapées</mark>, par le biais de chantiers de
+    réinsertion ou de séjours à vocation sociale.
+  </p>
+  <p class="sair sbreak">
+    <mark>La valorisation d'activités culturelles</mark>, en accueillant plusieurs événements artistiques, résidences et festivals
+    chaque année. <mark>Échos</mark> bénéficie à ce titre d'un soutien tout particulier des responsables locaux sans qui rien
+    n’aurait été possible.
+  </p>
 {% endblock %}

@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}{% if contentTitle %}{{ block.super }} - {{ contentTitle|capfirst }}{% endif %}{% endblock %}
+
 {% block extracss %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/layout.v2.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/layout.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.mCustomScrollbar.css"  />
 {% endblock %}
 
@@ -15,9 +17,9 @@
 
 {% block body %}
     <header>
-        <section id="logo">
+        <section class="leftCol" id="logo">
             <a href="/">
-                <img src="{{ STATIC_URL }}img/layout/echos.png"/>
+                <img src="{{ STATIC_URL }}img/layout/echos.2014.png"/>
             </a>
         </section>
 
@@ -25,26 +27,17 @@
     </header>
 
     <section id="contentRow">
-        <section id="sideImg">
+        <section class="leftCol" id="sideImg">
             {% block freebie %}{% endblock %}
-            <img class="drag" src="{{ STATIC_URL }}img/layout/side/{{ banner }}.jpg" />
+            <img class="drag" src="{{ STATIC_URL }}img/layout/side/2014/{{ banner }}.jpg" />
         </section>
-        <section id="contentFrame" class="{{ contentTitle }}">
+        <section id="contentFrame" class="rightCol {{ contentTitle }}">
             {% block contentTitle %}<h1 class="caviar caps">{{ contentTitle }}</h1>{% endblock %}
-            <section class="content {{ page }} {% block contentClass %}{% endblock %}">{% block content %}{% endblock %}</section>
+            <section class="content {{ page }} {% block contentClass %}tjustify{% endblock %}">{% block content %}{% endblock %}</section>
         </section>
     </section>
 
     <footer>
-        <section id="credits">
-            <p class="caviar">
-                <a style="margin:8px;" href="http://www.hartzine.com/" target="_blank">
-                    <img style="max-height:24px;vertical-align:-3px" class="px3" src="{{ STATIC_URL }}img/misc/logo-hz2.png"/>
-                </a>
-                <a style="margin:8px;" href="http://www.campusgrenoble.org/" target="_blank">
-                    <img style="max-height:27px;vertical-align:-5px" class="px3" src="{{ STATIC_URL }}img/misc/logo-rc3.png"/>
-                </a>
-                / association Dôme / <a target='_blank' href="https://www.facebook.com/association.dome"><img class="fb" src="{{ STATIC_URL }}img/layout/fb.png"/>acebook</a></p>
-        </section>
+        {% include "parts/footer.html" %}
     </footer>
 {% endblock %}

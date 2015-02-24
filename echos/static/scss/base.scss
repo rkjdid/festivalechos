@@ -1,4 +1,4 @@
-@import "tools";
+@import "mixins";
 
 /*******FONTS*******/
 @font-face {
@@ -13,6 +13,28 @@
 }
 
 @font-face {
+    font-family: 'Bebas';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/bebas/bebas.eot');
+    src: url('../font/bebas/bebas.eot?#iefix') format('embedded-opentype'),
+         url('../font/bebas/bebas.woff') format('woff'),
+         url('../font/bebas/bebas.ttf') format('truetype'),
+         url('../font/bebas/bebas.svg#bebas_neueregular') format('svg');
+}
+
+@font-face {
+    font-family: 'Candara';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/candara/candara.eot');
+    src: url('../font/candara/candara.eot?#iefix') format('embedded-opentype'),
+         url('../font/candara/candara.woff') format('woff'),
+         url('../font/candara/candara.ttf') format('truetype'),
+         url('../font/candara/candara.svg#candararegular') format('svg');
+}
+
+@font-face {
     font-family: 'Helvetica';
     font-style: normal;
     font-weight: normal;
@@ -23,10 +45,6 @@
 }
 
 /** nowait **/
-html.nowait, html.nowait *, html.nowait *:hover {
-  cursor: default !important;
-}
-
 /** Screen **/
 /***Waiting screen***/
 .screen {
@@ -34,7 +52,7 @@ html.nowait, html.nowait *, html.nowait *:hover {
   width: 100%; height: 100%;
   z-index: 9;
 
-  background: black;
+  background: white;
 
 }
 
@@ -44,7 +62,7 @@ html.nowait, html.nowait *, html.nowait *:hover {
 }
 
 body {
-    background: black;
+    background: #2faa75 url('/static/img/1.home/bgtile.jpg') repeat;
 }
 
 .caps {
@@ -83,10 +101,9 @@ h1, h2, h3, h4 {
   font-weight: normal;
 }
 
-.caviar, .caviar * {
-  -webkit-text-stroke: 0.35px;
-  font-family: "Caviar", sans-serif !important;
-  font-weight: normal !important;
+.caviar {
+  font-family: "Bebas", sans-serif;
+  font-weight: normal;
 }
 
 .white {
@@ -98,21 +115,17 @@ a, a:hover, a:visited, a:focus {
   text-decoration: inherit;
 }
 
-.content p a {
-  color: #7496c3;
+.content a, .fancybox-title a {
+  color: darken(#668faf, 15%);
 }
 
-.content p a:hover {
+.content a:hover, .fancybox-title a:hover {
   text-decoration: underline;
-  color: #58759d;
+  color: darken(#668faf, 25%);
 }
 
 .inblock {
   display: inline-block;
-}
-
-body:hover {
-  cursor: default;
 }
 
 ul, li {
@@ -123,12 +136,8 @@ ul, li {
 
 mark {
   font-weight: bold;
-  color: black;
   background: none;
-}
-
-a > mark {
-  color: inherit;
+  color: #222222;
 }
 
 img.fb {
