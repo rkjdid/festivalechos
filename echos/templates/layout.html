@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/layout.v2.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.mCustomScrollbar.css"  />
+{% endblock %}
+
+{% block extrajs %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/layout.js"></script>
+    {% if debug %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/lib/jquery.mCustomScrollbar.js"></script>{% else %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/lib/jquery.mCustomScrollbar.concat.min.js"></script>{% endif %}
+{% endblock %}
+
+
+{% block body %}
+    <header>
+        <section id="logo">
+            <a href="/">
+                <img src="{{ STATIC_URL }}img/layout/echos.png"/>
+            </a>
+        </section>
+
+        {% include "parts/nav.html" %}
+    </header>
+
+    <section id="contentRow">
+        <section id="sideImg">
+            {% block freebie %}{% endblock %}
+            <img class="drag" src="{{ STATIC_URL }}img/layout/side/{{ banner }}.jpg" />
+        </section>
+        <section id="contentFrame" class="{{ contentTitle }}">
+            {% block contentTitle %}<h1 class="caviar caps">{{ contentTitle }}</h1>{% endblock %}
+            <section class="content {{ page }} {% block contentClass %}{% endblock %}">{% block content %}{% endblock %}</section>
+        </section>
+    </section>
+
+    <footer>
+        <section id="credits">
+            <p class="caviar">
+                <a style="margin:8px;" href="http://www.hartzine.com/" target="_blank">
+                    <img style="max-height:24px;vertical-align:-3px" class="px3" src="{{ STATIC_URL }}img/misc/logo-hz2.png"/>
+                </a>
+                <a style="margin:8px;" href="http://www.campusgrenoble.org/" target="_blank">
+                    <img style="max-height:27px;vertical-align:-5px" class="px3" src="{{ STATIC_URL }}img/misc/logo-rc3.png"/>
+                </a>
+                / association Dôme / <a target='_blank' href="https://www.facebook.com/association.dome"><img class="fb" src="{{ STATIC_URL }}img/layout/fb.png"/>acebook</a></p>
+        </section>
+    </footer>
+{% endblock %}

@@ -1,0 +1,11 @@
+*.pyc
+
+_paths.py
+_credentials.py
+_debug.py
+
+.idea/
+
+config.rb
+.sass-cache
+echos/static/css/*.css

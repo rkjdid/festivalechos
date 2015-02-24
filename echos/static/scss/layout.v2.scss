@@ -1,0 +1,17 @@
+@import "commonlayout";
+
+section#page {
+  /** Content **/
+  section#contentRow {
+    section#contentFrame {
+      section.content {
+        $content_margin : 3.5%;
+        $content_height: 88% - 3*$content_margin;
+        height: $content_height;
+        margin: 1.5*$content_margin $content_margin 1.5*$content_margin $content_margin;
+        overflow: auto;
+        position: relative;
+      }
+    }
+  }
+}

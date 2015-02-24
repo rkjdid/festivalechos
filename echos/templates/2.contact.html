@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p class="air inblock">
+        Envie de nous soutenir ?
+    </p>
+    <form class="inblock" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="WBZ67DLWDMPD8">
+            <input style="vertical-align: middle; margin-left: 10px;" type="image"
+                   src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_SM.gif"
+                   class="ppinline"
+                   border="0" name="submit" alt="PayPal!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+    </form>
+    <p class="air">Envie de faire partie de l'aventure ?
+        <mark>Nous recherchons des bénévoles</mark> pour le jour J (accueil, bar, logistique, ...) !
+        Contactez-nous si vous êtes intéressés.</p>
+    <br>
+    <p>Pour toute demande d'information supplémentaire, vous pouvez nous joindre :</p>
+    <br>
+    <p>Par <mark>mail</mark> : <a href="mailto:association.dome@gmail.com">association.dome@gmail.com</a><br>
+       Par <mark>téléphone</mark> : <a href="tel:+33659608493">0659608493</a> (Camille, présidente Dôme)<br>
+       Par <mark>courrier postal</mark> : Association Dôme / 12 avenue Paul Krüger / 69100 Villeurbanne<br>
+    </p>
+    <br>
+    <p>Retrouvez nos actualités sur <a target="_blank" href="https://www.facebook.com/association.dome"><img class="fb" src="{{ STATIC_URL }}img/layout/fb.png" />acebook</a></p>
+    <br>
+    <p class="sbreak">Contact site web - <a href="mailto:romainknezevic@gmail.com">romainknezevic@gmail.com</a></p>
+    <br>
+{% endblock %}

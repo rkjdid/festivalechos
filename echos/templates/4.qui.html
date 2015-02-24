@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block contentTitle %}{% endblock %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/jquery.mCustomScrollbar.css"  />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/4.qui.v2.css" />
+{% endblock %}
+
+{% block content %}
+    <a href="{{ STATIC_URL }}FiatMusica.pdf" target="_blank">
+        <img class="col1" src="{{ STATIC_URL }}img/4.qui/FiatMusica.png" />
+    </a>
+{% endblock %}
+

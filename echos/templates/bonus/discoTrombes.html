@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}DiscoTrombes{% endblock %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/0.home.css" />
+{% endblock %}
+
+{% block extrajs %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/disco.js"></script>
+{% endblock %}
+
+{% block body %}
+    <body>
+        <section class="screen">
+            <img class="dot" src="{{ STATIC_URL }}img/1.home/dot.png">
+            <img class="dot" src="{{ STATIC_URL }}img/1.home/dot.png">
+            <img class="dot" src="{{ STATIC_URL }}img/1.home/dot.png">
+        </section>
+    </body>
+{% endblock %}
