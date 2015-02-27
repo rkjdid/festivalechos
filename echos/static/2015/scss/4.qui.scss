@@ -10,12 +10,6 @@ section#page {
           display: block;
           margin: auto;
         }
-        $content_margin : 1%;
-        $content_height: 93.75%;
-        height: $content_height;
-        margin: 2*$content_margin 0 $content_margin $content_margin;
-        overflow: auto;
-        position: relative;
       }
     }
   }

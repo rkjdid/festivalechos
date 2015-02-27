@@ -32,7 +32,6 @@
             <img class="drag" src="{{ STATIC_URL }}2015/img/layout/side/2014/{{ banner }}.jpg" />
         </section>
         <section id="contentFrame" class="rightCol {{ contentTitle }}">
-            {% block contentTitle %}<h1 class="caviar caps">{{ contentTitle }}</h1>{% endblock %}
             <section class="content {{ page }} {% block contentClass %}tjustify{% endblock %}">{% block content %}{% endblock %}</section>
         </section>
     </section>

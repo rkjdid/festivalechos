@@ -198,8 +198,10 @@ section#page {
           line-height: 1.3em;
         }
 
-        $content_height: 87% - 3*$content_margin;
+        $content_margin: 1.5%;
+        $content_height: 89.75%;
         height: $content_height;
+        margin: 2*$content_margin 0 $content_margin $content_margin;
         overflow: auto;
 
         position: relative;
