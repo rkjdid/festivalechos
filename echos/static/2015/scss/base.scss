@@ -105,12 +105,12 @@ a, a:hover, a:visited, a:focus {
 }
 
 .content a, .fancybox-title a {
-  color: darken(#668faf, 15%);
+  color: darken(#ab818e, 0%);
 }
 
 .content a:hover, .fancybox-title a:hover {
   text-decoration: underline;
-  color: darken(#668faf, 25%);
+  color: darken(#ab818e, 15%);
 }
 
 .inblock {
@@ -126,7 +126,7 @@ ul, li {
 mark {
   font-weight: bold;
   background: none;
-  color: #222222;
+  color: #161616;
 }
 
 img.fb {

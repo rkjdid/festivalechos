@@ -94,27 +94,4 @@ function vertAlign() {
       'marginTop': margin_top
     });
   }
-
-  // Dirty hack for firefox, don't remember what it's about
-  setTimeout(function() {backgroundAlign(margin_top);}, 0);
-}
-
-function backgroundAlign(margin_top) {
-  var center_x = 565;
-  var center_y = 330;
-
-  var logo = $('#logo'),
-     pg = $('#page'),
-     b = $('body');
-
-  var body_w = Math.max(pg.outerWidth(), b.width());
-  var offset_x = (body_w - pg.width()) / 2;
-  offset_x += logo.width() * 0.69; // 69% = y offset of O center in ECHOS logo
-
-  var logo_y = $("nav").height() - logo.find("img").height();
-  logo_y = Math.max(0, logo_y);
-  var offset_y = margin_top + logo_y + logo.height() * 0.51; // 51% = y offset of O center in ECHOS logo
-
-  b.css("background-position", Math.round((offset_x - center_x)) + "px " + Math.round((offset_y - center_y)) + "px");
-
 }

@@ -1,7 +1,7 @@
 @import "mixins";
 
 body {
-  background: #2faa75 url('/static/2015/img/layout/circles.jpg') no-repeat;
+  background: #2faa75 url('/static/2015/img/1.home/bgtile.jpg') repeat;
 }
 
 section#page {
@@ -59,7 +59,7 @@ section#page {
         &#mainList {
           cursor: default;
           margin-left: 6%;
-          color: #a0eaff;
+          color: black;
           opacity: .9;
         }
 
@@ -93,22 +93,22 @@ section#page {
 
           /** MenuList **/
           ul.menuItem {
-            margin-bottom: 5px;
+            margin-bottom: 7px;
             font-family: "Noe", sans-serif;
 
             /** MenuItem **/
             li {
               opacity: 0;
-              margin: 0;
-              font-size: 80%;
+              margin: 2px 0 0 0;
+              font-size: 81%;
               font-weight: bold;
               line-height: 1em;
               display: block;
 
-              color: #c5f1fd;
+              color: black;
 
               &:hover {
-                color: lighten(#c5f1fd, 8%);
+                color: lighten(black, 15%);
               }
 
               a {
@@ -123,7 +123,8 @@ section#page {
             margin: 0;
 
             display: inline;
-            font-size: 150%;
+            font-size: 104%;
+            text-transform: uppercase;
           }
         }
       }
@@ -136,7 +137,7 @@ section#page {
     width: 100%;
     z-index: 1;
 
-    color: #353535;
+    color: #252525;
 
     section#sideImg {
       overflow: hidden;
@@ -177,7 +178,7 @@ section#page {
 
     section#contentFrame {
       height: 99%;
-      background: rgba(180, 235, 255, .3);
+      background: rgba(255, 255, 255, .6);
 
       position: absolute;
       vertical-align: top;
@@ -188,7 +189,7 @@ section#page {
       h1 {
         margin: $content_margin;
 
-        font-size: 1.5* $ft_caviar;
+        font-size: $ft_caviar;
         text-align: center;
       }
 
@@ -291,7 +292,7 @@ section#page {
           margin-left: auto;
           margin-right: auto;
 
-          background: rgba(230,230,230,0.4);
+          background: rgba(150,150,150,0.18);
 
           h2 {
             margin-top: 0;
@@ -397,7 +398,7 @@ section#page {
       @include transition("all .5s");
 
       a, span {
-        color: white;
+        color: black;
         margin: 5px;
         img {
           max-height: 27px;
