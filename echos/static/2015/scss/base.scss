@@ -2,36 +2,25 @@
 
 /*******FONTS*******/
 @font-face {
-    font-family: 'Caviar';
+    font-family: 'Noe';
     font-style: normal;
     font-weight: normal;
-    src: url('../font/caviardreams/CaviarDreams.eot');
-    src: local('CaviarDreams'),
-        url('../font/caviardreams/CaviarDreams.ttf') format('truetype'),
-        url('../font/caviardreams/CaviarDreams.woff') format('woff'),
-        url('../font/caviardreams/CaviarDreams.svg') format('svg');
+    src: url('../font/noe/noe.eot');
+    src: url('../font/noe/noe.ttf') format('truetype'),
+         url('../font/noe/noe.woff') format('woff'),
+         url('../font/noe/noe.otf') format('truetype'),
+         url('../font/noe/noe.svg') format('svg');
 }
 
 @font-face {
-    font-family: 'Bebas';
-    font-weight: normal;
+    font-family: 'Larish';
     font-style: normal;
-    src: url('../font/bebas/bebas.eot');
-    src: url('../font/bebas/bebas.eot?#iefix') format('embedded-opentype'),
-         url('../font/bebas/bebas.woff') format('woff'),
-         url('../font/bebas/bebas.ttf') format('truetype'),
-         url('../font/bebas/bebas.svg#bebas_neueregular') format('svg');
-}
-
-@font-face {
-    font-family: 'Candara';
     font-weight: normal;
-    font-style: normal;
-    src: url('../font/candara/candara.eot');
-    src: url('../font/candara/candara.eot?#iefix') format('embedded-opentype'),
-         url('../font/candara/candara.woff') format('woff'),
-         url('../font/candara/candara.ttf') format('truetype'),
-         url('../font/candara/candara.svg#candararegular') format('svg');
+    src: url('../font/larish/larish.eot');
+    src: url('../font/larish/larish.ttf') format('truetype'),
+         url('../font/larish/larish.woff') format('woff'),
+         url('../font/larish/larish.otf') format('truetype'),
+         url('../font/larish/larish.svg') format('svg');
 }
 
 @font-face {
@@ -102,7 +91,7 @@ h1, h2, h3, h4 {
 }
 
 .caviar {
-  font-family: "Bebas", sans-serif;
+  font-family: "Larish", serif;
   font-weight: normal;
 }
 
