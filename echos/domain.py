@@ -13,8 +13,8 @@ class DomainMiddleware(object):
       request.session['lang'] = 'fr'
 
   def process_response(self, request, response):
-    language = request.session.get('lang')
-    if 'Content-Language' not in response and not language is None:
+    language = request.session.get('lang', 'fr')
+    if 'Content-Language' not in response:
       response['Content-Language'] = language
 
     return response
