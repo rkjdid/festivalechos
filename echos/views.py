@@ -6,193 +6,214 @@ from django.http import HttpResponse
 
 import models as m
 
+base_params = dict(
+  lang='en'
+)
+
+
 def home(request):
-    return render_to_response(
-        '0.home.html',
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '0.home.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
 
 
 def presentation(request):
-    params = dict(
-        contentTitle ='Présentation',
-        request=request,
-        banner= "1"
-    )
+  base_params.update(dict(
+    contentTitle='Présentation',
+    request=request,
+    banner="1"
+  ))
 
-    return render_to_response(
-        '1.presentation.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '1.presentation.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def contact(request):
-    params = dict(
-        contentTitle ='Contact',
-        request = request,
-        banner= "2"
-    )
+  base_params.update(dict(
+    contentTitle='Contact',
+    request=request,
+    banner="2"
+  ))
 
-    return render_to_response(
-        '2.contact.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '2.contact.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def progra(request):
-    params = dict(
-        contentTitle ='Programmation',
-        request=request,
-        banner="3"
-    )
+  base_params.update(dict(
+    contentTitle='Programmation',
+    request=request,
+    banner="3"
+  ))
 
-    return render_to_response(
-        '3.programmation.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '3.programmation.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def qui(request):
-    params = dict(
-        contentTitle ='Dôme',
-        request = request,
-        banner = "4",
-        page = "qui"
-    )
+  base_params.update(dict(
+    contentTitle='Dôme',
+    request=request,
+    banner="4",
+    page="qui"
+  ))
 
-    return render_to_response(
-        '4.qui.html',
-        params,
-        context_instance = RequestContext(request)
-    )
+  return render_to_response(
+    '4.qui.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def acces(request):
-    params = dict(
-        contentTitle ='Comment venir',
-        request = request,
-        banner = "5"
-    )
+  base_params.update(dict(
+    contentTitle='Comment venir',
+    request=request,
+    banner="5"
+  ))
 
-    return render_to_response(
-        '5.acces.html',
-        params,
-        context_instance = RequestContext(request)
-    )
+  return render_to_response(
+    '5.acces.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def resa(request):
-    params = dict(
-        contentTitle ='Réservation',
-        request=request,
-        banner = "6"
-    )
+  base_params.update(dict(
+    contentTitle='Réservation',
+    request=request,
+    banner="6"
+  ))
 
-    return render_to_response(
-        '6.reservation.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '6.reservation.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def win(request):
-    params = dict(
-        contentTitle ='Merci !',
-        request=request,
-        banner = "6" # ?
-    )
+  base_params.update(dict(
+    contentTitle='Merci !',
+    request=request,
+    banner="6"  # ?
+  ))
 
-    return render_to_response(
-        '10.thx.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '10.thx.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def ferme(request):
-    params = dict(
-        contentTitle ='La Ferme du Faï',
-        request=request,
-        banner = "7"
-    )
+  base_params.update(dict(
+    contentTitle='La Ferme du Faï',
+    request=request,
+    banner="7"
+  ))
 
-    return render_to_response(
-        '7.ferme.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '7.ferme.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def trompes(request):
-    params = dict(
-        contentTitle ='Le système acoustique',
-        request=request,
-        banner = "8"
-    )
+  base_params.update(dict(
+    contentTitle='Le système acoustique',
+    request=request,
+    banner="8"
+  ))
 
-    return render_to_response(
-        '8.trompes.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '8.trompes.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
+
 
 def zzz(request):
-    params = dict(
-        contentTitle ='Quoi dormir / Où manger',
-        request=request,
-        banner = "9"
-    )
+  base_params.update(dict(
+    contentTitle='Quoi dormir / Où manger',
+    request=request,
+    banner="9"
+  ))
 
-    return render_to_response(
-        '9.zzz.html',
-        params,
-        context_instance=RequestContext(request)
-    )
+  return render_to_response(
+    '9.zzz.html',
+    base_params,
+    context_instance=RequestContext(request)
+  )
 
 
 def sitemap(request):
-    return render(
-        request,
-        'parts/sitemap.xml',
-        content_type="application/xml"
-    )
+  return render(
+    request,
+    'parts/sitemap.xml',
+    content_type="application/xml"
+  )
 
 
 ###########################
 # ###### Redirects ###### #
 def redirectEchos(request):
-    return redirect(
-        '/echos/presentation',
-        context_instance=RequestContext(request)
-    )
+  return redirect(
+    '/echos/presentation',
+    context_instance=RequestContext(request)
+  )
+
 
 def redirectHome(request):
-    return redirect(
-        '/',
-        context_instance=RequestContext(request)
-    )
+  return redirect(
+    '/',
+    context_instance=RequestContext(request)
+  )
+
 
 def redirectLieu(request):
-    return redirect(
-        '/lieu/ferme',
-        context_instance = RequestContext(request)
-    )
+  return redirect(
+    '/lieu/ferme',
+    context_instance=RequestContext(request)
+  )
+
 
 def redirectModalites(request):
-    return redirect(
-        '/modalites/acces',
-        context_instance = RequestContext(request)
-    )
+  return redirect(
+    '/modalites/acces',
+    context_instance=RequestContext(request)
+  )
+
 
 def redirectQui(request):
-    return redirect(
-        '/dome',
-        context_instance = RequestContext(request)
-    )
+  return redirect(
+    '/dome',
+    context_instance=RequestContext(request)
+  )
 
-def redirectContact (request):
-    return redirect(
-        '/contact',
-        context_instance = RequestContext(request)
-    )
+
+def redirectContact(request):
+  return redirect(
+    '/contact',
+    context_instance=RequestContext(request)
+  )
+
 
 def redirectAdmin(request):
-    return redirect(
-        '/underground/',
-        context_instance = RequestContext(request)
-    )
+  return redirect(
+    '/underground/',
+    context_instance=RequestContext(request)
+  )

@@ -7,18 +7,25 @@ section#page {
   min-width: 600px;
   margin: auto;
 
-  opacity: .75;
-
-  cursor: pointer;
   @include transition(all .15s ease);
   -moz-backface-visibility: hidden;
 }
 
-section#page:hover {
-  a {
+section#page {
+  img {
     display: block;
   }
-  opacity: 1;
+
+  div {
+    text-align: center;
+    margin-top: 10px;
+
+    a {
+      font-family: "Larish", serif;
+      display: inline;
+      padding: 10px;
+    }
+  }
 }
 
 header, section#photo, footer {

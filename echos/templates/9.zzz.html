@@ -2,65 +2,91 @@
 
 {% block content %}
   <div class="sair sbreak box">
-    <h2>À savoir</h2>
-    <p class="sbreak"><mark>En cas de mauvais temps, il n'y a pas de dispositif pour garder toutes les têtes au sec.
-    Soyez prêts à être aventuriers, et mouillés !</mark></p>
-    <p>- Pas de carte bleu sur place : prévoyez du liquide pour l'entrée et tout le reste. </p>
-    <p>- C'est la montagne : prenez des vêtements chauds et des lampes torches. </p>
-    <p class="sbreak">- À partir du lundi 12 heures, le festival et la Ferme du Faï fermeront leurs portes. </p>
+    <h2>{% if lang == 'fr' %}À savoir{% else %}Please note{% endif %}</h2>
+    <p class="sbreak">
+      {% if lang == 'fr' %}
+        <mark>Il fera beau, mais en cas de mauvais temps, il n’y a pas de dispositif pour garder les têtes au sec.
+        Au cas où, des vêtements de pluie seront utiles.</mark>
+      {% else %}
+        <mark>The weather should be fine — but should it rain, there is nothing to keep you dry. Please consider
+          bringing raincoats.</mark>
+      {% endif %}
+    </p>
+    {% if lang == 'fr' %}
+      <p>- Pas de carte bleue sur place : prévoyez du liquide pour l’entrée et tout le reste.</p>
+      <p>- C'est la montagne : prenez des vêtements chauds et des lampes torches.</p>
+      <p class="sbreak">- À partir du dimanche 12 heures, le festival et la Ferme du Faï fermeront leurs portes.</p>
+    {% else %}
+      <p>- Credit cards are not accepted at the festival's venue: the entrance and the rest are to be paid with <mark>cash
+        only</mark>.</p>
+      <p>- The site is in the mountain: bring warm clothes and flashlights.</p>
+      <p class="sbreak">- The festival and Le Faï farm will close on sunday, 12 a.m.</p>
+    {% endif %}
   </div>
-  <h3 class="air sbreak">Se loger</h3>
-  <p>
-    La vallée offre aux visiteurs un grand espace sauvage <mark>où vous pourrez installer votre campement
-    librement </mark>(prévoir tentes, sacs de couchage et vêtements chauds). Des sanitaires (douches et toilettes)
-    seront à votre disposition à la Ferme du Faï. Le camping et les sanitaires seront gratuits pour tous les
-    spectateurs.
-  </p>
-  <p class="sair">
-    La Ferme du Faï propose des nuits en auberge dans la limite des places disponible.<br>Réservation obligatoire au
-    0492580707.
-  </p>
-  <h3 class="air sbreak">Se restaurer</h3>
-  <p>Nous vous proposons sur place à boire et à manger durant toute la durée du festival, vous pourrez
-    également amener
-    vos propres vivres.</p>
-
-  <h2 class="air sbreak">LES TARIFS</h2>
-
-  <h3>Boissons</h3>
-
-  <p class="sbreak">
-    Bière Alphand à la pression<br>
-    - Demi de Blonde - 1€50<br>
-    - Demi d'Ambrée ou de Blanche - 2€
-  </p>
-
-  <p>Verre de vin rouge local - 1€50</p>
-
-  <p>Verre de jus de fruit, limonade ou cola local - 1€</p>
-
-  <h3>Bouffe</h3>
-
-  <p class="sbreak">
-    <em>Samedi soir</em><br>
-    Pizza au feu de bois - 1€50 la part
-  </p>
-
-  <p class="sbreak">
-    <em>Dimanche midi</em><br>
-    Sandwich à la carte - 3€<br>
-    Fruits au choix - 0,50€
-  </p>
-
-  <p class="sbreak">
-    <em>Dimanche soir</em><br>
-    Assiette complète (petite entrée - dahl + riz - dessert - pain - fromage) - 8€<br>
-    Bol de dahl - 3€
-  </p>
-
-  <p>
-    <em>Les dimanche matin et lundi matin (jusqu'à 11h)</em><br>
-    Petit déjeuner complet - 2€<br>
-    Café - 0,50€
-  </p>
+  <h3 class="air sbreak">{% if lang == 'fr' %}Se loger{% else %}Accomodation{% endif %}</h3>
+  {% if lang == 'fr' %}
+    <p>
+      La vallée est un grand espace sauvage <mark>où vous pourrez installer votre campement librement</mark>
+      (prévoir tentes, sacs de couchages et vêtements chauds). Cette liberté suppose une certaine autonomie : <mark>nous ne
+      pouvons garantir l’accès aux sanitaires</mark>. Un brin de toilette avec du savon bio dans la rivière remplacera aisément
+      votre douche italienne.
+    </p>
+    <p class="sair">
+      La Ferme du Faï propose des nuits en auberge dans la limite des places disponible.<br>Réservation obligatoire au
+      0492580707.
+    </p>
+    <h3 class="air sbreak">Se restaurer</h3>
+    <p>Chacun(e) est libre d’amener ses propres vivres. Nous vous proposerons à manger aux horaires de repas, et le bar
+      servira de la bière, du vin, des softs et du café pendant toute la durée du festival.</p>
+  {% else %}
+    <p>
+      The valley is a large and wild space where <mark>you can camp where it pleases you</mark> (bring your own tent, sleeping bags
+      and warm clothes). This freedom goes with <em>autonomy</em>: <mark>there is no shower facilities provided</mark>. The river and some
+      organic soap are an alternative to be considered!
+    </p>
+    <p class="sair">
+      Sleeping at the Inn of the farm is also possible.<br>Imperatively register by phone: +33 (0)492580707.
+    </p>
+    <h3 class="air sbreak">To eat</h3>
+    <p>Everyone is free to bring their own food. It'll be possible to buy food during meal times; beer, wine, soft
+      drinks and coffee will be sold at the bar for the duration of the festival.</p>
+  {% endif %}
+{#  <h2 class="air sbreak">LES TARIFS</h2>#}
+{##}
+{#  <h3>Boissons</h3>#}
+{##}
+{#  <p class="sbreak">#}
+{#    Bière Alphand à la pression<br>#}
+{#    - Demi de Blonde - 1€50<br>#}
+{#    - Demi d'Ambrée ou de Blanche - 2€#}
+{#  </p>#}
+{##}
+{#  <p>Verre de vin rouge local - 1€50</p>#}
+{##}
+{#  <p>Verre de jus de fruit, limonade ou cola local - 1€</p>#}
+{##}
+{#  <h3>Bouffe</h3>#}
+{##}
+{#  <p class="sbreak">#}
+{#    <em>Samedi soir</em><br>#}
+{#    Pizza au feu de bois - 1€50 la part#}
+{#  </p>#}
+{##}
+{#  <p class="sbreak">#}
+{#    <em>Dimanche midi</em><br>#}
+{#    Sandwich à la carte - 3€<br>#}
+{#    Fruits au choix - 0,50€#}
+{#  </p>#}
+{##}
+{#  <p class="sbreak">#}
+{#    <em>Dimanche soir</em><br>#}
+{#    Assiette complète (petite entrée - dahl + riz - dessert - pain - fromage) - 8€<br>#}
+{#    Bol de dahl - 3€#}
+{#  </p>#}
+{##}
+{#  <p>#}
+{#    <em>Les dimanche matin et lundi matin (jusqu'à 11h)</em><br>#}
+{#    Petit déjeuner complet - 2€<br>#}
+{#    Café - 0,50€#}
+{#  </p>#}
 {% endblock %}

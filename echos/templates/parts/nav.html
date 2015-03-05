@@ -6,13 +6,13 @@
             <img class="vertLine" src="{{ STATIC_URL }}2015/img/layout/line.png"/>
             <ul class="menuItem">
                 <li class="{% active request "^/echos/pres" %}">
-                    <a href="/echos/presentation">Présentation</a>
+                    <a href="/echos/presentation">{% if lang == "fr" %}Présentation{% else %}Introduction{% endif %}</a>
                 </li>
                 <li class="{% active request "^/echos/prog" %}">
-                    <a href="/echos/programmation">Programmation</a>
+                    <a href="/echos/programmation">{% if lang == "fr" %}Programmation{% else %}Programs{% endif %}</a>
                 </li>
                 <li class="{% active request "^/echos/res" %}">
-                    <a>Merci à tous !</a>
+                    <a href="/echos/reservation">{% if lang == "fr" %}Préventes{% else %}Tickets{% endif %}</a>
                 </li>
             </ul>
             <div class="header {% active request "^/echos" %}">échos</div>
@@ -21,25 +21,25 @@
             <img class="vertLine" src="{{ STATIC_URL }}2015/img/layout/line.png" />
             <ul class="menuItem">
                 <li>
-                    <a href="/lieu/ferme">La Ferme du Faï</a>
+                    <a href="/lieu/ferme">{% if lang == "fr" %}La Ferme du Faï{% else %}Le Faï farm{% endif %}</a>
                 </li>
                 <li>
-                    <a href="/lieu/trompes">Le système acoustique</a>
+                    <a href="/lieu/trompes">{% if lang == "fr" %}Le système acoustique{% else %}The acoustic system{% endif %}</a>
                 </li>
             </ul>
-            <div class="header {% active request "^/echos" %}">le lieu</div>
+            <div class="header {% active request "^/echos" %}">{% if lang == "fr" %}le lieu{% else %}the place{% endif %}</div>
         </li>
         <li class="mod">
             <img class="vertLine" src="{{ STATIC_URL }}2015/img/layout/line.png" />
             <ul class="menuItem">
                 <li class="{% active request "^/echos/res" %}">
-                    <a href="/modalites/acces">Comment venir ?</a>
+                    <a href="/modalites/acces">{% if lang == "fr" %}Comment venir ?{% else %}Coming to échos{% endif %}</a>
                 </li>
                 <li>
-                    <a href="/modalites/zzz">Se loger / Se restaurer</a>
+                    <a href="/modalites/zzz">{% if lang == "fr" %}Se loger / Se restaurer{% else %}Sleep / Eat{% endif %}</a>
                 </li>
             </ul>
-            <div class="header {% active request "^/echos" %}">modalités</div>
+            <div class="header {% active request "^/echos" %}">{% if lang == "fr" %}modalités{% else %}details{% endif %}</div>
         </li>
         <li class="dome">
             <a href="/dome"><div class="header {% active request "^/dome" %}">dôme</div></a>

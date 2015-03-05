@@ -245,15 +245,15 @@ section#page {
           margin-left: auto; margin-right: auto;
 
           &.lundi {
-            width: 200px;
+            text-align: center;
           }
 
           &.samedi {
-            width: 250px;
+            text-align: center;
           }
 
           &.dimanche {
-            width: 300px;
+            text-align: center;
           }
         }
 
@@ -380,6 +380,10 @@ section#page {
             vertical-align: middle;
             margin-left: 10px;
           }
+        }
+
+        .embedmap {
+          text-align: center;
         }
       }
     }

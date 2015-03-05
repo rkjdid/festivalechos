@@ -2,35 +2,60 @@
 
 {% block content %}
   <p class="sair">
-    Pour sa deuxième édition, le festival échos déploie l’expérience sonore sur un <mark>week-end de musique
-    improvisée</mark> au cœur d’un vaste espace naturel à l’acoustique exceptionnelle.
+    {% if lang == "fr" %}
+      Après un deuxième exercice du tonnerre, <mark>échos 3</mark> fera à nouveau vibrer <a href="/lieu/trompes">
+      le système acoustique</a> de la <a href="/lieu/ferme">ferme du Faï</a> <mark>le vendredi 26 juin 2015</mark>.
+    {% else %}
+      The previous edition of échos was a wild and stormy one; <a href="/lieu/trompes">the acoustic system</a> will
+      tremble again through <mark>échos 3, Friday the 26th of June, 2015</mark>.
+    {% endif %}
   </p>
   <p class="sair">
-    <mark>Samedi 28 juin, de la fin d’après-midi au lever du jour,</mark> <a href="/echos/programmation/">nos
-    artistes</a> développeront des improvisations libres, amplifiées par <a href="/lieu/trompes/"><mark>trois trompes
-    géantes</mark></a>. Ce système acoustique fait face à une somptueuse falaise concave et sublimera l’écho naturel du
-    lieu, au timbre de créations audacieuses.
-  </p>
-  <p>
-    Au terme d’une résidence d’une semaine, les musiciens feront vibrer <a href="/lieu/ferme/">la Ferme du Faï</a> par une
-    approche personnelle, selon un travail narratif dédié au lieu. Continuums, accidents et textures sonores
-    s’infiltreront à travers les trompes, iront rencontrer la falaise, et se diffuser dans l’ensemble de la vallée :
-    vous serez libres <mark>d’arpenter cet espace sauvage</mark> sous la nuit étoilée, à la recherche des points
-    d’écoute qui éveilleront le mieux vos sensations.
+    {% if lang == "fr" %}
+      Toute la nuit, <a href="/echos/programmation">sept formations</a> joueront sur <mark>trois trompes géantes</mark>
+      plantées entre la montagne d’Aujour et une falaise concave à la résonance singulière.
+    {% else %}
+      All night long, <a href="/echos/programmation">seven bands</a> will play on the <mark>three giant horns</mark>
+      rooted between the Anjour mountain and a peculiar-resonating concave cliff.
+    {% endif %}
   </p>
   <p class="sair">
-    Loin du milieu urbain, nous vous invitons à <a href="/modalites/zzz/">dormir sur place</a>, en plein air.
+    {% if lang == "fr" %}
+      Les artistes invités improviseront au gré des échos et des bruits naturels pour envelopper l’espace de leur
+      musique, après s’être familiarisés au lieu lors d’une semaine de résidence. Continuums, accidents et autres
+      manipulations sonores seront projetés par les trompes et <mark>réverbérés par la falaise</mark> dans la nuit ambiante.
+    {% else %}
+      The artists will improvise amidst the echoes and surrounding sounds to unfold the space with music — after a
+      week-long residency to let them feel the place. Drones, glitches and other sonic manipulations will be thrown by
+      the horns and <mark>reverberated by the cliff</mark> through the ambient night.
+    {% endif %}
   </p>
   <p class="sair">
-    <mark>Le lendemain</mark>, vous pourrez tester le système acoustique avec vos instruments (<a href="/contact">inscription
-    obligatoire</a>). Nous vous inviterons également à vous balader au gré de vos envies, et à découvrir les coins de
-    randonnée ou de baignade des environs.
+    {% if lang == "fr" %}
+      Le lendemain, repos, balade, baignade ou test du système acoustique (<a href="/contact">inscription obligatoire</a>),
+      avant une soirée bonus pour les plus vaillants, ou les moins résignés au départ :
+      <mark>un concert chaleureux au <em>théâtre de verdure</em></mark>.
+    {% else %}
+      The day after, rest, walk, bath, or try out the acoustic system (<a href="/contact/">registration required!</a>)
+      — followed by an extra evening for the braves: <mark>a party with live acts at <em>le théâtre de verdure</em></mark>.
+    {% endif %}
   </p>
-  <p>
-    Le soir, nous conclurons le week-end par <mark>une soirée à la ferme</mark> pour se remettre de l’expérience
-    forte des trompes de la vieille.
+  <p class="sair">
+    {% if lang == "fr" %}
+      Le festival a lieu dans un milieu naturel ouvert :<br>
+      &nbsp;&nbsp;– vous pourrez arpenter la vallée à la recherche des meilleurs espaces d’écoute<br>
+      &nbsp;&nbsp;– <a href="/modalites/zzz">le camping est sauvage, libre et autonome</a>
+    {% else %}
+      The festival is taking place in a natural open environment:<br>
+      &nbsp;&nbsp;– you'll be able to wander through the valley in search of the best listening spots<br>
+      &nbsp;&nbsp;– <a href="/modalites/zzz">camping is free and autonomous</a>
+    {% endif %}
   </p>
   <p class="sair sbreak">
-    Après une nouvelle nuit sur place, <mark>le festival fermera ses portes le lundi matin.</mark>
+    {% if lang == "fr" %}
+      <mark>Après une nouvelle nuit sur place, le festival fermera ses portes le dimanche matin.</mark>
+    {% else %}
+      <mark>After a last night on the site, the festival and the farm will close on sunday at noon.</mark>
+    {% endif %}
   </p>
 {% endblock %}
