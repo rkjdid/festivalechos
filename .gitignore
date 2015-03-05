@@ -6,6 +6,5 @@ _debug.py
 
 .idea/
 
-config.rb
 .sass-cache
 echos/static/2015/css/*.css
