@@ -53,6 +53,7 @@ except:
         "need to be defined in credentials.py", file=sys.stderr)
   raise ImproperlyConfigured("_credentials.py missing")
 
+SERVER_EMAIL = _credentials.SERVER_EMAIL
 SECRET_KEY = _credentials.SECRET_KEY
 DATABASES = {
   'default': {
