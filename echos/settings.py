@@ -74,6 +74,7 @@ STATICFILES_DIRS = ()
 
 MIDDLEWARE_CLASSES = (
   'django.contrib.sessions.middleware.SessionMiddleware',
+  'echos.domain.DomainMiddleware',
   'django.middleware.common.CommonMiddleware',
   'django.middleware.csrf.CsrfViewMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,3 +124,9 @@ TIME_ZONE = 'Europe/Paris'
 LANGUAGE_CODE = 'fr-FR'
 USE_I18N = True
 USE_L10N = True
+
+AVAILABLE_LANGUAGES = (
+  'fr',
+  'en'
+)
+CURRENT_LANGUAGE = 'fr'

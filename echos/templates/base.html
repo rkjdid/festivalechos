@@ -3,10 +3,10 @@
 <html lang="fr" class="oldie">
 <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="fr" class="js{% block html_class %}{% endblock %}">
+<html lang="{% if lang == 'fr' %}fr{% else %}en{% endif %}" class="js{% block html_class %}{% endblock %}">
 <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta name="description" content="{% block gdesc %}Vendredi 26 juin 2015, de la fin d’après-midi au lever du jour, nos artistes développeront des improvisations libres, amplifiées par trois trompes géantes dans la Haute Vallée de Maraize{% endblock %}" />

@@ -6,12 +6,12 @@ from django.http import HttpResponse
 
 import models as m
 
-base_params = dict(
-  lang='en'
-)
+base_params = dict()
 
 
 def home(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
+
   return render_to_response(
     '0.home.html',
     base_params,
@@ -20,6 +20,7 @@ def home(request):
 
 
 def presentation(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Présentation',
     request=request,
@@ -34,6 +35,7 @@ def presentation(request):
 
 
 def contact(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Contact',
     request=request,
@@ -48,6 +50,7 @@ def contact(request):
 
 
 def progra(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Programmation',
     request=request,
@@ -62,6 +65,7 @@ def progra(request):
 
 
 def qui(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Dôme',
     request=request,
@@ -77,6 +81,7 @@ def qui(request):
 
 
 def acces(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Comment venir',
     request=request,
@@ -91,6 +96,7 @@ def acces(request):
 
 
 def resa(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Réservation',
     request=request,
@@ -105,6 +111,7 @@ def resa(request):
 
 
 def win(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Merci !',
     request=request,
@@ -119,6 +126,7 @@ def win(request):
 
 
 def ferme(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='La Ferme du Faï',
     request=request,
@@ -133,6 +141,7 @@ def ferme(request):
 
 
 def trompes(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Le système acoustique',
     request=request,
@@ -147,6 +156,7 @@ def trompes(request):
 
 
 def zzz(request):
+  base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
     contentTitle='Quoi dormir / Où manger',
     request=request,
