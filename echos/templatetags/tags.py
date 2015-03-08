@@ -16,7 +16,9 @@ def subdomain(request, lang):
     prefix += 's:'
   prefix += '://'
 
-  if lang != 'fr':
-    prefix += lang + '.'
+  if lang == 'fr':
+    prefix += 'festivalechos.fr'
+  else:
+    prefix += 'en.festivalechos.fr'
 
   return prefix + request.META['HTTP_HOST']
