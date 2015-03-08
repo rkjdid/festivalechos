@@ -26,6 +26,7 @@ def presentation(request):
     request=request,
     banner="1"
   ))
+  base_params['contentTitle'] = 'Présentation' if base_params['lang'] == 'fr' else 'Introduction'
 
   return render_to_response(
     '1.presentation.html',
@@ -52,10 +53,10 @@ def contact(request):
 def progra(request):
   base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
-    contentTitle='Programmation',
     request=request,
     banner="3"
   ))
+  base_params['contentTitle'] = 'Programmation' if base_params['lang'] == 'fr' else 'Program'
 
   return render_to_response(
     '3.programmation.html',
@@ -83,10 +84,10 @@ def qui(request):
 def acces(request):
   base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
-    contentTitle='Comment venir',
     request=request,
     banner="5"
   ))
+  base_params['contentTitle'] = 'Comment venir ?' if base_params['lang'] == 'fr' else 'Coming to échos'
 
   return render_to_response(
     '5.acces.html',
@@ -98,10 +99,10 @@ def acces(request):
 def resa(request):
   base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
-    contentTitle='Réservation',
     request=request,
     banner="6"
   ))
+  base_params['contentTitle'] = 'Réservation' if base_params['lang'] == 'fr' else 'Tickets'
 
   return render_to_response(
     '6.reservation.html',
@@ -128,10 +129,10 @@ def win(request):
 def ferme(request):
   base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
-    contentTitle='La Ferme du Faï',
     request=request,
     banner="7"
   ))
+  base_params['contentTitle'] = 'La ferme du Faï' if base_params['lang'] == 'fr' else 'Le Faï farm'
 
   return render_to_response(
     '7.ferme.html',
@@ -143,10 +144,10 @@ def ferme(request):
 def trompes(request):
   base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
-    contentTitle='Le système acoustique',
     request=request,
     banner="8"
   ))
+  base_params['contentTitle'] = 'Le système acoustique' if base_params['lang'] == 'fr' else 'The acoustic system'
 
   return render_to_response(
     '8.trompes.html',
@@ -158,10 +159,10 @@ def trompes(request):
 def zzz(request):
   base_params['lang'] = request.session.get('lang', 'fr')
   base_params.update(dict(
-    contentTitle='Quoi dormir / Où manger',
     request=request,
     banner="9"
   ))
+  base_params['contentTitle'] = 'Quoi dormir / Où manger' if base_params['lang'] == 'fr' else 'Sleep / Eat'
 
   return render_to_response(
     '9.zzz.html',
