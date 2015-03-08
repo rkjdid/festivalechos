@@ -48,4 +48,9 @@
             <a href="/contact"><div class="header {% active request "^/contact" %}">contact</div></a>
         </li>
     </ul>
+
+    <div class="lang">
+      <a href="{% subdomain request 'fr' %}{{ request.META.PATH_INFO }}">FR</a> –
+      <a href="{% subdomain request 'en' %}{{ request.META.PATH_INFO }}">EN</a>
+    </div>
 </nav>

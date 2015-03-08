@@ -3,8 +3,8 @@
 section#page {
   position: relative;
 
-  width: 50%;
-  min-width: 600px;
+  width: 35%;
+  min-width: 400px;
   margin: auto;
 
   @include transition(all .15s ease);
@@ -15,16 +15,16 @@ section#page {
   img {
     display: block;
   }
+}
 
-  div {
-    text-align: center;
-    margin-top: 10px;
+div.lang {
+  text-align: center;
+  margin-top: 10px;
 
-    a {
-      font-family: "Larish", serif;
-      display: inline;
-      padding: 10px;
-    }
+  a {
+    font-family: "Larish", serif;
+    display: inline;
+    padding: 10px;
   }
 }
 
