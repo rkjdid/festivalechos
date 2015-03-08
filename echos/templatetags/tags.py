@@ -21,4 +21,4 @@ def subdomain(request, lang):
   else:
     prefix += 'en.festivalechos.fr'
 
-  return prefix + request.META['HTTP_HOST']
+  return prefix
