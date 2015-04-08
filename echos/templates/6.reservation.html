@@ -1,60 +1,128 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  {% if lang == 'fr' %}
-    <p class="air">
-      Oui, oui, ça arrive
-    </p>
-  {% else %}
-    <p class="air">
-      Yo chill out, it's coming
-    </p>
-  {% endif %}
 {#  <p class="box break">#}
 {#    <mark>C'est terminé pour les préventes !</mark> Pas d'inquiétude ceci-dit, il y a de la place pour tout le monde,#}
 {#    paiement possible en espèce ou par chèque à l'entrée de la vallée. À ce soir !#}
 {#  </p>#}
-{#  {% include "parts/paypal.html" %}#}
-{#  <div class="tarifs">#}
-{#    <h3>TARIF "COSTANZA" : 12€</h3>#}
-{#    <p class="break">#}
-{#      - 1 adhésion à l'asso Dôme pour 1 an<br>#}
-{#      - 1 entrée pour Échos<br>#}
-{#    </p>#}
-{##}
-{#    <h3>TARIF "KRUGER" : 15€</h3>#}
-{#    <p class="break">#}
-{#      - 1 adhésion à l'asso Dôme pour 1 an<br>#}
-{#      - 1 entrée pour Échos<br>#}
-{#      - 1 carte d'adhérent stylée<br>#}
-{#    </p>#}
-{##}
-{#    <h3>TARIF "BOZARDEUX" : 25€</h3>#}
-{#    <p class="break">#}
-{#      - 1 adhésion à l'asso Dôme pour 1 an<br>#}
-{#      - 1 entrée pour Échos<br>#}
-{#      - 1 carte d'adhérent stylée<br>#}
-{#      - 1 affiche sérigraphiée numérotée sortie en édition limitée<br>#}
-{#    </p>#}
-{##}
-{#    <h3>TARIF "SAIX ADDICT" : 30€</h3>#}
-{#    <p class="break">#}
-{#      - 1 adhésion à l'asso Dôme pour 1 an<br>#}
-{#      - 1 entrée pour Échos<br>#}
-{#      - 1 carte d'adhérent stylée<br>#}
-{#      - 1 affiche sérigraphiée numérotée sortie en édition limitée<br>#}
-{#      - 1 K7 infinie réalisée pour l'occasion par l’asso, numérotée<br>#}
-{#    </p>#}
-{##}
-{#    <h3>TARIF "BIG V" : 60€</h3>#}
-{#    <p class="break">#}
-{#      - 2 adhésions à l'asso Dôme pour 1 an<br>#}
-{#      - 2 entrées pour Échos<br>#}
-{#      - 2 cartes d'adhérent stylées<br>#}
-{#      - 2 affiches sérigraphiées numérotées sorties en édition limitée<br>#}
-{#      - 2 K7 infinies réalisées pour l'occasion par l’asso, numérotées<br>#}
-{#      - 2 petit-déjeuners à la Ferme du Faï le dimanche matin et le lundi matin<br>#}
-{#    </p>#}
-{#    {% include "parts/paypal.html" %}#}
-{#  </div>#}
+{% if lang == 'fr' %}
+  <p class="sair break">
+    Pour soutenir notre festival, <mark>Dôme vous propose plusieurs tarifs de préventes</mark>,
+    avec des bonus faits maison, selon les moyens de chacun. <em>À noter que échos n'est pas et n'a jamais été
+    subventionné d'aucune manière, l'évènement est sur pieds grâce à la sueur d'une bande de passionnés, et
+    tout éventuel excédent financier sera utilisé pour remercier les intervenants.
+    Votre participation est notre seule source de revenus !</em>
+  </p>
+  <p class="sair">
+    Après le paiement en ligne, vous n’avez rien à imprimer. Vous recevrez simplement un mail de confirmation et
+    aurez à vous présenter le jour J avec les nom et prénom utilisés lors du paiement.
+  </p>
+  <p class="sair">
+    Pour les allergiques au paiement par internet : vous pouvez régler votre prévente par chèque, à envoyer
+    <a href="/contact/">au siège de l’association</a>.
+  </p>
+{% else %}
+  <p class="sair break">
+    In order to help us putting up échos, we have made available <mark>several ticket fees</mark>,
+    to adequately fit your wallet size. <em>Please note that échos is not and has never been subsidized externally,
+    the event exists thanks to the sweat of a small crew of mad enthusiasts and if a divine intervention were to happen
+    and we collect money above requirements, it'll be used to express gratitude towards the artists. Your participation is our only
+    income!</em>
+  </p>
+  <p class="sair">
+    After having paid, you're good to go. You'll receive a confirmation email, simply come to us the day of the event,
+    if you remember correctly the name provided at payment (this is the hard part), we shall let you pass and
+    collect your gifts.
+  </p>
+  <p class="sair">
+    If you'd rather avoid online payment, bank checks to Association Dôme are welcome, send it to our postal address,
+    available on the <a href="/contact/">contact page</a>.
+  </p>
+{% endif %}
+
+  {% include "parts/paypal.html" %}
+  <div class="tarifs">
+{% if lang == "fr" %}
+  <h3>TARIF "COSTANZA" : 12€</h3>
+  <p class="break">
+    - 1 adhésion à l'asso Dôme pour 1 an<br>
+    - 1 entrée pour Échos<br>
+  </p>
+
+  <h3>TARIF "KRUGER" : 15€</h3>
+  <p class="break">
+    - 1 adhésion à l'asso Dôme pour 1 an<br>
+    - 1 entrée pour Échos<br>
+    - <mark>1 carte d'adhérent stylée, réalisée par l'asso</mark><br>
+  </p>
+
+  <h3>TARIF "BOZARDEUX" : 25€</h3>
+  <p class="break">
+    - 1 adhésion à l'asso Dôme pour 1 an<br>
+    - 1 entrée pour Échos<br>
+    - 1 carte d'adhérent stylée, réalisée par l'asso<br>
+    - <mark>1 affiche sérigraphiée numérotée sortie en édition limitée</mark><br>
+  </p>
+
+  <h3>TARIF "SAIX ADDICT" : 30€</h3>
+  <p class="break">
+    - 1 adhésion à l'asso Dôme pour 1 an<br>
+    - 1 entrée pour Échos<br>
+    - 1 carte d'adhérent stylée, réalisée par l'asso<br>
+    - 1 affiche sérigraphiée numérotée sortie en édition limitée<br>
+    - <mark>1 oscilloscope home-made, numéroté</mark><br>
+  </p>
+
+  <h3>TARIF "BIG V" : 60€</h3>
+  <p class="break">
+    - 2 adhésions à l'asso Dôme pour 1 an<br>
+    - 2 entrées pour Échos<br>
+    - 2 cartes d'adhérent stylées, réalisées par l'asso<br>
+    - 2 affiches sérigraphiées numérotées sorties en édition limitée<br>
+    - 2 oscilloscopes home-made, numérotés<br>
+    - <mark>2 petit-déjeuners à la Ferme du Faï les samedi et dimanche matins</mark><br>
+  </p>
+{% else %}
+    <h3>"COSTANZA" FEE - 12€</h3>
+    <p class="break">
+      - 1 year Dôme membership<br>
+      - 1 ticket for Échos<br>
+    </p>
+
+    <h3>"KRUGER" FEE - 15€</h3>
+    <p class="break">
+      - 1 year Dôme membership<br>
+      - 1 ticket for Échos<br>
+      - <mark>1 kickass member card, homemade</mark><br>
+    </p>
+
+    <h3>"BOZARDEUX" FEE - 25€</h3>
+    <p class="break">
+      - 1 year Dôme membership<br>
+      - 1 ticket for Échos<br>
+      - 1 kickass member card, homemade<br>
+      - <mark>1 silkscreen poster, numbered limited edition</mark><br>
+    </p>
+
+    <h3>"SAIX ADDICT" FEE - 30€</h3>
+    <p class="break">
+      - 1 year Dôme membership<br>
+      - 1 ticket for Échos<br>
+      - 1 kickass member card, homemade<br>
+      - 1 silkscreen poster, numbered limited edition<br>
+      - <mark>1 homemade oscilloscope, numbered limited edition</mark><br>
+    </p>
+
+    <h3>"BIG V" FEE - 60€</h3>
+    <p class="break">
+      - 2 1-year Dôme memberships<br>
+      - 2 tickets for Échos<br>
+      - 2 kickass member cards, homemade<br>
+      - 2 silkscreen posters, numbered limited edition<br>
+      - 2 homemade oscilloscopes, numbered limited edition<br>
+      - <mark>2 breakfasts at le Faï farm, on Saturday and Sunday mornings</mark><br>
+    </p>
+{% endif %}
+  {% include "parts/paypal.html" %}
+</div>
 {% endblock %}
