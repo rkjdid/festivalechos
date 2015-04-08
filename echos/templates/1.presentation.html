@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
+  <p class="sair"></p>
   <p class="sair">
     {% if lang == "fr" %}
       Après un deuxième exercice du tonnerre, <mark>échos 3</mark> fera à nouveau vibrer <a href="/lieu/trompes">
@@ -42,13 +43,11 @@
   </p>
   <p class="sair">
     {% if lang == "fr" %}
-      Le festival a lieu dans un milieu naturel ouvert :<br>
-      &nbsp;&nbsp;– vous pourrez arpenter la vallée à la recherche des meilleurs espaces d’écoute<br>
-      &nbsp;&nbsp;– <a href="/modalites/zzz">le camping est sauvage, libre et autonome</a>
+      Le festival a lieu dans un milieu naturel ouvert ; vous pourrez arpenter la vallée à la recherche des meilleurs
+      espaces d’écoute. <a href="/modalites/zzz">Le camping est sauvage, libre et autonome</a>.
     {% else %}
-      The festival is taking place in a natural open environment:<br>
-      &nbsp;&nbsp;– you'll be able to wander through the valley in search of the best listening spots<br>
-      &nbsp;&nbsp;– <a href="/modalites/zzz">camping is free and autonomous</a>
+      The festival is taking place in a natural open environment; you'll be able to wander through the valley in
+      search of the best listening spots. <a href="/modalites/zzz">Camping is free and autonomous</a>.
     {% endif %}
   </p>
   <p class="sair sbreak">
