@@ -3,40 +3,41 @@
 {% block title %}{% if contentTitle %}{{ block.super }} - {{ contentTitle|capfirst }}{% endif %}{% endblock %}
 
 {% block extracss %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}2015/css/layout.css" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}2015/css/jquery.mCustomScrollbar.css"  />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}2015/css/layout.css" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}2015/css/jquery.mCustomScrollbar.css"  />
 {% endblock %}
 
 {% block extrajs %}
-    <script type="text/javascript" src="{{ STATIC_URL }}2015/js/layout.js"></script>
-    {% if debug %}
-    <script type="text/javascript" src="{{ STATIC_URL }}2015/js/lib/jquery.mCustomScrollbar.js"></script>{% else %}
-    <script type="text/javascript" src="{{ STATIC_URL }}2015/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>{% endif %}
+  <script type="text/javascript" src="{{ STATIC_URL }}2015/js/layout.js"></script>
+  {% if debug %}
+  <script type="text/javascript" src="{{ STATIC_URL }}2015/js/lib/jquery.mCustomScrollbar.js"></script>{% else %}
+  <script type="text/javascript" src="{{ STATIC_URL }}2015/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>{% endif %}
 {% endblock %}
 
 
 {% block body %}
-    <header>
-        <section class="leftCol" id="logo">
-            <a href="/">
-                <img src="{{ STATIC_URL }}2015/img/layout/echos.png"/>
-            </a>
-        </section>
-
-        {% include "parts/nav.html" %}
-    </header>
-
-    <section id="contentRow">
-        <section class="leftCol" id="sideImg">
-            {% block freebie %}{% endblock %}
-            <img class="drag" src="{{ STATIC_URL }}2015/img/layout/side/2015/{{ banner }}.jpg" />
-        </section>
-        <section id="contentFrame" class="rightCol {{ contentTitle }}">
-            <section class="content {{ page }} {% block contentClass %}tjustify{% endblock %}">{% block content %}{% endblock %}</section>
-        </section>
+  <header>
+    <section class="leftCol" id="logo">
+      <a href="/">
+        <img src="{{ STATIC_URL }}2015/img/layout/echos.png"/>
+      </a>
     </section>
 
-    <footer>
-        {% include "parts/footer.html" %}
-    </footer>
+    {% include "parts/nav.html" %}
+  </header>
+
+  <section id="contentRow">
+    <section class="leftCol" id="sideImg">
+      {% block freebie %}{% endblock %}
+      <img class="drag" src="{{ STATIC_URL }}2015/img/layout/side/2015/{{ banner }}.jpg"/>
+    </section>
+    <section id="contentFrame" class="rightCol {{ contentTitle }}">
+      <section class="content {{ page }} {% block contentClass %}tjustify{% endblock %}">
+        {% block content %}{% endblock %}</section>
+    </section>
+  </section>
+
+  <footer>
+    {% include "parts/footer.html" %}
+  </footer>
 {% endblock %}
