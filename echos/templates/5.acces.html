@@ -94,6 +94,21 @@
       From Veynes, hitchhiking or carpooling (dedicated web page coming soon).
     {% endif %}
   </p><br>
+  <h3><a target="_blank" href="http://echovoiturage.forumouf.com/" style="color: inherit; text-decoration: none;"
+         class="unfancy">{% if lang == "fr" %}Covoiturage{% else %}Carpooling{% endif %}
+        <img src="{{ STATIC_URL }}2015/img/5.acces/maserati.png" class="2cv"
+             style="display: inline; vertical-align: bottom; width: 10%;"></a></h3>
+  <p>
+    {% if lang == 'fr' %}
+      Rendez vous sur notre forum improvisé
+      <a target="_blank" href="http://echovoiturage.forumouf.com/">http://echovoiturage.forumouf.com/</a>
+      pour vous coordonner physiquement dans votre planning !
+    {% else %}
+      Meet on our hip forum
+      <a target="_blank" href="http://echovoiturage.forumouf.com/">http://echovoiturage.forumouf.com/</a>
+      for an attempt at forward physical planning through space and time!
+    {% endif %}
+  </p><br>
   <h2>{% if lang == "fr" %}Du Saix jusqu'à la Ferme du Faï{% else %}From le Saix to le Faï farm{% endif %}</h2>
   <div class="air break gallery box">
     <a rel="acces" data-boxtitle="{% if lang == "fr" %}L'entrée du village du Saix{% else %}Le Saix village entrance{% endif %}"
