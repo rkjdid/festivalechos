@@ -129,6 +129,10 @@ section#page {
                 color: darken(#ab818e, 15%);
               }
 
+              &.disabled, &.disabled:hover {
+                color: black;
+              }
+
               a {
                 display: block;
               }
