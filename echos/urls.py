@@ -14,7 +14,6 @@ urlpatterns = patterns('',
   # ECHOS
   url(r'^echos/presentation/?$', echos.views.presentation, name='presentation'),
   url(r'^echos/programmation/?$', echos.views.progra, name='programmation'),
-  url(r'^echos/reservation/?$', 'echos.views.resa', name='reservation'),
 
   # QUI ?
   url(r'^dome/?$', echos.views.qui, name='qui'),
