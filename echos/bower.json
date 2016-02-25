@@ -1,0 +1,17 @@
+{
+  "name": "echos2016",
+  "description": "",
+  "authors": [
+    "RK <romainknezevic@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.0.0"
+  }
+}
