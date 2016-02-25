@@ -9,7 +9,7 @@ def home(request):
   base_params['lang'] = request.session.get('lang', 'fr')
 
   return render_to_response(
-    'home.html',
+    'teaz.html',
     base_params,
     context_instance=RequestContext(request)
   )

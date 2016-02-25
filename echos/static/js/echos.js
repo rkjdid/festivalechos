@@ -1,6 +1,4 @@
 (function ($) {
   // DOM ready
-  $(function() {
-    console.log("hi");
-  });
+  $(function() {});
 })(jQuery);

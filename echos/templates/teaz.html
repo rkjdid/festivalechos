@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block body %}
+  <textarea id="textMod"></textarea>
+  <textarea id="text" spellcheck="false"></textarea>
+  <a href="http://2015.festivalechos.fr/" target="_blank">édition 2015</a>
+{% endblock %}
+{% block extrajs %}
+  <script type="text/javascript">
+    lastKey();
+    space();
+
+    var f, last, diff;
+    var tempsAvantEspace = 10;
+    <!-- change cette valeur pour modifier le temps qu'attends le programme avant de faire des espaces -->
+    var tempsChaqueEspace = 100;
+    <!-- change cette valeur pour modifier le temps entre chaque espace -->
+    var strokes = 0;
+    var modText = " Échos revient les 2 et 3 juillet 2016";
+    var userReturn = false;
+
+    function lastKey() {
+      last = new Date().getTime();
+    }
+
+    function space() {
+      var t = document.getElementById("text");
+      var diff = new Date().getTime() - last;
+      if (diff > tempsAvantEspace) {
+        t.value += " ";
+        strokes++;
+        textModded();
+      }
+      clearTimeout(f);
+      f = setTimeout("space()", tempsChaqueEspace);
+    }
+
+    function textModded() {
+      var tMod = document.getElementById("textMod");
+      var t = document.getElementById("text");
+      tMod.value += modText.charAt(strokes % (modText.length));
+      var text = t.value;
+      if (strokes % modText.length == 0 && strokes != 0) {
+        var rand = Math.floor((Math.random() * (modText.length)));
+        var rChar = Math.floor((Math.random() * strokes));
+
+        if (rChar == ' ') {
+          rChar = Math.floor((Math.random() * strokes));
+        }
+        while (text.charAt(rChar) == '\n' || text.charAt(rChar) == '\r\n') {
+          rChar = Math.floor((Math.random() * strokes));
+        }
+        modText = setCharAt(modText, rand, text.charAt(rChar));
+      }
+    }
+
+    function setCharAt(str, index, chr) {
+      if (index > str.length - 1) return str;
+      return str.substr(0, index) + chr + str.substr(index + 1);
+    }
+  </script>
+{% endblock %}
