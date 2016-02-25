@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <!--[if lte IE 8]>
 <html lang="fr" class="oldie">
 <![endif]-->
@@ -9,36 +10,28 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <meta name="description" content="{% block gdesc %}Vendredi 26 juin 2015, de la fin d’après-midi au lever du jour, nos artistes développeront des improvisations libres, amplifiées par trois trompes géantes dans la Haute Vallée de Maraize{% endblock %}" />
-    <meta name="keywords" content="echos, echos2013, dome, fai, ambiant, ambient, expérimentation, noise, cascade, saaad, saÅad, yann gourdon, antez, tamagawa, insiden">
+    <meta name="description" content="{% block gdesc %}Les 2 et 3 juillet 2016, Échos revient{% endblock %}" />
+    <meta name="keywords" content="echos, festival échos, festivalechos, dome, fai, ambiant, ambient, expérimentation, noise, vibrations">
 
-    <meta property="og:title" content="Échos 2015" />
+    <meta property="og:title" content="Échos 2016" />
     <meta property="og:url" content="http://festivalechos.fr/" />
     <meta property="og:description" content="" />
-    <meta property="og:image" content="http://festivalechos.fr/static/img/layout/side/2014/1.jpg" />
+    <meta property="og:image" content="http://festivalechos.fr/static/img/layout/side/2015/5.jpg" />
 
-    <title>{% block title %}Échos 2015{% endblock %}</title>
+    <title>{% block title %}Échos 2016{% endblock %}</title>
 
-    <link rel="shortcut icon" href="{{ STATIC_URL }}2015/img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static "img/favicon.png" %}" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}2015/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="{% static "out/echos.1.min.css" %}" />
     {% block extracss %}{% endblock %}
-
-    <script>var e;e="mark nav header footer section aside hgroup figure".split(" ");var i; var l; for(i=0,l=e.length;i<l;i++)document.createElement(e[i]);</script>
 </head>
 <body>
-    <section class="screen"></section>
-
-    <section id="page">
-        {% block body %}{% endblock %}
-    </section>
-
+    {% block body %}{% endblock %}
     {% block extrabody %}{% endblock %}
 
-{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>#}
-    <script type="text/javascript" src="{{ STATIC_URL }}2015/js/lib/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}2015/js/lib/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}2015/js/base.v2.js"></script>
+    {% if debug %}
+    <script type="text/javascript" src="{% static "out/echos.1.dev.js" %}"></script>{% else %}
+    <script type="text/javascript" src="{% static "out/echos.1.min.js" %}"></script>{% endif %}
     {% block extrajs %}{% endblock %}
 
     {# Google Analytics #}
