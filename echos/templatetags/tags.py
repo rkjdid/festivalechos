@@ -17,8 +17,8 @@ def subdomain(request, lang):
   prefix += '://'
 
   if lang == 'fr':
-    prefix += 'festivalechos.fr'
+    prefix += '2015.festivalechos.fr'
   else:
-    prefix += 'en.festivalechos.fr'
+    prefix += 'en.2015.festivalechos.fr'
 
   return prefix

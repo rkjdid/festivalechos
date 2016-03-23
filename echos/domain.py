@@ -7,6 +7,7 @@ class DomainMiddleware(object):
   """
 
   def process_request(self, request):
+
     if 'en' == request.META['HTTP_HOST'].split('.')[0]:
       request.session['lang'] = 'en'
     else:
