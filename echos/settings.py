@@ -28,6 +28,7 @@ ALLOWED_HOSTS = [
   '.localhost',
   '.192.168.1.1',
   '.festivalechos.fr',
+  '.2015.festivalechos.fr',
 ]
 INTERNAL_IPS = [
   '127.0.0.1',
