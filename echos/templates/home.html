@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block body %}
-  <section id="randomness"></section>
-  <div style="display: none;" id="nil"></div>
+  <section id="content">
+    <h2>2 et 3 juillet 2016</h2>
+    <h2>
+      Ferme du Faï<br />
+      05400 Le Saix<br/>
+      France
+    </h2>
+  </section><section id="menu">
+    <div id="copyright">Copyright Association Dôme</div>
+    <div id="map">
+      <img id="imap" src="{% static "img/map.jpg" %}"/>
+      <img class="item echos"   src="{% static "img/map/echos.png" %}" />
+      <img class="item acces"   src="{% static "img/map/item_acces.png" %}"/>
+      <img class="item ferme"   src="{% static "img/map/item_ferme.png" %}"/>
+      <img class="item infos"   src="{% static "img/map/item_infos.png" %}"/>
+      <img class="item prog"    src="{% static "img/map/item_programmation.png" %}"/>
+      <img class="item trompes" src="{% static "img/map/item_trompes.png" %}"/>
+    </div>
+  </section>
 {% endblock %}
