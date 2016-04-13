@@ -3,14 +3,9 @@
 
 {% block body %}
   <section id="content">
-    <h2>2 et 3 juillet 2016</h2>
-    <h2>
-      Ferme du Faï<br />
-      05400 Le Saix<br/>
-      France
-    </h2>
+    <img id="title" src="{% static "img/map/title.png" %}" />
   </section><section id="menu">
-    <div id="copyright">Copyright Association Dôme</div>
+    <div id="copyright"><img src="{% static "img/map/kopime.png" %}"></div>
     <div id="map">
       <img id="imap" src="{% static "img/map.jpg" %}"/>
       <img class="item echos"   src="{% static "img/map/echos.png" %}" />
@@ -19,6 +14,21 @@
       <img class="item infos"   src="{% static "img/map/item_infos.png" %}"/>
       <img class="item prog"    src="{% static "img/map/item_programmation.png" %}"/>
       <img class="item trompes" src="{% static "img/map/item_trompes.png" %}"/>
+    </div>
+    <div id="bottom">
+      <div class="row" id="row0">
+        <a class="i0"><img src="{% static "img/map/reserver.png" %}"/></a><a class="i1">
+          <img src="{% static "img/map/pdf.png" %}"/></a><a class="i2">
+          <img src="{% static "img/map/trompe.png" %}" /></a>
+      </div>
+      <div class="row" id="row1">
+        <a class="i0"><img src="{% static "img/map/facebook.png" %}"/>
+        </a><a class="i1"><img src="{% static "img/map/2013.png" %}"/>
+        </a><a class="idash"><img src="{% static "img/map/dash.png" %}"/>
+        </a><a class="i2"><img src="{% static "img/map/2014.png" %}"/>
+        </a><a class="idash"><img src="{% static "img/map/dash.png" %}"/>
+        </a><a class="i3"><img src="{% static "img/map/2015.png" %}"/></a>
+      </div>
     </div>
   </section>
 {% endblock %}
