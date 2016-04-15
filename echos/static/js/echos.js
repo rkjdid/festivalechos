@@ -8,6 +8,7 @@
   var lang = "fr";
   var current = "";
   var delay_default = 50;
+  var $tx = "#text";
 
   // DOM ready
   $(function() {
@@ -119,8 +120,8 @@
     });
     $("#options").find("input").on("change", function(e, v, j, k) {
       delay_default = e.target.value;
-      stopText();
-      printText("new speed:" + e.target.value, + "ms");
+      //stopText();
+      printText("new speed: " + e.target.value + "ms");
     });
   };
 
@@ -147,24 +148,25 @@
   // ---------
   // text shit
   // ---------
-  var stopText = function ($e) {
+  var stopText = function () {
+    var $e = $($tx);
     clearInterval(handler);
     var h_cache = $e.height();
     $e.append("<br>");
     $e.append("<br>");
     text = $e.html();
-    resizeText($e, h_cache);
+    resizeText(h_cache);
   };
 
-  var printText = function($e, text, delay) {
-    stopText($e);
+  var printText = function(text, delay) {
+    stopText();
     if (delay === undefined || typeof(delay) !== 'number') {
-      delay = 20;
+      delay = delay_default;
     }
 
     var i = 0;
     handler = setInterval(function() {
-      printChar($e, text[i]);
+      printChar(text[i]);
       i++;
       if (i === text.length) {
         clearInterval(handler);
@@ -172,20 +174,22 @@
     }, delay);
   };
 
-  var printChar = function ($e, c) {
+  var printChar = function (c) {
+    var $e = $($tx);
     var h_cache = $e.height();
     if (c === '\n') {
       $e.append("<br>");
       text = $e.html();
-      resizeText($e, h_cache);
+      resizeText(h_cache);
       return;
     }
     text += c;
     $e.html(text);
-    resizeText($e, h_cache);
+    resizeText(h_cache);
   };
 
-  var resizeText = function ($e, cache) {
+  var resizeText = function (cache) {
+    var $e = $($tx);
     if ($e.height() === cache) {
       return;
     }
@@ -257,7 +261,7 @@
         text = "Du 2 juillet soir au 3 juillet soir, trompes du Faï ouvertes en continu. Trompes du Faï ouvertes en continu. Une nuit et un jour : le festival Échos vous invite à un concert longue durée. On vous attrape à 17h le samedi et on vous relâche le lundi matin. VOTRE ATTENTION S’IL VOUS PLAÎT CETTE ANNÉE L’ENTRÉE SE FAIT UNIQUEMENT SUR PRÉVENTE OLALALA.";
         break;
     }
-    printText($("#text"), text);
+    printText(text);
   };
 
   var pageAcces = function () {
@@ -279,7 +283,7 @@
         break;
     }
     $("#submenu").addClass("on");
-    printText($("#text"), text);
+    printText(text);
   };
 
   var pageInfos = function() {
@@ -308,7 +312,7 @@
         break;
     }
     $("#encart").append(encart).addClass("on");
-    printText($("#text"), text);
+    printText(text);
   };
 
   var pageFerme = function() {
