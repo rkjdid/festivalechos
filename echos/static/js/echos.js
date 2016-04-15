@@ -118,10 +118,15 @@
     $(".item.trompes").click(function () {
       pageTrompes();
     });
-    $("#options").find("input").on("change", function(e, v, j, k) {
+    $("#options").find("input").on("change", function(e) {
       delay_default = e.target.value;
-      //stopText();
-      printText("new speed: " + e.target.value + "ms");
+      if (delay_default === "36") {
+        printText("accuracy is key");
+      } else if (delay_default < 10) {
+        printText("oussavatrévite " + delay_default + "ms");
+      } else {
+        printText("newpitch: " + e.target.value + "ms");
+      }
     });
   };
 
