@@ -69,7 +69,7 @@
       row1_extraw -= $(this).width();
     });
     var pad_unit = (row1_extraw-20) / 7;
-    $row1.find("a").css({"margin-right": pad_unit})
+    $row1.find("a").add($row1.find(".idash")).css({"margin-right": pad_unit})
       .last().css({"margin-right": 0});
     $row1.find(".i0").css({"margin-right": pad_unit * 3});
     $row0.find("a").css({"margin-right": pad_unit * 2.5})
