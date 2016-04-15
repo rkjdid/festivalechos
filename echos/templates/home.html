@@ -3,6 +3,11 @@
 
 {% block body %}
   <section id="content">
+    <div id="options" class="debug">
+      <label for="speed">
+        SPEEDNESS: <input type="number" name="speed" value="50" min="0">
+      </label>
+    </div>
     <div class="interactive" id="encart"></div>
     <img class="interactive" id="trompe3d" src="{% static "img/trompe3D.gif" %}" />
     <img class="interactive" id="title" src="{% static "img/title.png" %}" />

@@ -27,6 +27,16 @@ body {
 }
 
 section#content {
+  #options {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+
+    input {
+      height: 35px;
+    }
+  }
+
   position: relative;
   width: 55%;
   height: 100%;

@@ -7,6 +7,7 @@
   var text = "";
   var lang = "fr";
   var current = "";
+  var delay_default = 50;
 
   // DOM ready
   $(function() {
@@ -115,6 +116,11 @@
     });
     $(".item.trompes").click(function () {
       pageTrompes();
+    });
+    $("#options").find("input").on("change", function(e, v, j, k) {
+      delay_default = e.target.value;
+      stopText();
+      printText("new speed:" + e.target.value, + "ms");
     });
   };
 
