@@ -3,17 +3,26 @@
 
 {% block body %}
   <section id="content">
-    <img id="title" src="{% static "img/map/title.png" %}" />
+    <div class="interactive" id="encart"></div>
+    <img class="interactive" id="trompe3d" src="{% static "img/trompe3D.gif" %}" />
+    <img class="interactive" id="title" src="{% static "img/title.png" %}" />
+    <ul class="interactive" id="submenu"></ul>
+    <p id="text">&nbsp;<br /></p>
   </section><section id="menu">
     <div id="copyright"><img src="{% static "img/kopime.png" %}"></div>
     <div id="map">
       <img id="imap" src="{% static "img/map.jpg" %}"/>
+      <div class="item lang">
+        <a href="?en"><img src="{% static "img/en.png" %}" /></a>
+        <img class="idash" src="{% static "img/dash_w.png" %}"/>
+        <a href="?fr"><img src="{% static "img/fr.png" %}"/></a>
+      </div>
       <img class="item echos"   src="{% static "img/echos.png" %}" />
-      <img class="item acces"   src="{% static "img/item_acces.png" %}"/>
-      <img class="item ferme"   src="{% static "img/item_ferme.png" %}"/>
-      <img class="item infos"   src="{% static "img/item_infos.png" %}"/>
-      <img class="item prog"    src="{% static "img/item_programmation.png" %}"/>
-      <img class="item trompes" src="{% static "img/item_trompes.png" %}"/>
+      <img class="item interactive acces"   src="{% static "img/item_acces.png" %}"/>
+      <img class="item interactive ferme"   src="{% static "img/item_ferme.png" %}"/>
+      <img class="item interactive infos"   src="{% static "img/item_infos.png" %}"/>
+      <img class="item interactive prog"    src="{% static "img/item_programmation.png" %}"/>
+      <img class="item interactive trompes" src="{% static "img/item_trompes.png" %}"/>
     </div>
     <div id="bottom">
       <div class="row" id="row0">
@@ -24,10 +33,8 @@
       <div class="row" id="row1">
         <a class="i0"><img src="{% static "img/facebook.png" %}"/>
         </a><a class="i1"><img src="{% static "img/2013.png" %}"/>
-        </a><a class="idash"><img src="{% static "img/dash.png" %}"/>
-        </a><a class="i2"><img src="{% static "img/2014.png" %}"/>
-        </a><a class="idash"><img src="{% static "img/dash.png" %}"/>
-        </a><a class="i3"><img src="{% static "img/2015.png" %}"/></a>
+        </a><img class="idash" src="{% static "img/dash.png" %}"/><a class="i2"><img src="{% static "img/2014.png" %}"/>
+        </a><img class="idash" src="{% static "img/dash.png" %}"/><a class="i3"><img src="{% static "img/2015.png" %}"/></a>
       </div>
     </div>
   </section>
