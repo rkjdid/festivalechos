@@ -6,7 +6,7 @@
   var textOffset = 0, textDelta = 15, stopOffset;
   var text = "";
   var lang = "fr";
-  var current = "";
+  var current = "home"; //todo
   var delay_default = 25;
   var $tx = "#text";
 
