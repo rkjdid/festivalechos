@@ -213,8 +213,6 @@
     var page = uri[uri.length - 1];
 
     switch(page) {
-      case current:
-
       case "acces":
         pageAcces();
         break;
