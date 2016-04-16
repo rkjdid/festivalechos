@@ -7,7 +7,7 @@
   var text = "";
   var lang = "fr";
   var current = "";
-  var delay_default = 50;
+  var delay_default = 25;
   var $tx = "#text";
 
   // DOM ready
