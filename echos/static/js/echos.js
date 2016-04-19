@@ -7,7 +7,7 @@
   var text = "";
   var lang = "fr";
   var current = "home"; //todo
-  var delay_default = 25;
+  var delay_default = 35;
   var $tx = "#text";
 
   // DOM ready

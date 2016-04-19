@@ -8,6 +8,11 @@ $bg_encart: white;
   font-family: "Lucida Console", monospace, sans-serif;
 }
 
+.debug {
+  display: none;
+  //display: block;
+}
+
 a {
   text-decoration: none;
 }
