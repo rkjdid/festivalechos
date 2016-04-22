@@ -12,10 +12,10 @@ urlpatterns = patterns('',
 # catch'em'all
 urlpatterns += patterns('',
   url(r'^echos_fr.pdf', echos.views.static_serve,
-      {'target': 'static/img/echos_fr.pdf',
+      {'target': 'img/echos_fr.pdf',
        'content_type': 'application/pdf'}),
   url(r'^echos_en.pdf', echos.views.static_serve,
-      {'target': 'static/img/echos_en.pdf',
+      {'target': 'img/echos_en.pdf',
        'content_type': 'application/pdf'}),
   url(r'^/?.*$', echos.views.home, name='home'),
 )

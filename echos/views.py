@@ -18,7 +18,8 @@ def home(request):
 
 # Static binary serve (pdf, jpg, ..)
 def static_serve(request, target, content_type):
-  f = open(os.path.join(os.getcwd(), 'echos', target), 'rb')
+  from _paths import STATIC_ROOT
+  f = open(os.path.join(STATIC_ROOT, target), 'rb')
   content = f.read()
   f.close()
   fname = os.path.basename(os.path.normpath(target))
