@@ -18,13 +18,13 @@ def home(request):
 
 # Static binary serve (pdf, jpg, ..)
 def static_serve(request, target, content_type):
-  f = open(target, 'rb')
+  f = open(os.path.join(os.getcwd(), 'echos', target), 'rb')
   content = f.read()
   f.close()
   fname = os.path.basename(os.path.normpath(target))
 
   response = HttpResponse(content, content_type)
-  response['Content-Disposition'] = 'attachment; filename=%s' % fname
+  response['Content-Disposition'] = 'filename=%s' % fname
   return response
 
 ###########################
