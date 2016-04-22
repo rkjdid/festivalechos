@@ -30,68 +30,38 @@
 
   // get viewport size
   var getSize = function() {
-    width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    width = window.innerWidth;
+    height = window.innerHeight;
     if (width === 0) {
       width = $(window).width();
     }
     if (height === 0) {
       height = $(window).height();
     }
+    console.log(height, $(window).height(), document.documentElement.clientHeight, window.innerHeight);
   };
 
   var refresh = function() {
     getSize();
-    // copyright height: 25px
-    // menu height: 100px
-    maph = height - 100 - 25;
+    // copyright height: 2.5%
+    // map height: 82%
+    // menu height: 15.5%
+
+    maph = height*0.82;
     mapw = 0.9452736318 * maph;
     zoom = mapw / mapw_natural;
 
     $("body").width(width).height(height);
     $("#imap").height(maph).width(mapw);
     $("#map").height(maph).width(mapw);
-    $(".item.echos").width(zoom * 205);
-    $(".item.acces").width(zoom * 169);
-    $(".item.ferme").width(zoom * 181);
-    $(".item.infos").width(zoom * 369);
-    $(".item.prog").width(zoom * 369);
-    $(".item.trompes").width(zoom * 252);
     $("#content").width(width-mapw);
     $("#menu").width(mapw);
 
-    var $row0 = $("#row0"),
-        $row1 = $("#row1");
-    $row0.find("img").height(zoom * 50);
-    $row1.find("a").not(".idash").find("img").height(zoom * 25);
-    $row0.css({"margin-bottom": 12});
-
-    // set vertical alignment
-    menuh = $row0.height() + 12 + $row1.height();
-    $row0.css({"margin-top": (100 - menuh) / 2.5});
-    $(".lang").find(".idash").css({
-      "margin-top": 0.0248756218*maph,
-      "margin-bottom": 0.0248756218 * maph,
-      "margin-right": "auto",
-      "margin-left": "auto"});
-
-    // set horizontal paddings
-    row1_extraw = $row1.width();
-    $("#row1 img").each(function () {
-      row1_extraw -= $(this).width();
-    });
-    var pad_unit = (row1_extraw-20) / 7;
-    $row1.find("a").add($row1.find(".idash")).css({"margin-right": pad_unit})
-      .last().css({"margin-right": 0});
-    $row1.find(".i0").css({"margin-right": pad_unit * 3});
-    $row0.find("a").css({"margin-right": pad_unit * 2.5})
-      .last().css({"margin-right": 0});
-
     // set title position
-    $("#title").css({
-      width: 0.7* (width-mapw),
-      left:  (132/1036)* (width - mapw),
-      top:   (184/974) * (height)});
+    //$("#title").css({
+    //  width: 0.7* (width-mapw),
+    //  left:  (132/1036)* (width - mapw),
+    //  top:   (184/974) * (height)});
 
     textDelta = $("#text").height();
     textOffset = $("#content").height() - textDelta;
@@ -118,6 +88,22 @@
     $(".item.trompes").click(function () {
       pageTrompes();
     });
+    $("#lang_en").click(function() {
+      if ("en" === lang) {
+        return;
+      }
+      lang = "en";
+      refresh();
+    });
+    $("#lang_fr").click(function () {
+      if ("fr" === lang) {
+        return;
+      }
+      lang = "fr";
+      refresh();
+    });
+
+    // debug pitch
     $("#options").find("input").on("change", function(e) {
       delay_default = e.target.value;
       if (delay_default === "36") {
@@ -128,6 +114,21 @@
         printText("newpitch: " + e.target.value + "ms");
       }
     });
+  };
+
+  var setLang = function(lng) {
+    switch (lng) {
+      case "en":
+        lang = "en";
+        $(".fr").removeClass("active");
+        $(".en").addClass("active");
+        break;
+      default:
+        lang = "fr";
+        $(".en").removeClass("active");
+        $(".fr").addClass("active");
+        break;
+    }
   };
 
   var clear = function () {
@@ -198,6 +199,9 @@
     });
   };
 
+  // ---------------
+  // navigation shit
+  // ---------------
   var urlToPage = function () {
     var uri = window.location.href;
     var uri_lang = uri.split('?');
@@ -209,6 +213,7 @@
       }
       setUri(uri_lang[0]);
     }
+    setLang(lang);
     uri = uri.split('/');
     var page = uri[uri.length - 1];
 
@@ -247,17 +252,20 @@
   var pageHome = function() {
     clear();
     setUri("/");
-    $("#title").addClass("on");
-
+    var $title;
     var text;
+
     switch (lang) {
       case "en":
         text = "From July 2 evening to July 3 evening, Faï horns playing continuously. Faï horns playing continuously. One night and one day : Échos festival invites you to a 24h-long concert. You’ll be caught on saturday 5 p.m.  You’ll be set free on monday morning. YOUR ATTENTION PLEASE THIS YEAR PRE-SALE IS REQUIRED TO ACCESS THE FESTIVAL OMG.";
+        $title = $(".title.en");
         break;
       default:
         text = "Du 2 juillet soir au 3 juillet soir, trompes du Faï ouvertes en continu. Trompes du Faï ouvertes en continu. Une nuit et un jour : le festival Échos vous invite à un concert longue durée. On vous attrape à 17h le samedi et on vous relâche le lundi matin. VOTRE ATTENTION S’IL VOUS PLAÎT CETTE ANNÉE L’ENTRÉE SE FAIT UNIQUEMENT SUR PRÉVENTE OLALALA.";
+        $title = $(".title.fr");
         break;
     }
+    $title.addClass("on");
     printText(text);
   };
 
