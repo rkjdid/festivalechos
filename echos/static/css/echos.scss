@@ -9,6 +9,70 @@ $bg_encart: white;
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
+#curtain {
+  z-index: 36;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+
+  .loading {
+    position: fixed;
+    width: 5.5%;
+    bottom: 6%;
+    left: 91.5%;
+
+    &.spin {
+      -webkit-animation: spin 4s linear infinite;
+      -moz-animation: spin 4s linear infinite;
+      animation: spin 4s linear infinite;
+    }
+
+    &.out {
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused;
+    }
+
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @-moz-keyframes out {
+      100% {
+        -moz-transform: translate(420);
+      }
+    }
+    @-webkit-keyframes out {
+      100% {
+        -webkit-transform: translate(420);
+      }
+    }
+    @keyframes out {
+      100% {
+        -webkit-transform: translate(420);
+        transform: translate(420);
+      }
+    }
+  }
+}
+
 .debug {
   display: none;
   //display: block;
