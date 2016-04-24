@@ -257,7 +257,7 @@
         pageTickets();
         break;
       case "dome":
-        pageTickets();
+        pageDome();
         break;
       default:
         pageHome();
