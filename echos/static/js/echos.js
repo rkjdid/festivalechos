@@ -155,12 +155,13 @@
   };
 
   var addToMenu = function (title, uri) {
-    var $e = $("<li class='interactive fix'>");
+    var $e = $("<li class='interactive'>");
     if (uri !== undefined) {
       var $a = $("<a target='_blank' href='" + uri + "'>");
       $a.html(title);
       $e.append($a);
     } else {
+      $e.addClass("fix");
       $e.html(title);
     }
     $("#submenu").append($e);

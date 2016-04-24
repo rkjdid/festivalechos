@@ -7,7 +7,7 @@ module.exports = function(grunt){
     project:      'echos',
 
     css_version: 6,
-    js_version: 5
+    js_version: 6
   };
 
   // paths
