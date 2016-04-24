@@ -154,7 +154,7 @@
   };
 
   var addToMenu = function (title, uri) {
-    var $e = $("<li class='interactive'>");
+    var $e = $("<li class='interactive fix'>");
     if (uri !== undefined) {
       var $a = $("<a target='_blank' href='" + uri + "'>");
       $a.html(title);

@@ -190,6 +190,9 @@ section#content {
       &.interactive {
         display: block;
       }
+      &.fix {
+        background: $bg_links;
+      }
     }
   }
   #text {
