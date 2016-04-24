@@ -6,8 +6,8 @@ module.exports = function(grunt){
   var config = {
     project:      'echos',
 
-    css_version: 4,
-    js_version: 4
+    css_version: 5,
+    js_version: 5
   };
 
   // paths

@@ -21,7 +21,7 @@
 
     <link rel="shortcut icon" href="{% static "img/favicon.png" %}" type="image/x-icon" />
 
-    <link rel="stylesheet" type="text/css" href="{% static "out/echos.4.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "out/echos.5.min.css" %}" />
     {% block extracss %}{% endblock %}
 </head>
 <body>
@@ -29,8 +29,8 @@
     {% block extrabody %}{% endblock %}
 
     {% if debug %}
-    <script type="text/javascript" src="{% static "out/echos.4.dev.js" %}"></script>{% else %}
-    <script type="text/javascript" src="{% static "out/echos.4.min.js" %}"></script>{% endif %}
+    <script type="text/javascript" src="{% static "out/echos.5.dev.js" %}"></script>{% else %}
+    <script type="text/javascript" src="{% static "out/echos.5.min.js" %}"></script>{% endif %}
     {% block extrajs %}{% endblock %}
 
     {# Google Analytics #}
