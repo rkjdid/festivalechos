@@ -169,9 +169,16 @@ section#content {
   }
   .ferme { // chèvre seguin
     position: absolute;
-    width: 36%;
-    top: 20%;
-    left: 12%;
+    text-align: center;
+    top: 14%;
+    left: 8%;
+    width: 40%;
+    img {
+      position: absolute;
+      max-width: 100%;
+      left: 0; right: 0;
+      margin: auto;
+    }
   }
   ul#submenu {
     position: absolute;

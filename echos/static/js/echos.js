@@ -151,6 +151,7 @@
     $("#submenu").empty();
     $("#encart").empty();
     $(".interactive").removeClass("on");
+    clearInterval(diapoFerme);
   };
 
   var addToMenu = function (title, uri) {
@@ -342,10 +343,21 @@
     printText(text);
   };
 
+  var diapoFerme = 0;
   var pageFerme = function() {
     clear();
     setUri("/ferme");
     $(".ferme").addClass("on");
+    $(".ferme .i0").addClass("on");
+    var current = 0;
+    diapoFerme = setInterval(function() {
+      $(".ferme .i" + current).removeClass("on");
+      if (current == 4)
+        current = 0;
+      else
+        current++;
+      $(".ferme .i" + current).addClass("on");
+    }, 7000);
 
     var text;
     switch (lang) {
