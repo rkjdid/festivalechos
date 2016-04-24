@@ -324,14 +324,14 @@
 
     switch (lang) {
       case "en":
-        text = "SLEEPING ? FOR REAL ? The valley is a huge and wild environment where you can freely set your camp (make sure to bring tents, sleeping bags and warm outfits). This freedom requires some kind of independence, we cannot guarantee access to showers for instance. However the river is just downhill, available for a welcoming fresh up with “green” soap. Ferme du Faï offers accommodation within the limits of available places. Booking only by phone at +33 492580707.\n" +
+        text = "SLEEPING ? FOR REAL ? The valley is a huge and wild environment where you can freely set your camp (make sure to bring tents, sleeping bags and warm outfits). This freedom requires some kind of independence, we cannot guarantee access to showers for instance. However the river is just downhill, available for a welcoming fresh up with “green” soap. Ferme du Faï offers accommodation within the limits of available places. Booking only by phone at +33 492580707. " +
           "FOOD and DRINKS ? Feel free to bring your own rations. Apart from that, you will find food at eating hours and if you’re thirsty the bar will serve beer, wine and soft throughout the festival. ";
         encart = "Credit cards are not accepted : the entrance and the rest are to be paid with cash only.<br />" +
           "The site is in the mountain : make sure to bring suitable clothes for cold and rainy weather as well as flashlights.<br />" +
           "The festival and Le Faï farm will close on monday at noon. ";
         break;
       default:
-        text = "QUOI DORMIR ? La vallée est un grand espace sauvage où vous pourrez installer votre campement librement (prévoir tentes, sacs de couchages et vêtements chauds). Cette liberté suppose une certaine autonomie : nous ne pouvons garantir l’accès aux douches. Un brin de toilette avec du savon bio dans la rivière remplacera aisément votre douche italienne. La Ferme du Faï propose des nuits en auberge dans la limite des places disponibles. Réservation obligatoire au 0492580707.\n" +
+        text = "QUOI DORMIR ? La vallée est un grand espace sauvage où vous pourrez installer votre campement librement (prévoir tentes, sacs de couchages et vêtements chauds). Cette liberté suppose une certaine autonomie : nous ne pouvons garantir l’accès aux douches. Un brin de toilette avec du savon bio dans la rivière remplacera aisément votre douche italienne. La Ferme du Faï propose des nuits en auberge dans la limite des places disponibles. Réservation obligatoire au 0492580707. " +
           "OÙ MANGER ? Chacun-e est libre d’amener ses propres vivres. Nous vous proposerons à manger aux horaires de repas et le bar servira de la bière, du vin, des softs et du café pendant toute la durée du festival. ";
         encart = "Pas de carte bleue sur place : prévoyez du liquide pour l’entrée et tout le reste.<br />" +
           "C'est la montagne : prenez des vêtements chauds et de pluie et des lampes-torches.<br />" +
