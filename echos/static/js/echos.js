@@ -228,6 +228,7 @@
         lang = "fr";
       }
       setUri(uri_lang[0]);
+      uri = window.location.href;
       createCookie("lang", lang, 120);
     } else {
       lang = readCookie("lang");
@@ -253,6 +254,9 @@
         pageTrompes();
         break;
       case "tickets":
+        pageTickets();
+        break;
+      case "dome":
         pageTickets();
         break;
       default:
