@@ -449,6 +449,7 @@
     encart = "<a href='mailto:contact@festivalechos.fr'>contact@festivalechos.fr</a><br>" +
         "+33(0)659608493<br>" +
         "Association Dôme / 12 Avenue Paul Krüger / 69100 Villeurbanne<br>" +
+        "<a href='https://facebook.com/association.dome' target='_blank'>Facebook</a><br>" +
         "Webdesign : <a href='http://hugosaugier.tumblr.com/' target='_blank'>Hugo</a> & " +
                     "<a href='https://igormyrtille.wordpress.com/' target='_blank'>Igor</a>";
     $("#encart").append(encart).addClass("on");
