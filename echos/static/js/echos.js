@@ -47,7 +47,6 @@
     if (height === 0) {
       height = $(window).height();
     }
-    console.log(height, $(window).height(), document.documentElement.clientHeight, window.innerHeight);
   };
 
   var refresh = function() {
