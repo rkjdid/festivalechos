@@ -463,7 +463,7 @@
     addToMenu("Joaquim Brissaud", "/JoaquimBrissaud", true, "iJB");
     addToMenu("Duo Maurel - Desailly", "/DuoMaurelDesailly", true, "iDMD");
     addToMenu("Piotr Kurek", "/PiotrKurek", true, "iPK");
-    addToMenu("Pom Bouvier B", "/PomBouvierB", true, "iPBB");
+    addToMenu("Pôm Bouvier B", "/PomBouvierB", true, "iPBB");
     addToMenu("Sourdure", "/Sourdure", true, "iS");
     addToMenu("Stephen O'Malley", "/StephenOMalley", true, "iSOM");
     addToMenu("Thomas Tilly", "/ThomasTilly", true, "iTT");
@@ -517,10 +517,10 @@
     var text;
     switch (lang) {
       case "en":
-        text = "POM BOUVIER B - Les Mondes : Accumulation - cycles - stretching process - matter displayed in sonic layers - improvisation upon loupspeakers vibrations - feedback - motion - errand. Matching the sonic material with the place. Working with the spreading of sound into the open space. Working with the mark the gesture leaves in the landscape. ";
+        text = "PÔM BOUVIER B - Les Mondes : Accumulation - cycles - stretching process - matter displayed in sonic layers - improvisation upon loupspeakers vibrations - feedback - motion - errand. Matching the sonic material with the place. Working with the spreading of sound into the open space. Working with the mark the gesture leaves in the landscape. ";
         break;
       default:
-        text = "POM BOUVIER B - Les Mondes : Travail d'accumulation, de cycles longs. Processus d'étirement et de glissements de la matière dans un déploiement des plans sonores. Improvisation sur des processus qui vont du fragmentaire, du rebond, de la vibration issue de la membrane du haut-parleur en feedback pour déployer dans le frotté des cordes, un geste comme un souffle, une course. Pour le festival Échos, elle aimerait travailler l'idée de la projection et du déploiement dans la profondeur ici réelle. Adapter la matière sonore à celle du paysage, travailler la trace, la trace du geste dans le paysage. Pôm Bouvier B. explore depuis de nombreuses années divers champs de la scène artistique. Sa pratique, bien que centrée sur la musique depuis dix ans se nourrit des arts plastiques, du cinéma, de la littérature, des sciences, de la philosophie. Elle compose des pièces de musique électro-acoustique, y mêlant parfois des instrumentistes ou la lumière au même titre. Son travail sur l'improvisation en musique expérimentale est une recherche vibratoire et corporelle. La musique est ici un moyen pour créer des espaces perceptifs où le sujet serait en chaque auditeur. Ses collaborations sont nombreuses et sont des recherches partagées sur le Temps et l'Espace. ";
+        text = "PÔM BOUVIER B - Les Mondes : Travail d'accumulation, de cycles longs. Processus d'étirement et de glissements de la matière dans un déploiement des plans sonores. Improvisation sur des processus qui vont du fragmentaire, du rebond, de la vibration issue de la membrane du haut-parleur en feedback pour déployer dans le frotté des cordes, un geste comme un souffle, une course. Pour le festival Échos, elle aimerait travailler l'idée de la projection et du déploiement dans la profondeur ici réelle. Adapter la matière sonore à celle du paysage, travailler la trace, la trace du geste dans le paysage. Pôm Bouvier B. explore depuis de nombreuses années divers champs de la scène artistique. Sa pratique, bien que centrée sur la musique depuis dix ans se nourrit des arts plastiques, du cinéma, de la littérature, des sciences, de la philosophie. Elle compose des pièces de musique électro-acoustique, y mêlant parfois des instrumentistes ou la lumière au même titre. Son travail sur l'improvisation en musique expérimentale est une recherche vibratoire et corporelle. La musique est ici un moyen pour créer des espaces perceptifs où le sujet serait en chaque auditeur. Ses collaborations sont nombreuses et sont des recherches partagées sur le Temps et l'Espace. ";
         break;
     }
     printText(text);
