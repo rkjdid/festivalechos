@@ -167,30 +167,60 @@ section#content {
     top: 25%;
     left: 18%;
   }
-  .ferme { // chèvre seguin
+  .acces {
     position: absolute;
-    text-align: center;
     top: 14%;
-    left: 8%;
+    left: 12%;
+    width: 30%;
+  }
+
+  .ferme, .prog { // chèvre seguin
+    position: absolute;
+    text-align: left;
+    top: 14%;
+    left: 7.5%;
     width: 40%;
     img {
-      position: absolute;
       max-width: 100%;
       left: 0; right: 0;
       margin: auto;
     }
+
+    &.prog {
+      top: 12%;
+    }
+
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 5px;
+        a {
+          cursor: pointer;
+          padding: 5px 8px;
+          &:hover {
+            background: $bg_links;
+          }
+        }
+      }
+    }
   }
   ul#submenu {
     position: absolute;
-    left: 58%;
+    left: 52%;
     top: 8%;
     list-style: none;
     li {
       padding: 5px 8px;
-      font-size: 1.5em;
+      font-size: 1.2em;
       a {
+        cursor: pointer;
         padding: 5px 8px;
         &:hover, &.interactive.on {
+          background: $bg_links;
+        }
+      }
+      &.on {
+        a {
           background: $bg_links;
         }
       }
@@ -198,9 +228,6 @@ section#content {
         display: block;
       }
       &.fix {
-        background: $bg_links;
-      }
-      &:hover {
         background: $bg_links;
       }
     }

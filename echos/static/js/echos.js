@@ -7,7 +7,7 @@
   var text = "";
   var lang = "fr";
   var current = "home"; //todo
-  var delay_default = 35;
+  var delay_default = 30;
   var $tx = "#text";
 
   // DOM ready
@@ -150,24 +150,46 @@
   var clear = function () {
     $("#submenu").empty();
     $("#encart").empty();
+    $("ul.links").empty();
     $(".interactive").removeClass("on");
     clearInterval(diapoFerme);
   };
 
-  var addToMenu = function (title, uri) {
+  var addToMenu = function (title, uri, onclick, css) {
     var $e = $("<li class='interactive'>");
+    var $a;
     if (uri !== undefined) {
-      var $a = $("<a target='_blank' href='" + uri + "'>");
+      if (onclick !== undefined) {
+        $a = $("<a>");
+        $a.click(function () {
+          setUri(uri);
+          urlToPage();
+        });
+      } else {
+        $a = $("<a target='_blank' href='" + uri + "'>");
+      }
       $a.html(title);
       $e.append($a);
     } else {
       $e.addClass("fix");
       $e.html(title);
     }
+    if (css !== undefined) {
+      $e.addClass(css);
+    }
     $("#submenu").append($e);
     return $e;
   };
 
+  var addProgLink = function (title, uri) {
+    var $e = $("<li>");
+    var $a = $("<a target='_blank' href='" + uri + "'>");
+    $a.html(title);
+    $a.attr('title', uri);
+    $e.append($a);
+    $("ul.links").append($e);
+    return $e;
+  };
 
   // ---------
   // text shit
@@ -261,6 +283,42 @@
       case "dome":
         pageDome();
         break;
+      case "DuoAsisVazquez":
+        pageProgDAV();
+        break;
+      case "BearBonesLayLow":
+        pageProgBBLL();
+        break;
+      case "ThomasTilly":
+        pageProgTT();
+        break;
+      case "JoaquimBrissaud":
+        pageProgJB();
+        break;
+      case "JeanBender":
+        pageProgJBender();
+        break;
+      case "PiotrKurek":
+        pageProgPK();
+        break;
+      case "Homnimal":
+        pageProgH();
+        break;
+      case "DuoMaurelDesailly":
+        pageProgDMD();
+        break;
+      case "PomBouvierB":
+        pageProgPBB();
+        break;
+      case "GolemMecanique":
+        pageProgGM();
+        break;
+      case "Sourdure":
+        pageProgS();
+        break;
+      case "StephenOMalley":
+        pageProgSOM();
+        break;
       default:
         pageHome();
         break;
@@ -298,6 +356,7 @@
     clear();
     setUri("/acces");
     $(".item.acces").addClass("on");
+    $("#content .acces").addClass("on");
 
     var text;
     switch (lang) {
@@ -393,23 +452,267 @@
     printText(text);
   };
 
-  var pageProg = function () {
+  var commonProg = function() {
     clear();
-    setUri("/programmation");
     $(".item.prog").addClass("on");
+    addToMenu("Duo de Asís - Vazquez", "/DuoAsisVazquez", true, "iDDAV");
+    addToMenu("Bear Bones, Lay Low", "/BearBonesLayLow", true, "iBBLL");
+    addToMenu("Golem Mécanique", "/GolemMecanique", true, "iGM");
+    addToMenu("Homnimal", "/Homnimal", true, "iH");
+    addToMenu("Jean Bender", "/JeanBender", true, "iJBender");
+    addToMenu("Joaquim Brissaud", "/JoaquimBrissaud", true, "iJB");
+    addToMenu("Duo Maurel - Desailly", "/DuoMaurelDesailly", true, "iDMD");
+    addToMenu("Piotr Kurek", "/PiotrKurek", true, "iPK");
+    addToMenu("Pom Bouvier B", "/PomBouvierB", true, "iPBB");
+    addToMenu("Sourdure", "/Sourdure", true, "iS");
+    addToMenu("Stephen O'Malley", "/StephenOMalley", true, "iSOM");
+    addToMenu("Thomas Tilly", "/ThomasTilly", true, "iTT");
+    $("#submenu").addClass("on");
+  };
+
+  var pageProg = function () {
+    setUri("/programmation");
+    commonProg();
 
     var text;
     switch (lang) {
       case "en":
         text = "Gates open Saturday 2nd july 5pm. Gigs start 9pm. Gigs ends Sunday 3rd july at night. Gates close Monday 4th july 12am. The horns are continually roaring. Between every concert, a mantra, semi-repetitive patterns feinting a punctual recurrence of the same instant. ";
-        addToMenu("LINE-UP TO COME");
         break;
       default:
         text = "Ouverture des portes samedi 2 juillet 17h. Début des concerts 21h. Fin des concerts dimanche 3 juillet au soir. Fermeture des portes lundi 4 juillet 12h. Les trompes sonnent en continu. Entre les concerts, un mantra, des motifs mi-répétitifs qui feintent un retour ponctuel du même instant. ";
-        addToMenu("PROGRAMMATION À VENIR");
         break;
     }
-    $("#submenu").addClass("on");
+    printText(text);
+  };
+
+  var pageProgDMD = function() {
+    setUri("/DuoMaurelDesailly");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iDMD").addClass("on");
+    addProgLink("cargocollective.com", "http://cargocollective.com/juliendesailly/Duo-Desailly-Maurel");
+    addProgLink("violonaroue.fr", "http://violonaroue.fr/");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "DUO MAUREL DESAILLY - Uilleann pipes, motorized hurdy-gurdy, bodhran... These instruments produce unusual and peculiar-sounding drones which complete and merge. This duet also plays with microtonality; the different pitches slightly vary over time thus creating new dynamics. From harmonic frictions rise rhythm, loops are created, in the fashion of american minimalism. And so, rhythm and melody live and die in the drone. ";
+        break;
+      default:
+        text = "DUO MAUREL DESAILLY - Cornemuse irlandaise, harmonium, vielles à roue motorisées, bodhran… Des instruments à bourdons, aux timbres très typés et inhabituels, qui se complètent, et parfois se confondent. Ce duo opère aussi dans le domaine de la microtonalité : les intervalles de hauteurs varient légèrement et peuvent ainsi faire basculer les dynamiques musicales. Des battements harmoniques naissent une rythmique, des boucles s’installent, faisant penser aux musiques répétitives américaines. Ainsi, tant la mélodie, tant le rythme, naissent et meurent dans le son continu. ";
+        break;
+    }
+    printText(text);
+  };
+
+  var pageProgPBB = function () {
+    setUri("/PomBouvierB");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iPBB").addClass("on");
+    addProgLink("pombouvierb.blogspot.com", "http://pombouvierb.blogspot.com");
+    addProgLink("soundcloud.com", "https://soundcloud.com/pom2b");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "POM BOUVIER B - Les Mondes : Accumulation - cycles - stretching process - matter displayed in sonic layers - improvisation upon loupspeakers vibrations - feedback - motion - errand. Matching the sonic material with the place. Working with the spreading of sound into the open space. Working with the mark the gesture leaves in the landscape. ";
+        break;
+      default:
+        text = "POM BOUVIER B - Les Mondes : Travail d'accumulation, de cycles longs. Processus d'étirement et de glissements de la matière dans un déploiement des plans sonores. Improvisation sur des processus qui vont du fragmentaire, du rebond, de la vibration issue de la membrane du haut-parleur en feedback pour déployer dans le frotté des cordes, un geste comme un souffle, une course. Pour le festival Échos, elle aimerait travailler l'idée de la projection et du déploiement dans la profondeur ici réelle. Adapter la matière sonore à celle du paysage, travailler la trace, la trace du geste dans le paysage. Pôm Bouvier B. explore depuis de nombreuses années divers champs de la scène artistique. Sa pratique, bien que centrée sur la musique depuis dix ans se nourrit des arts plastiques, du cinéma,de la littérature, des sciences, de la philosophie. Elle compose des pièces de musique électro-acoustique, y mêlant parfois des instrumentistes ou la lumière au même titre. Son travail sur l'improvisation en musique expérimentale est une recherche vibratoire et corporelle. La musique est ici un moyen pour créer des espaces perceptifs où le sujet serait en chaque auditeur. Ses collaborations sont nombreuses et sont des recherches partagées sur le Temps et l'Espace. ";
+        break;
+    }
+    printText(text);
+  };
+
+  var pageProgJB = function () {
+    setUri("/JoaquimBrissaud");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iJB").addClass("on");
+    addProgLink("joaquimbrissaud.com", "http://joaquimbrissaud.com/");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "Resonant Valley by Joaquim Brissaud: Ambiance, recorded sounds, acoustic feedback system, temporal loops. ";
+        break;
+      default:
+        text = "Resonant Valley par Joaquim Brissaud : Ambiance, sons enregistrés, système de feedback acoustique, boucles temporelles. ";
+        break;
+    }
+    printText(text);
+  };
+
+  var pageProgDAV = function () {
+    setUri("/DuoAsisVazquez");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iDDAV").addClass("on");
+    addProgLink("lauralisavazquez.com", "http://www.lauralisavazquez.com/");
+    addProgLink("soundcloud.com", "https://soundcloud.com/claradeasis");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "DUO DE ASIS VAZQUEZ - Words on prepared guitar, sound poetry. Clara de Asìs is an electroacoustic composer and experimental guitar player. Through improvisation on prepared guitar she sets up listening and sonic-generating processes, allowing her to develop experimentations around gesture, material, variations, unperdictabilty. Laura Vazquez, a poet from Marseille, writes, gives performance-readings, and runs the journal “Muscle”. ";
+        break;
+      default:
+        text = "DUO DE ASIS VAZQUEZ - Mots sur guitare préparée, poésie sonore. Clara de Asís est compositrice de musique électroacoustique et guitariste expérimentale. Née en 1988 en Espagne, elle vit à Marseille depuis 2012. En improvisation, à travers l’utilisation de la guitare préparée, elle met en œuvre des processus d’écoute et de génération sonore qui lui permettent de développer une expérimentation directe du geste et du matériau, des variations, des accidents. Elle accorde un soin tout particulier à l’écoute et à la mise en espace des sonorités de son instrument, ce qui lui permet de maintenir une épure dans la forme et une cohésion dans l’exploitation des matières. De manière concrète, elle fait émerger les divers timbres que lui offre l’instrument en utilisant différents objets et matériaux, qui sont tout autant instruments à disposition dans l’acte performatif. Laura Vazquez, poète marseillaise, écrit, donne des lectures performées et anime la revue Muscle. ";
+        break;
+    }
+    printText(text);
+  };
+
+  var pageProgBBLL = function () {
+    setUri("/BearBonesLayLow");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iBBLL").addClass("on");
+    addProgLink("bearboneslaylow.wordpress.com", "https://bearboneslaylow.wordpress.com");
+    addProgLink("soundcloud.com", "https://soundcloud.com/bearboneslaylow");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "BEAR BONES, LAY LOW - Hailing from Venezuela and based in Belgium since 2003, Bear Bones, Lay Low is the moniker Ernesto González uses to explore shifting psychedelic moods in electronic sound. Active since a teenager in the Belgian noise underground, González’s music has evolved from spontaneous bedroom noise/drone jams to colorful synthesizer tunes where library-esque vibes meet entrancing rhythms, dubby use of effects and plenty of freak outs. He has also been part of psychedelic jam band Silvester Anfang / Sylvester Anfang II since 2006 and is involved in numerous projects including Tav Exotic, a beat driven electronic duo with fellow synth tripper Weird Dust. Having released music in various formats and labels such as Sloow Tapes, Troglosound, Full Of Nothing and KRAAK, Bear Bones, Lay Low takes you on an energetic trip through the most warped zones of the cartoon world hidden in your mind! ";
+        break;
+      default:
+        text = "BEAR BONES, LAY LOW - Originaire du Venezuela et installé en Belgique depuis 2003, Bear Bones, Lay Low est le pseudonyme qu’utilise Ernesto Gonzàlez pour travailler sur les ambiances psyché en musique électronique. Actif depuis l’adolescence dans l’underground belge, Gonzàlez est passé d’impros noise home-made à des morceaux bigarés au synthétiseur, morceaux pleins de rythmes endiablés, d’abus de pédales d’effets et d’heureux accidents. À partir de 2006 il joue dans les groupes psychédéliques Silvester Anfang / Sylvester Anfang II, et participe à de nombreux autres projets dont Tav Exotic, un duo de musique électronique avec son camarade Weird Dust. ";
+        break;
+    }
+    printText(text);
+  };
+  var pageProgGM = function () {
+    setUri("/GolemMecanique");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iGM").addClass("on");
+    addProgLink("golemecanik.tumblr.com", "http://golemecanik.tumblr.com/");
+    addProgLink("golemecanique.bandcamp.com", "http://golemecanique.bandcamp.com/");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "GOLEM MÉCANIQUE will work around Dante (Chant IV), will make use of the landscape, the cliff, the horns, the acoustic setting to recreate the trip of Virgil and Dante. Mixing recorded voices on tapes, electro-accoustic devices, and the live use of his voice, this work constantly evolves depending on where it’s performed. The morphing of voice and sound is at the core of the Golem Mécanique project; what is given to hear comes from his personnal synthesis of various myths, recordings, natural sounds, feedback, fragmented voice, electroacoustic devices or string instruments. Recently this project focuses on a more minimalist setting as to prompt the playing to be precise, the voice essential, the sound a celebration of mystical beliefs. ";
+        break;
+      default:
+        text = "GOLEM MÉCANIQUE - La manipulation du son et de la voix est au coeur du projet Golem Mécanique. Les propositions sonores puisent leurs formes dans la synthèse personnelle de différents mythes et paysages intimes, enregistrements manipulés, sons concrets, larsens, voix chantée et fragmentée, dispositifs électro-acoustique étudiés, instruments de lutherie. Oscillant entre poésie sonore et pièces monolithes issues d’un empilement de sons, le projet se consacre depuis peu sur des dispositifs épurés pour inciter le geste à être précis, la voix primordiale, le son exaltation d’une mystique invisible. Pour Échos, elle proposera un travail récent autour de Dante : Chant IV. Se servir du paysage, de la roche, du dispositif  sonore et des trompes afin de recréer la déambulation de Virgile et Dante. Mêlant voix enregistrée sur bandes et cassettes et voix/chant live et dispositif électro-acoustique, c'est un travail qu’elle amorcé depuis peu et qu’elle ne cesse de faire évoluer selon l'endroit et l'espace, en se réappropriant une topographie pour en redessiner les dimensions symboliques. ";
+        break;
+    }
+    printText(text);
+  };
+  var pageProgTT = function () {
+    setUri("/ThomasTilly");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iTT").addClass("on");
+    addProgLink("thomas.tilly.free.fr", "http://thomas.tilly.free.fr/tohome.html");
+    addProgLink("thomastilly.bandcamp.com", "https://thomastilly.bandcamp.com/");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "THOMAS TILLY uses mainly microphone and loudspeaker as instruments. His work is focused on the study — musical or scientific — of sonic environment. The act of listening prevails over all forms and kinds of representation, the research on the sound over the aesthetics; the displaying of the sonic wave is the key. The commitment on the physical field is a crucial part of this process which involves different stages : listening, observation, and then recording; from this perspective, the relationship to space, architecture, urbanism becomes essential, and it often goes beyond the mere recording of sounds. ";
+        break;
+      default:
+        text = "THOMAS TILLY est un musicien utilisant le microphone et le haut- parleur comme principaux instruments de création. Centré sur l’étude de l’environnement sonore et sa confrontation avec l’espace dans lequel il existe, son travail emprunte autant à la recherche musicale expérimentale que scientifique. Dans sa démarche, l’écoute reste centrale au détriment de toutes formes de représentations. Ce qui se passe sur le terrain doit être interprété puis transmis à l’auditeur dans des conditions d’immersion totale, la subjectivité de cette restitution résidant dans le sensible plutôt que dans une mise en oeuvre technique complexe. Toujours connectées à l’idée d’un autre «possible musical», ses pièces sonores, diffusions, ou installations, sont les fruits d’études où la recherche tente de supplanter l’esthétique. C’est l’exposition de l’onde sonore qui est importante. L’implication sur le terrain reste une part importante du processus nécessitant des phases d’écoute, d’observation, puis d’enregistrement. En ce sens, la relation aux espaces naturels, à l’architecture (dont le rôle est prédominant dans le sonore), ou encore à l’urbanisme, deviennent des axes de recherches privilégiés et leur appréhension dépasse souvent la seule pratique de l’enregistrement du son. Chez Thomas Tilly, la rapport entre nature et technologie, primitivité et modernité reste un angle d’approche privilégié, souvent abordé par le traitement des modes de communication. La nécessité d’écouter et d’observer le lieu comme postulat à toute création, est nourrie par l’idée que l’environnement sonore est infiniment complexe et que son appréhension par le public ne peut se faire dans un rapport superficiel. Dans les travaux de Thomas Tilly, tout les outils de captation du son sont utilisés comme des moyens d’écriture, des révélateurs. Captations ultrasoniques, sismiques, hydrophoniques ou aériennes, la méthode employée n’est jamais prétexte au spectaculaire, mais le vecteur d’une appréhension singulière du monde. LE FIELD RECORDING POUR Thomas Tilly : Il ne s'agit pas que de capter le son, mais de placer le microphone au même rang que l'instrument de musique et d'envisager la situation de cet instrument dans l'espace comme une méthode de composition, il s'agit de détourner son rôle d'outil de communication pour appréhender l'onde sonore autrement. S'attaquer à un immatériel croisant tout ce qui constitue et conditionne le matériel, s'attacher à parler et user du bruit comme quelque chose de précieux et unique, et confronter ce bruit à ce que l'on appelle musique. ";
+        break;
+    }
+    printText(text);
+  };
+  var pageProgS = function () {
+    setUri("/Sourdure");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iS").addClass("on");
+    addProgLink("ernestbergez.com", "http://www.ernestbergez.com/");
+    addProgLink("sourdure.bandcamp.com", "https://sourdure.bandcamp.com/");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "SOURDURE = Ernest Bergez = one half of Kaumwald. Ernest Bergez plays a kind of electronic live music combinig the manners of musique concrète with the techniques of jamaican dub and the onslaughts of noise music. The raw electronic tones play alongside sound from the everyday, songs unborn or music not composed, as to link music to daily life. The recorded sounds act as a distorting mirror, a gate to the complexity of human emotions. ";
+        break;
+      default:
+        text = "SOURDURE = Ernest Bergez = moitié de Kaumwald. Ernest Bergez pratique une forme bricolée et spontanée de live électronique qui combine les manipulations de la musique concrète avec les techniques du dub jamaïcain et les assauts de la noise music. Les sonorités brutes de l’électronique côtoient des sons collectés au quotidien : motifs rustiques de violon, ébauches de chansonnettes, conversations chapardées à la volée, fragments de musiques anonymes. Derrière cette pratique en conglomérat, il y a le vœu de rapprocher le musical de la vie et d’ancrer l’écriture dans le vécu immédiat. La présence fantomatique et surréelle des sons « fixés » est utilisée comme un miroir, mais un miroir déformant et hasardeux qui ouvre un espace potentiel à la complexité des émotions humaines. SOURDURE = Ernest Bergez = moitié de Kaumwald. Ernest Bergez pratique une forme bricolée et spontanée de live électronique qui combine les manipulations de la musique concrète avec les techniques du dub jamaïcain et les assauts de la noise music. Les sonorités brutes de l’électronique côtoient des sons collectés au quotidien : motifs rustiques de violon, ébauches de chansonnettes, conversations chapardées à la volée, fragments de musiques anonymes. Derrière cette pratique en conglomérat, il y a le vœu de rapprocher le musical de la vie et d’ancrer l’écriture dans le vécu immédiat. La présence fantomatique et surréelle des sons « fixés » est utilisée comme un miroir, mais un miroir déformant et hasardeux qui ouvre un espace potentiel à la complexité des émotions humaines. ";
+        break;
+    }
+    printText(text);
+  };
+  var pageProgSOM = function () {
+    setUri("/StephenOMalley");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iSOM").addClass("on");
+    addProgLink("ideologic.org", "http://www.ideologic.org/");
+    addProgLink("soundcloud.com", "https://soundcloud.com/stephen-omalley");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "STEPHEN O’MALLEY is widely considered as the father of drone doom, a subgenre of doom metal. He created or had a role in many drone doom or experimental music bands. He plays in Sun O))), Ginnungagap, KTL, Lotus Eaters, Khanate, Burning Witch..His huge sonic structures, full of distortions and interferences, are made with a taste for dreadfull and restless ambiances. ";
+        break;
+      default:
+        text = "STEPHEN O’MALLEY est souvent considéré comme le créateur du genre drone doom (nommé d'après la technique musicale du bourdon), sous-genre du doom metal. Il a fondé ou a participé à la fondation de divers groupes de drone doom ou de musique expérimentale. Il joue dans les groupes Sun O))), Ginnungagap, KTL, Lotus Eaters, Khanate, Burning Witch... Il bâtit des cathédrales sonores emplies de saturations et de parasitages. Et assume son bon goût pour les longs climats effrayants et les sources de malaises ambiants. ";
+        break;
+    }
+    printText(text);
+  };
+  var pageProgPK = function () {
+    setUri("/PiotrKurek");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iPK").addClass("on");
+    addProgLink("piotrkurek.bandcamp.com", "https://piotrkurek.bandcamp.com/");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "PIOTR KUREK comes from Warsaw. The music he plays is synthetic, mysterious, populated by catchy melodies, eerie, often harmonic, rhythmic — and loud. ";
+        break;
+      default:
+        text = "PIOTR KUREK vient de Varsovie. Il crée des morceaux synthétiques et mystérieux remplis de mélodies prenantes, qu'il agrémente parfois de voix. Sa musique est étrange, souvent harmonique, rythmique et à fort volume. ";
+        break;
+    }
+    printText(text);
+  };
+  var pageProgH = function () {
+    setUri("/Homnimal");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iH").addClass("on");
+    addProgLink("homnimal.com", "http://homnimal.com/");
+    addProgLink("soundcloud.com", "https://soundcloud.com/homnimal");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "Frédéric Bernier aka HOMNIMAL works within the field of vocal techniques, from bel canto to growling, gathering them inside installations, rites or scenic mash-ups. Live, his music is a trip inside a soundscape where intimacy & fragility go hand to hand with raw, dirty materials. ";
+        break;
+      default:
+        text = "Frédéric Bernier aka HOMNIMAL travaille notamment sur les différentes techniques vocales et leur valeur d’usage, allant du chant lyrique au grognement pour les rassembler formellement dans des hybridations scéniques, des rites ou des installations. Ses concerts donnent à voir et à entendre une déambulation dans un paysage sonore où fragilité et intime côtoient une matière brute et terreuse. ";
+        break;
+    }
+    printText(text);
+  };
+  var pageProgJBender = function () {
+    setUri("/JeanBender");
+    commonProg();
+    $(".interactive.prog").addClass("on");
+    $(".iJBender").addClass("on");
+    addProgLink("jeanbender.blogspot.fr", "http://jeanbender.blogspot.fr/");
+
+    var text;
+    switch (lang) {
+      case "en":
+        text = "JEAN BENDER experiments with DIY and misused instruments. His work is directed toward noise, space and its dynamics. Music is approached through repetitions, sonic layers and the work on frequencies thus creating soundscapes that are raw albeit full of details. Self-taught, he discovered experimental music in 2009, being part of the HAK lofi RECORD collective. He also worked on a device based around the abuse of CMOS chips as well as incertainty, which is a constant thematic inside his work. ";
+        break;
+      default:
+        text = "Jean Bender est un expérimentateur sonore utilisant et mésutilisant des instruments de musiques ayant en commun le détournement et la fabrication DIY. Son approche musicale est tournée vers le bruit, et une recherche autour de l'espace sonore et sa dynamique. L'approche de la musique se fait par la répétition, l'ajout de couches sonores et le travail des fréquences, créant ainsi des fresques sonores à priori dures mais révélant une multitude de détails. Autodidacte, Jean Bender a découvert la musique expérimentale en intégrant le collectif HAK lofi RECORD en 2009. Très vite, il a ainsi pu travailler le jeu en groupe lors de performances collectives. L'entrée dans ce collectif lui a permis de rencontrer AxDelbor avec qui il développe la création d'instruments de musique dédiés à la recherche sonore et l'improvisation. Il a également pu participer à la résidence VARIABLE(S), à Aubagne en 2011, qui lui a permis de travailler un dispositif basé sur le détournement de composants CMOS et l'erreur, qui reste une constante dans son travail. ";
+        break;
+    }
     printText(text);
   };
 
