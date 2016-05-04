@@ -551,7 +551,7 @@
     $(".interactive.prog").addClass("on");
     $(".iDDAV").addClass("on");
     addProgLink("lauralisavazquez.com", "http://www.lauralisavazquez.com/");
-    addProgLink("soundcloud.com", "https://soundcloud.com/claradeasis");
+    addProgLink("claradeasis.com", "http://claradeasis.com/");
 
     var text;
     switch (lang) {
