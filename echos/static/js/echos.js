@@ -725,14 +725,12 @@
     switch (lang) {
       case "en":
         text = "The team is fully made of volunteers. As a rule of thumb, we do everything without public/corporate money (no Red Bull cultural philantropy here) : everlasting meetings, express setup of green toilets, breakfast coffee without coffee pot and so on. But this festival is mostly made with you; the best way to support the team is by coming to the festival with all the fervor you can bring. And if you’re the kind of die-hard DIY enthousiast, we sell special support pre-sale tickets which we exchange for wholly hand-made goodies (almost). ";
-        encart = "Because of the limited space available, you can only access the festival through booking. There will be no ticket sale on the festival.<br>For booking, we’ll be throwing three support event (Lyon, Paris, Marseille, follow on Facebook or by mail) with ticket sale, or please come back on this very page in May!";
         break;
       default:
         text = "L’équipe est entièrement bénévole et nous mettons un point d’honneur à tout faire sans subventions ni mécénat Red Bull : réunions interminables, montage express de toilettes sèches, café sans cafetière pour votre petit déjeuner. Mais le festival se construit aussi et surtout avec vous. Pour nous soutenir, on vous invite à venir au festival avec un enthousiasme titanesque. Et si vous voulez sacrifier au DIY éternel, nous proposons également des tarifs de soutien que nous échangeons contre des goodies totalement faits main (ou presque). ";
-        encart = "À cause du nombre de places limité, le festival est uniquement accessible sur réservation. Il n’y aura pas de vente à l’entrée.<br>Pour réserver, RDV dans nos soirées de soutien (Lyon, Paris et Marseille, infos via Facebook ou mail) ou sur cette page à partir de mi mai !";
         break;
     }
-    $("#encart").append(encart).addClass("on");
+    $("#helloasso").addClass("on");
     printText(text);
   };
 
