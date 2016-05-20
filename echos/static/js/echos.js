@@ -725,11 +725,11 @@
     switch (lang) {
       case "en":
         text = "The team is fully made of volunteers. As a rule of thumb, we do everything without public/corporate money (no Red Bull cultural philantropy here) : everlasting meetings, express setup of green toilets, breakfast coffee without coffee pot and so on. But this festival is mostly made with you; the best way to support the team is by coming to the festival with all the fervor you can bring. And if you’re the kind of die-hard DIY enthousiast, we sell special support pre-sale tickets which we exchange for wholly hand-made goodies (almost). ";
-        encart = "Sorry baby no more tickets, to catch the last ones meet us at the support parties:<br> - Les Instants Chavirés, Paris, May 20th<br> - L'Embobineuse, Marseille, June 4th";
+        encart = "Sorry baby no more tickets, to catch the last ones meet us at the support events:<br> - Les Instants Chavirés, Paris, May 20th<br> - L'Embobineuse, Marseille, June 4th";
         break;
       default:
         text = "L’équipe est entièrement bénévole et nous mettons un point d’honneur à tout faire sans subventions ni mécénat Red Bull : réunions interminables, montage express de toilettes sèches, café sans cafetière pour votre petit déjeuner. Mais le festival se construit aussi et surtout avec vous. Pour nous soutenir, on vous invite à venir au festival avec un enthousiasme titanesque. Et si vous voulez sacrifier au DIY éternel, nous proposons également des tarifs de soutien que nous échangeons contre des goodies totalement faits main (ou presque). ";
-        encart = "Il n'y a plus de prévéntes dispos en ligne. Ne perds pas espoir cependant, tu peux attraper les dernières en te rendant aux soirées de soutien respectivement à :<br> - Les Instants Chavirés, à Paris le 20 mai<br> - L'Embobineuse, à Marseille le 6 juin";
+        encart = "Il n'y a plus de prévéntes dispos en ligne. Ne perds pas espoir cependant, tu peux attraper les dernières en te rendant aux soirées de soutien respectivement à :<br> - Les Instants Chavirés, Paris le 20 mai<br> - L'Embobineuse, Marseille le 6 juin";
         break;
     }
     $("#encart").append(encart).addClass("on");
