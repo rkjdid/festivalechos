@@ -729,7 +729,7 @@
         break;
       default:
         text = "L’équipe est entièrement bénévole et nous mettons un point d’honneur à tout faire sans subventions ni mécénat Red Bull : réunions interminables, montage express de toilettes sèches, café sans cafetière pour votre petit déjeuner. Mais le festival se construit aussi et surtout avec vous. Pour nous soutenir, on vous invite à venir au festival avec un enthousiasme titanesque. Et si vous voulez sacrifier au DIY éternel, nous proposons également des tarifs de soutien que nous échangeons contre des goodies totalement faits main (ou presque). ";
-        encart = "Il n'y a plus de prévéntes dispos en ligne. Ne perds pas espoir cependant, tu peux attraper les dernières en te rendant aux soirées de soutien respectivement à :<br> - Les Instants Chavirés, Paris le 20 mai<br> - L'Embobineuse, Marseille le 6 juin";
+        encart = "Il n'y a plus de prévéntes dispos en ligne. Ne perds pas espoir cependant, tu peux attraper les dernières en te rendant aux soirées de soutien respectivement à :<br> - Les Instants Chavirés, Paris le 20 mai<br> - L'Embobineuse, Marseille le 4 juin";
         break;
     }
     $("#encart").append(encart).addClass("on");
