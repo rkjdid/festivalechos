@@ -96,9 +96,6 @@
     $(".item.trompes").click(function () {
       pageTrompes();
     });
-    $(".book").click(function () {
-      pageTickets();
-    });
     $(".dome").click(function () {
       pageDome();
     });

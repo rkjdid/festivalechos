@@ -392,15 +392,16 @@ section#menu {
       }
 
       .i0 { // réserver
+        cursor: default;
         &.en {
-          width: 15.2631578947%;
+          width: 26.2631578947%;
           top: 24%;
-          left: 20%;
+          left: 10%;
         }
         &.fr {
-          width: 31.2631578947%;
-          top: 19%;
-          left: 8%;
+          width: 23.2631578947%;
+          top: 24%;
+          left: 10%;
         }
       }
       .i1 { // pdf récap
