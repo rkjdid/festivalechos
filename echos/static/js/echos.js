@@ -19,15 +19,13 @@
   $(window).on("load", function() {
     refresh();
     loaded = true;
-    setTimeout(function() {
-      var $c = $("#curtain");
-      $c.find(".loading").addClass("out")
-        .delay(300)
-        .animate({left: "110%"}, 750, function() {
-          $("#curtain").hide();
-          $("body").removeClass("loading");
-        });
-    }, 500);
+    var $c = $("#curtain");
+    $c.find(".loading").addClass("out")
+      .delay(300)
+      .animate({left: "110%"}, 750, function() {
+        $("#curtain").hide();
+        $("body").removeClass("loading");
+      });
   });
 
   // onresize
