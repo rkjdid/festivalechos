@@ -160,6 +160,13 @@ section#content {
         text-decoration: underline;
       }
     }
+
+    p {
+      margin-bottom: 8px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 
   #helloasso {
@@ -392,7 +399,6 @@ section#menu {
       }
 
       .i0 { // réserver
-        cursor: default;
         &.en {
           width: 26.2631578947%;
           top: 24%;

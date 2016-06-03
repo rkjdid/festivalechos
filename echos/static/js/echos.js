@@ -99,6 +99,9 @@
     $(".dome").click(function () {
       pageDome();
     });
+    $(".book").click(function () {
+      pageTickets();
+    });
     $("#lang_en").click(function() {
       if ("en" === lang) {
         return;
@@ -721,12 +724,12 @@
     var encart;
     switch (lang) {
       case "en":
-        text = "The team is fully made of volunteers. As a rule of thumb, we do everything without public/corporate money (no Red Bull cultural philantropy here) : everlasting meetings, express setup of green toilets, breakfast coffee without coffee pot and so on. But this festival is mostly made with you; the best way to support the team is by coming to the festival with all the fervor you can bring. And if you’re the kind of die-hard DIY enthousiast, we sell special support pre-sale tickets which we exchange for wholly hand-made goodies (almost). ";
-        encart = "Sorry baby no more tickets, to catch the last ones meet us at the support events:<br> - Les Instants Chavirés, Paris, May 20th<br> - L'Embobineuse, Marseille, June 4th";
+        text = "The team is fully made of volunteers. As a rule of thumb, we do everything without public/corporate money (no Red Bull cultural philantropy here) : everlasting meetings, express setup of green toilets, breakfast coffee without coffee pot and so on. ";
+        encart = "<p>The event is sold-out, sorry!</p><p>The Faï farm hosting Échos cannot exceed a given threshold. Please do not attempt to come without ticket, we do not wish to do police work.</p><p>Association Dôme</p>";
         break;
       default:
-        text = "L’équipe est entièrement bénévole et nous mettons un point d’honneur à tout faire sans subventions ni mécénat Red Bull : réunions interminables, montage express de toilettes sèches, café sans cafetière pour votre petit déjeuner. Mais le festival se construit aussi et surtout avec vous. Pour nous soutenir, on vous invite à venir au festival avec un enthousiasme titanesque. Et si vous voulez sacrifier au DIY éternel, nous proposons également des tarifs de soutien que nous échangeons contre des goodies totalement faits main (ou presque). ";
-        encart = "Il n'y a plus de prévéntes dispos en ligne. Ne perds pas espoir cependant, tu peux attraper les dernières en te rendant aux soirées de soutien respectivement à :<br> - Les Instants Chavirés, Paris le 20 mai<br> - L'Embobineuse, Marseille le 4 juin";
+        text = "L’équipe est entièrement bénévole et nous mettons un point d’honneur à tout faire sans subventions ni mécénat Red Bull : réunions interminables, montage express de toilettes sèches, café sans cafetière pour votre petit déjeuner. ";
+        encart = "<p>Désolé, c'est complet !</p><p>La ferme du Faï qui accueille le festival Échos ne peut excéder une certaine jauge. Par ailleurs nous souhaitons privilégier la qualité d'écoute. Il ne sera pas possible d'acheter des entrées sur place, il est donc inutile de venir sans préventes. Merci de respecter le fait que nous ne sommes pas des flics : on n'a pas envie de faire la police.</p><p>L'asso Dôme</p>";
         break;
     }
     $("#encart").append(encart).addClass("on");
