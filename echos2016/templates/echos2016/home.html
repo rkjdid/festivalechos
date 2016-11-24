@@ -1,0 +1,94 @@
+{% extends 'echos2016/base.html' %}
+{% load static %}
+
+{% block body %}
+  <section id="curtain">
+    <img class="loading spin" src="{% static "echos2016/img/trompe.png" %}" />
+  </section>
+  <section id="content">
+    <div id="options" class="debug">
+      <label for="speed">
+        SPEEDNESS: <input type="number" name="speed" value="25" min="0">
+      </label>
+    </div>
+    <div class="interactive" id="encart"></div>
+    <img class="interactive" id="trompe3d" src="{% static "echos2016/img/trompe3D.gif" %}" />
+    <img class="interactive title fr" src="{% static "echos2016/img/title.png" %}" />
+    <img class="interactive title en" src="{% static "echos2016/img/title.en.png" %}"/>
+    <img class="interactive trompe3d" src="{% static "echos2016/img/trompe3D.gif" %}"/>
+    <img class="interactive acces" src="{% static "echos2016/img/acces.jpg" %}"/>
+    <div class="interactive ferme">
+      <img class="i0 interactive" src="{% static "echos2016/img/ferme1.jpg" %}"/>
+      <img class="i1 interactive" src="{% static "echos2016/img/ferme2.jpg" %}"/>
+      <img class="i2 interactive" src="{% static "echos2016/img/ferme3.jpg" %}"/>
+      <img class="i3 interactive" src="{% static "echos2016/img/ferme4.jpg" %}"/>
+      <img class="i4 interactive" src="{% static "echos2016/img/ferme5.jpg" %}"/>
+    </div>
+    <div class="interactive prog">
+      <ul class="links"></ul>
+      <img class="iDMD interactive" src="{% static "echos2016/img/prog/maureldesailly.jpg" %}"/>
+      <img class="iPBB interactive" src="{% static "echos2016/img/prog/pombouvierb.jpg" %}"/>
+      <img class="iJB interactive" src="{% static "echos2016/img/prog/joaquimbrissaud.jpg" %}"/>
+      <img class="iDDAV interactive" src="{% static "echos2016/img/prog/asisvaquez_2.jpg" %}"/>
+      <img class="iBBLL interactive" src="{% static "echos2016/img/prog/bearboneslaylow.jpg" %}"/>
+      <img class="iGM interactive" src="{% static "echos2016/img/prog/golemecanique.jpg" %}"/>
+      <img class="iTT interactive" src="{% static "echos2016/img/prog/thomastilly.jpg" %}"/>
+      <img class="iS interactive" src="{% static "echos2016/img/prog/sourdure.jpg" %}"/>
+      <img class="iSOM interactive" src="{% static "echos2016/img/prog/stephenomalley.jpg" %}"/>
+      <img class="iPK interactive" src="{% static "echos2016/img/prog/piotrkurek.jpg" %}"/>
+      <img class="iH interactive" src="{% static "echos2016/img/prog/homnimal.jpg" %}"/>
+      <img class="iJBender interactive" src="{% static "echos2016/img/prog/jeanbender.jpg" %}"/>
+    </div>
+    <ul class="interactive" id="submenu"></ul>
+    <p id="text">&nbsp;<br /></p>
+  </section><section id="menu">
+    <div id="copyright"><img src="{% static "echos2016/img/kopime.png" %}"></div>
+    <div id="map">
+      <img id="imap" src="{% static "echos2016/img/map.jpg" %}"/>
+      <img id="lang_en" src="{% static "echos2016/img/en.png" %}" />
+      <img class="idash" src="{% static "echos2016/img/dash_w.png" %}"/>
+      <img id="lang_fr" src="{% static "echos2016/img/fr.png" %}"/>
+      <img class="item echos"   src="{% static "echos2016/img/echos.png" %}" />
+      <img class="item interactive acces fr"   src="{% static "echos2016/img/item_acces.png" %}"/>
+      <img class="item interactive acces en"   src="{% static "echos2016/img/item_acces.en.png" %}"/>
+      <img class="item interactive ferme fr"   src="{% static "echos2016/img/item_ferme.png" %}"/>
+      <img class="item interactive ferme en"   src="{% static "echos2016/img/item_ferme.en.png" %}"/>
+      <img class="item interactive infos fr"   src="{% static "echos2016/img/item_infos.png" %}"/>
+      <img class="item interactive infos en"   src="{% static "echos2016/img/item_infos.en.png" %}"/>
+      <img class="item interactive prog fr"    src="{% static "echos2016/img/item_programmation.png" %}"/>
+      <img class="item interactive prog en"    src="{% static "echos2016/img/item_programmation.en.png" %}"/>
+      <img class="item interactive trompes fr" src="{% static "echos2016/img/item_trompes.png" %}"/>
+      <img class="item interactive trompes en" src="{% static "echos2016/img/item_trompes.en.png" %}"/>
+    </div>
+    <div id="bottom">
+      <div class="row" id="row0">
+        <a class="i0 fr book">
+          <img src="{% static "echos2016/img/soldout.png" %}"/></a>
+        <a class="i0 en book">
+          <img src="{% static "echos2016/img/soldout.en.png" %}"/></a>
+        <a class="i1 fr" target="_blank" href="/echos_fr.pdf">
+          <img src="{% static "echos2016/img/pdf.png" %}"/></a>
+        <a class="i1 en" target="_blank" href="/echos_en.pdf">
+          <img src="{% static "echos2016/img/pdf.en.png" %}"/></a>
+        <a class="i2 dome">
+          <img src="{% static "echos2016/img/trompe.png" %}" /></a>
+      </div>
+      <div class="row" id="row1">
+        <a class="i0" href="https://facebook.com/association.dome" target="_blank">
+          <img src="{% static "echos2016/img/facebook.png" %}"/>
+        </a>
+        <a class="i1" href="http://2013.festivalechos.fr/" target="_blank">
+          <img src="{% static "echos2016/img/2013.png" %}"/>
+        </a>
+        <img class="i2" src="{% static "echos2016/img/dash.png" %}"/>
+        <a class="i3" href="http://2014.festivalechos.fr/" target="_blank">
+          <img src="{% static "echos2016/img/2014.png" %}"/>
+        </a>
+        <img class="i4" src="{% static "echos2016/img/dash.png" %}"/>
+        <a class="i5" href="http://2015.festivalechos.fr/" target="_blank">
+          <img src="{% static "echos2016/img/2015.png" %}"/>
+        </a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

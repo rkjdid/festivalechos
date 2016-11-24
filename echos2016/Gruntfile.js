@@ -12,15 +12,15 @@ module.exports = function(grunt){
 
   // paths
   var paths = {
-    static_root:  'static/',
-    font:         'static/font',
-    js:           'static/js',
-    css:          'static/css',
-    img:          'static/img',
+    static_root:  'static/echos2016',
+    font:         'static/echos2016/font',
+    js:           'static/echos2016/js',
+    css:          'static/echos2016/css',
+    img:          'static/echos2016/img',
 
-    css_out :     'static/out/css',
-    img_out:      'static/out/img',
-    out:          'static/out'
+    css_out :     'static/echos2016/out/css',
+    img_out:      'static/echos2016/out/img',
+    out:          'static/echos2016/out'
   };
 
   var js_libs_dist = [
@@ -40,8 +40,8 @@ module.exports = function(grunt){
   ];
 
   var js_dist_before_libs = path.join(paths.out, "src.js");
-  var js_dist_path = path.join(paths.out, config.project + '.' + config.js_version + '.min.js');
-  var js_dev_path = path.join(paths.out, config.project + '.' + config.js_version + '.dev.js');
+  var js_dist_path = path.join(paths.static_root, config.project + '.' + config.js_version + '.min.js');
+  var js_dev_path = path.join(paths.static_root, config.project + '.' + config.js_version + '.dev.js');
 
   // externalize uglify parameters to allow dynamic dictionnary keys
   var uglify_parameters = {
@@ -98,7 +98,7 @@ module.exports = function(grunt){
     concat: {
       css: {
         src: css_files,
-        dest: path.join(paths.out, config.project + "." + config.css_version + ".min.css")
+        dest: path.join(paths.static_root, config.project + "." + config.css_version + ".min.css")
       },
       jsdev: {
         options: {
@@ -121,12 +121,6 @@ module.exports = function(grunt){
         expand: true,
         cwd: paths.static_root,
         src: 'font/**',
-        dest: path.join(paths.out, '/')
-      },
-      img: {
-        expand: true,
-        cwd: paths.static_root,
-        src: 'img/**',
         dest: path.join(paths.out, '/')
       },
       css_libs: {

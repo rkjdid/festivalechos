@@ -1,21 +1,25 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url, include
 from django.http import HttpResponse
 
-# Uncomment the next two lines to enable the admin:
-import echos.views
-
 # robots.txt
-urlpatterns = patterns('',
-  url(r'^robots.txt', lambda r: HttpResponse("User-agent: *\nDisallow:", mimetype="text/plain")),
-)
+urlpatterns = [
+	url(r'^robots.txt', lambda r: HttpResponse("User-agent: *\nDisallow:", mimetype="text/plain")),
+]
 
-# catch'em'all
-urlpatterns += patterns('',
-  url(r'^echos_fr.pdf', echos.views.static_serve,
-      {'target': 'img/echos_fr.pdf',
-       'content_type': 'application/pdf'}),
-  url(r'^echos_en.pdf', echos.views.static_serve,
-      {'target': 'img/echos_en.pdf',
-       'content_type': 'application/pdf'}),
-  url(r'^/?.*$', echos.views.home, name='home'),
-)
+# sitemap.xml
+urlpatterns += [
+	url(r'^sitemap.xml', lambda r: HttpResponse(
+		"http://festivalechos.fr/", mimetype="text/plain"
+	)),
+]
+
+# route to specific editions
+# from echos2013.urls import urls as urls2013
+# from echos2014.urls import urls as urls2014
+# from echos2015.urls import urls as urls2015
+import echos2016.urls as echos2016
+
+urlpatterns += [
+	url(r'^2016', include(echos2016.urls)),
+	url(r'^', include(echos2016.urls))
+]
