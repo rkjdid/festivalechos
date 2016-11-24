@@ -5,6 +5,11 @@ _credentials.py
 _debug.py
 
 .idea/
-
 .sass-cache
-echos/static/2015/css/*.css
+
+node_modules/
+bower_components/
+**/static/**/out/
+/static
+
+*.db
