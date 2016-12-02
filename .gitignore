@@ -7,9 +7,13 @@ _debug.py
 .idea/
 .sass-cache
 
-node_modules/
-bower_components/
+**/node_modules
+**/bower_components
 **/static/**/out/
+**/static/*/echos*css
+**/static/*/echos*js
+**/static/**/css/
+!**/static/echos2016/css/
 /static
 
 *.db
