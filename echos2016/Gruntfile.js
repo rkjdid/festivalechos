@@ -25,10 +25,12 @@ module.exports = function(grunt){
 
   var js_libs_dist = [
     path.join(paths.js, 'lib/jquery.min.js'),
+    path.join(paths.js, 'lib/imagesloaded.pkgd.min.js'),
   ];
 
   var js_libs_dev = [
     path.join(paths.js, 'lib/jquery.js'),
+    path.join(paths.js, 'lib/imagesloaded.pkgd.js'),
   ];
 
   var js_files = [
