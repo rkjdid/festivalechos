@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(APP_DIR)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-SECRET_KEY = '+2&7a=3bfr7#)nj)qk4cc&5(07ay@f^x@(#5*81s6motrc95^9'
+SECRET_KEY = 'fixme'
 
 ALLOWED_HOSTS = [
 	'.localhost',
@@ -33,13 +33,17 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 
 	'common',
+	# 'echos2013',
+	# 'echos2014',
+	# 'echos2015',
 	'echos2016',
 ]
 
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
-	'common.lang.LangMiddleware',
+	'common.middleware.SiteMiddleware',
+	'common.middleware.LangMiddleware',
 	'django.middleware.common.CommonMiddleware',
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -9,10 +9,16 @@
   var current = "home"; //todo
   var delay_default = 30;
   var $tx = "#text";
+  var $images;
 
   // DOM ready
   $(function() {
     ready = true;
+    $images = $("img:not(.async)");
+    var toLoad = $images.length;
+    $images.imagesLoaded(function() {
+      toLoad--;
+    });
   });
 
   // onload
@@ -242,20 +248,7 @@
   // ---------------
   var urlToPage = function () {
     var uri = window.location.href;
-    var uri_lang = uri.split('?');
-    if (uri_lang.length > 1) {
-      if (uri_lang[1] === "en") {
-        lang = "en";
-      } else if (uri_lang[1] === "fr") {
-        lang = "fr";
-      }
-      setUri(uri_lang[0]);
-      uri = window.location.href;
-      createCookie("lang", lang, 120);
-    } else {
-      lang = readCookie("lang");
-    }
-    setLang(lang);
+    setLang(readCookie("lang"));
     uri = uri.split('/');
     var page = uri[uri.length - 1];
 

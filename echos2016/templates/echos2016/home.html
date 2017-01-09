@@ -1,5 +1,6 @@
 {% extends 'echos2016/base.html' %}
 {% load static %}
+{% load tags %}
 
 {% block body %}
   <section id="curtain">
@@ -12,10 +13,9 @@
       </label>
     </div>
     <div class="interactive" id="encart"></div>
-    <img class="interactive" id="trompe3d" src="{% static "echos2016/img/trompe3D.gif" %}" />
     <img class="interactive title fr" src="{% static "echos2016/img/title.png" %}" />
     <img class="interactive title en" src="{% static "echos2016/img/title.en.png" %}"/>
-    <img class="interactive trompe3d" src="{% static "echos2016/img/trompe3D.gif" %}"/>
+    <img class="interactive trompe3d async" src="{% static "echos2016/img/trompe3D.gif" %}"/>
     <img class="interactive acces" src="{% static "echos2016/img/acces.jpg" %}"/>
     <div class="interactive ferme">
       <img class="i0 interactive" src="{% static "echos2016/img/ferme1.jpg" %}"/>
@@ -66,9 +66,9 @@
           <img src="{% static "echos2016/img/soldout.png" %}"/></a>
         <a class="i0 en book">
           <img src="{% static "echos2016/img/soldout.en.png" %}"/></a>
-        <a class="i1 fr" target="_blank" href="/echos_fr.pdf">
+        <a class="i1 fr" target="_blank" href="{% href request "echos_fr.pdf" %}">
           <img src="{% static "echos2016/img/pdf.png" %}"/></a>
-        <a class="i1 en" target="_blank" href="/echos_en.pdf">
+        <a class="i1 en" target="_blank" href="{% href request "echos_en.pdf" %}">
           <img src="{% static "echos2016/img/pdf.en.png" %}"/></a>
         <a class="i2 dome">
           <img src="{% static "echos2016/img/trompe.png" %}" /></a>
@@ -77,15 +77,15 @@
         <a class="i0" href="https://facebook.com/association.dome" target="_blank">
           <img src="{% static "echos2016/img/facebook.png" %}"/>
         </a>
-        <a class="i1" href="http://2013.festivalechos.fr/" target="_blank">
+        <a class="i1" href="/2013/">
           <img src="{% static "echos2016/img/2013.png" %}"/>
         </a>
         <img class="i2" src="{% static "echos2016/img/dash.png" %}"/>
-        <a class="i3" href="http://2014.festivalechos.fr/" target="_blank">
+        <a class="i3" href="/2014/">
           <img src="{% static "echos2016/img/2014.png" %}"/>
         </a>
         <img class="i4" src="{% static "echos2016/img/dash.png" %}"/>
-        <a class="i5" href="http://2015.festivalechos.fr/" target="_blank">
+        <a class="i5" href="/2015/">
           <img src="{% static "echos2016/img/2015.png" %}"/>
         </a>
       </div>

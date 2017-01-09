@@ -1,1 +1,1 @@
-../../../../bower_components/jquery/dist/jquery.slim.js
+../../../../../common/bower_components/jquery/dist/jquery.slim.js

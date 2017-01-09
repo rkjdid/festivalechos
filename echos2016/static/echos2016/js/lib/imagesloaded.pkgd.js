@@ -1,1 +1,1 @@
-../../../../bower_components/imagesloaded/imagesloaded.pkgd.js
+../../../../../common/bower_components/imagesloaded/imagesloaded.pkgd.js

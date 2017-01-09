@@ -14,5 +14,5 @@ urls = [
 	url(r'^echos_en.pdf', common.views.static_serve,
 			{'target': os.path.join(STATIC_ROOT, 'echos2016/misc/echos_en.pdf'),
 			 'content_type': 'application/pdf'}),
-	url(r'^.*$', views.home, name='home'),
+	url(r'^$', views.home, name='home')
 ]
