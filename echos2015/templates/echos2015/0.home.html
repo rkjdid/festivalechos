@@ -1,0 +1,27 @@
+{% extends 'echos2015/base.html' %}
+{% load static %}
+{% load tags %}
+
+{% block extracss %}
+  <link rel="stylesheet" type="text/css" href="{% static "echos2015/css/0.home.css" %}"/>
+{% endblock %}
+
+
+{% block body %}
+  <header>
+    <section id="artists" class="caps noie">
+      <p class="tcenter caviar">FRANCE / JOOKLO DUO / LIONEL MARCHETTI / LOÏC VERDILLON / MR MARCAILLE / MICHEL DONEDA
+      / PETIT BONHOMME / PALI MEURSAULT / PATRICIA BOSSHARD / SALSA / LE VERDOUBLE</p>
+    </section>
+  </header>
+
+  <section id="photo">
+    <a href="{% href request "echos/presentation/" %}">
+      <img src="{% static "echos2015/img/1.home/home.v2.jpg" %}"/>
+    </a>
+  </section>
+  <div class="lang">
+    <a href="{% href request "echos/presentation?lang=fr" %}">français</a> –
+    <a href="{% href request "echos/presentation?lang=en" %}">english</a>
+  </div>
+{% endblock %}

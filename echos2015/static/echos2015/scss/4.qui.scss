@@ -1,0 +1,16 @@
+@import "layout";
+
+section#page {
+  /** Content **/
+  section#contentRow {
+    section#contentFrame {
+      section.content {
+        img {
+          width: 85%;
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

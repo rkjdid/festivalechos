@@ -1,0 +1,54 @@
+{% load static %}
+{% load tags %}
+
+<nav class="caviar rightCol">
+    <ul id="mainList">
+        <li class="echos">
+            <img class="vertLine" src="{% static "echos2015/img/layout/line.png" %}"/>
+            <ul class="menuItem">
+                <li class="{% active request.path "/echos/pres" %}">
+                    <a href="{% href request "echos/presentation" %}">{% if lang == "fr" %}Présentation{% else %}Introduction{% endif %}</a>
+                </li>
+                <li class="{% active request.path "/echos/prog" %}">
+                    <a href="{% href request "echos/programmation" %}">{% if lang == "fr" %}Programmation{% else %}Programs{% endif %}</a>
+                </li>
+            </ul>
+            <div class="header {% active request.path "/echos" %}">échos</div>
+        </li>
+        <li class="lieu">
+            <img class="vertLine" src="{% static "echos2015/img/layout/line.png" %}" />
+            <ul class="menuItem">
+                <li>
+                    <a href="{% href request "lieu/ferme" %}">{% if lang == "fr" %}La ferme du Faï{% else %}Le Faï farm{% endif %}</a>
+                </li>
+                <li>
+                    <a href="{% href request "lieu/trompes" %}">{% if lang == "fr" %}Le système acoustique{% else %}The acoustic system{% endif %}</a>
+                </li>
+            </ul>
+            <div class="header {% active request.path "/echos" %}">{% if lang == "fr" %}le lieu{% else %}the place{% endif %}</div>
+        </li>
+        <li class="mod">
+            <img class="vertLine" src="{% static "echos2015/img/layout/line.png" %}" />
+            <ul class="menuItem">
+                <li class="{% active request.path "/echos/res" %}">
+                    <a href="{% href request "modalites/acces" %}">{% if lang == "fr" %}Comment venir ?{% else %}Coming to échos{% endif %}</a>
+                </li>
+                <li>
+                    <a href="{% href request "modalites/zzz" %}">{% if lang == "fr" %}Se loger / Se restaurer{% else %}Sleep / Eat{% endif %}</a>
+                </li>
+            </ul>
+            <div class="header {% active request.path "/echos" %}">{% if lang == "fr" %}modalités{% else %}details{% endif %}</div>
+        </li>
+        <li class="dome">
+            <a href="{% href request "dome" %}"><div class="header {% active request.path "/dome" %}">dôme</div></a>
+        </li>
+        <li class="contact">
+            <a href="{% href request "contact" %}"><div class="header {% active request.path "/contact" %}">contact</div></a>
+        </li>
+    </ul>
+
+    <div class="lang">
+      <a href="?lang=fr">FR</a> –
+      <a href="?lang=en">EN</a>
+    </div>
+</nav>

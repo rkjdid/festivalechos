@@ -1,0 +1,99 @@
+{% extends 'echos2015/layout.html' %}
+{% load static %}
+
+{% block extracss %}
+  {{ block.super }}
+  <link href="{% static "echos2015/js/lib/fancybox/jquery.fancybox.css" %}" type="text/css" rel="stylesheet"/>
+  <link href="{% static "echos2015/css/3.programmation.css" %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block extrajs %}
+  {{ block.super }}
+  <script src="{% static "echos2015/js/lib/history/jquery.history.js" %}"></script>
+  <script src="{% static "echos2015/js/lib/fancybox/jdidbox.v0.1.pack.js" %}"></script>
+  <script src="{% static "echos2015/js/3.progra.v1.js" %}"></script>
+{% endblock %}
+
+{% block gdesc %}FRANCE / JOOKLO DUO / LIONEL MARCHETTI / LOÏC VERDILLON / MR MARCAILLE / MICHEL DONEDA
+  / PETIT BONHOMME / PALI MEURSAULT / PATRICIA BOSSHARD / SALSA / LE VERDOUBLE{% endblock %}
+
+{% block content %}
+  <h2 style="margin-top: 3px;">
+    <time datetime="2015-06-26">{% if lang == "fr" %}Vendredi 26 juin{% else %}Friday June 26{% endif %}</time>
+  </h2>
+  <p class="dateflow samedi sair sbreak">
+    <time><mark>17h00</mark></time> - {% if lang == "fr" %}Ouverture des portes{% else %}Opening{% endif %}<br>
+    <time><mark>21h00</mark></time> - {% if lang == "fr" %}Concert sur les trompes{% else %}Concerts{% endif %}<br>
+  </p>
+  <div id="lineup" class="sair lineup1">
+    <div class="tcenter">
+      <a rel="artists" data-boxtitle="{% include 'echos2015/parts/artists/1.html' %}"
+         data-anchor="jd" href="{% static "echos2015/img/3.programmation2015/1.jpg" %}">
+        Jooklo Duo</a><br>
+      <a rel="artists" data-boxtitle="{% include 'echos2015/parts/artists/2.html' %}"
+         data-anchor="lm" href="{% static "echos2015/img/3.programmation2015/2.jpg" %}">
+        Lionel Marchetti</a><br>
+      <a rel="artists" data-boxtitle="{% include 'echos2015/parts/artists/3.html' %}"
+         data-anchor="lv" href="{% static "echos2015/img/3.programmation2015/3.jpg" %}">
+        Loïc Verdillon</a><br>
+      <a rel="artists" data-boxtitle="{% include 'echos2015/parts/artists/4.html' %}"
+         data-anchor="md" href="{% static "echos2015/img/3.programmation2015/4.jpg" %}">
+        Michel Doneda</a><br>
+      <a rel="artists" data-boxtitle="{% include 'echos2015/parts/artists/5.html' %}"
+         data-anchor="pm" href="{% static "echos2015/img/3.programmation2015/5.jpg" %}">
+        pali meursault</a><br>
+      <a rel="artists" data-boxtitle="{% include 'echos2015/parts/artists/6.html' %}"
+         data-anchor="pbd" href="{% static "echos2015/img/3.programmation2015/6.jpg" %}">
+        Patricia Bosshard</a><br>
+      <a rel="artists" data-boxtitle="{% include 'echos2015/parts/artists/7.html' %}"
+         data-anchor="v" href="{% static "echos2015/img/3.programmation2015/7.jpg" %}">
+        Le Verdouble</a><br>
+    </div>
+  </div>
+  <h2>
+    <time datetime="2015-06-27">{% if lang == "fr" %}Samedi 27 juin{% else %}Saturday June 27{% endif %}</time>
+  </h2>
+  <p class="dateflow dimanche sair sbreak">
+    {% if lang == "fr" %}
+      <time>
+        <mark>Après-midi</mark>
+      </time>
+      - Testez le système acoustique avec vos instruments<br>
+      Réservation obligatoire : <a href="mailto:contact@festivalechos.fr">contact@festivalechos.fr</a><br>
+      Balades et baignades<br>
+      <time class="sair">
+        <mark>Soir</mark>
+      </time> - Concert au <em>théâtre de verdure</em><br>
+    {% else %}
+      <time>
+        <mark>Afternoon</mark>
+      </time>
+      - Try out the acoustic system with your instruments<br>
+      Imperatively register at: <a href="mailto:contact@festivalechos.fr">contact@festivalechos.fr</a><br>
+      Walking & swimming<br>
+      <time class="sair">
+        <mark>Evening</mark>
+      </time> - Gigs at <em>Le théâtre de verdure</em><br>
+    {% endif %}
+  </p>
+  <div id="lineup" class="sair lineup2">
+    <div class="tcenter">
+      <a rel="artists2" data-boxtitle="{% include 'echos2015/parts/artists/8.html' %}"
+         data-anchor="f" href="{% static "echos2015/img/3.programmation2015/8.jpg" %}">
+        France</a><br>
+      <a rel="artists2" data-boxtitle="{% include 'echos2015/parts/artists/9.html' %}"
+         data-anchor="pb" href="{% static "echos2015/img/3.programmation2015/9.jpg" %}">
+        Petit Bonhomme</a><br>
+      <a rel="artists2" data-boxtitle="{% include 'echos2015/parts/artists/10.html' %}"
+         data-anchor="s" href="{% static "echos2015/img/3.programmation2015/10.jpg" %}">
+        Salsa</a><br>
+    </div>
+  </div>
+  <h2>
+    <time datetime="2015-06-28">{% if lang == "fr" %}Dimanche 28 juin{% else %}Sunday June 28{% endif %}</time>
+  </h2>
+  <p class="dateflow lundi sair sbreak">
+    <time><mark>12h00</mark></time> - {% if lang == "fr" %}Fermeture des portes{% else %}Closing of festival{% endif %}
+  </p>
+{% endblock %}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+<html lang="fr" class="oldie">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="{% if lang == 'fr' %}fr{% else %}en{% endif %}" class="js{% block html_class %}{% endblock %}">
+<!--<![endif]-->
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="description" content="{% block gdesc %}Vendredi 26 juin 2015, de la fin d’après-midi au lever du jour, nos artistes développeront des improvisations libres, amplifiées par trois trompes géantes dans la Haute Vallée de Maraize{% endblock %}" />
+    <meta name="keywords" content="echos, echos2013, dome, fai, ambiant, ambient, expérimentation, noise, cascade, saaad, saÅad, yann gourdon, antez, tamagawa, insiden">
+
+    <meta property="og:title" content="Échos 2015" />
+    <meta property="og:url" content="http://festivalechos.fr/" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="http://festivalechos.fr/static/echos2014/img/layout/side/2014/1.jpg" />
+
+    <title>{% block title %}Échos 2015{% endblock %}</title>
+
+    <link rel="shortcut icon" href="{% static "echos2015/img/favicon.png" %}" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="{% static "echos2015/css/base.css" %}" />
+    {% block extracss %}{% endblock %}
+
+    <script>var e;e="mark nav header footer section aside hgroup figure".split(" ");var i; var l; for(i=0,l=e.length;i<l;i++)document.createElement(e[i]);</script>
+</head>
+<body>
+    <section class="screen"></section>
+
+    <section id="page">
+        {% block body %}{% endblock %}
+    </section>
+
+    {% block extrabody %}{% endblock %}
+
+    <script type="text/javascript" src="{% static "echos2015/js/lib/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "echos2015/js/lib/jquery.mousewheel.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "echos2015/js/base.v2.js" %}"></script>
+    {% block extrajs %}{% endblock %}
+
+    {# Google Analytics #}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-36455896-7', 'festivalechos.fr');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+{% extends "echos2015/layout.html" %}
+{% load static %}
+
+{% block extracss %}
+  {{ block.super }}
+  <link href="{% static "echos2015/js/lib/fancybox/jquery.fancybox.css" %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block extrajs %}
+  {{ block.super }}
+  <script src="{% static "echos2015/js/lib/fancybox/jdidbox.v0.1.pack.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+  <p class="air">
+    {% if lang == "fr" %}
+      <em>échos</em> se déroule à la Ferme du Faï, <mark>sur les hauteurs du village du Saix</mark>,
+      dans le département des Hautes-Alpes (05).
+    {% else %}
+      <em>échos</em> takes place in the heights of Le Saix, Hautes-Alpes (France - 05)
+    {% endif %}
+  </p><br>
+  <p class="tcenter">
+    <div class='embedmap'>
+      <iframe style="width: 90%; pointer-events: none"
+         width="661"
+         height="360"
+         frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+         src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en-US&amp;geocode=&amp;q=Le+Fai,+05400+Le+Saix,+France&amp;aq=&amp;sll=44.462938,5.830136&amp;sspn=0.021532,0.045447&amp;t=h&amp;gl=US&amp;ie=UTF8&amp;hq=&amp;hnear=Le+Fai,+05400+Le+Saix,+France&amp;z=14&amp;ll=44.462938,5.830136&amp;output=embed">
+      </iframe>
+      <br>
+      <small><a target="_blank"
+                href="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en-US&amp;geocode=&amp;q=Le+Fai,+05400+Le+Saix,+France&amp;aq=&amp;sll=44.462938,5.830136&amp;sspn=0.021532,0.045447&amp;t=h&amp;gl=US&amp;ie=UTF8&amp;hq=&amp;hnear=Le+Fai,+05400+Le+Saix,+France&amp;z=14&amp;ll=44.462938,5.830136">
+        {% if lang == "fr" %}agrandir le plan{% else %}enlarge map{% endif %}
+      </a></small>
+    </div>
+  </p><br>
+  <p>
+    {% if lang == "fr" %}
+      Pour se rendre au festival, la première étape sera de rejoindre le village du Saix. Depuis le village,
+      vous rejoindrez le lieu du festival à pieds.
+    {% else %}
+      To come to the festival, the first step is to reach the village called Le Saix. From the village, you can walk to
+      the location of the festival.
+    {% endif %}
+  </p>
+  <h2>{% if lang == "fr" %}Jusqu'au Saix{% else %}Traveling to Le Saix{% endif %}</h2>
+  <h3>{% if lang == "fr" %}En voiture{% else %}By car{% endif %}</h3>
+  <p>
+    {% if lang == "fr" %}
+      Une fois arrivés au Saix, se garer sur
+      <a target="_blank"
+         href="https://www.google.fr/maps/place/44°28%2733.3%22N+5°48%2757.4%22E/@44.4759167,5.8159444,15z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0">
+      le parking</a> prévu à cet effet, sur la D49, à l’entrée du village du Saix.
+      Pour des raisons de sécurité, les voitures ne pourront aller plus loin.
+    {% else %}
+      Once you're in Le Saix,
+      <a target="_blank"
+         href="https://www.google.fr/maps/place/44°28%2733.3%22N+5°48%2757.4%22E/@44.4759167,5.8159444,15z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0">
+        there is a parking dedicated to the festival</a>, on the D49 road, at the entrance of the village.
+      For security reasons, cars are not allowed to drive further.
+    {% endif %}
+  </p><br>
+  <h3>{% if lang == "fr" %}En train{% else %}By train{% endif %}</h3>
+  <p>
+    {% if lang == "fr" %}
+      Vous pouvez aller <mark>jusqu'à Veynes</mark> en train, la ville la plus proche du Saix.<br>
+    {% else %}
+      The nearest train station to Le Saix is <mark>Veynes</mark>.
+    {% endif %}
+    <a target="_blank"
+       href="http://cdn.ter.sncf.com/medias/PDF/rhone_alpes/63af_2015_V2_tcm70-28146_tcm70-28087.pdf">
+      {% if lang == "fr" %}
+        Horaires sncf</a> depuis Gap ou Grenoble<br>
+      {% else %}
+        Train schedule</a> from Gap or Grenoble<br>
+      {% endif %}
+    <a target="_blank"
+       href="http://cdn.ter.sncf.com/medias/PDF/paca/FH_14_Valence_Veynes_Gap_Briancon_DEC2014_tcm65-37507_tcm65-37506.pdf">
+      {% if lang == "fr" %}
+        Horaires sncf</a> depuis Valence ou Briançon<br>
+      {% else %}
+        Train schedule</a> from Valence or Briançon<br>
+      {% endif %}
+    <a target="_blank"
+       href="http://cdn.ter.sncf.com/medias/PDF/paca/FH_13_Marseille_manosque_Gap_Briancon_DEC2014_tcm65-37502_tcm65-37499.pdf">
+      {% if lang == "fr" %}
+        Horaires sncf</a> depuis Marseille<br>
+      {% else %}
+        Train schedule</a> from Marseille<br>
+      {% endif %}
+    {% if lang == "fr" %}
+      Une fois à Veynes, rejoindre le village du Saix en stop, gyropode ou covoiturage (page dédiée à venir).
+    {% else %}
+      From Veynes, hitchhiking or carpooling (dedicated web page coming soon).
+    {% endif %}
+  </p><br>
+  <h3><a target="_blank" href="http://echovoiturage.forumouf.com/" style="color: inherit; text-decoration: none;"
+         class="unfancy">{% if lang == "fr" %}Covoiturage{% else %}Carpooling{% endif %}
+        <img src="{% static "echos2015/img/5.acces/maserati.png" %}" class="2cv"
+             style="display: inline; vertical-align: bottom; width: 10%;"></a></h3>
+  <p>
+    {% if lang == 'fr' %}
+      Rendez vous sur notre forum improvisé
+      <a target="_blank" href="http://echovoiturage.forumouf.com/">http://echovoiturage.forumouf.com/</a>
+      pour vous coordonner physiquement dans votre planning !
+    {% else %}
+      Meet on our hip forum
+      <a target="_blank" href="http://echovoiturage.forumouf.com/">http://echovoiturage.forumouf.com/</a>
+      for an attempt at forward physical planning through space and time!
+    {% endif %}
+  </p><br>
+  <h2>{% if lang == "fr" %}Du Saix jusqu'à la Ferme du Faï{% else %}From le Saix to le Faï farm{% endif %}</h2>
+  <div class="air break gallery box">
+    <a rel="acces" data-boxtitle="{% if lang == "fr" %}L'entrée du village du Saix{% else %}Le Saix village entrance{% endif %}"
+       href="{% static "echos2015/img/5.acces/1.jpg" %}">
+      <img src="{% static "echos2015/img/5.acces/thumb/1.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="{% if lang == "fr" %}Des indications vous guideront tout au long de votre route à pied{% else %}Marks will guide you along the way{% endif %}"
+       href="{% static "echos2015/img/5.acces/2.jpg" %}">
+      <img src="{% static "echos2015/img/5.acces/thumb/2.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="Copyright <em>As Human Pattern</em>"
+       href="{% static "echos2015/img/5.acces/3.jpg" %}">
+      <img src="{% static "echos2015/img/5.acces/thumb/3.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="{% if lang == "fr" %}Entrée des gorges{% else %}Gorges' entrance{% endif %}"
+       href="{% static "echos2015/img/5.acces/4.jpg" %}">
+      <img src="{% static "echos2015/img/5.acces/thumb/4.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="Copyright <em>As Human Pattern</em>"
+       href="{% static "echos2015/img/5.acces/5.jpg" %}">
+      <img src="{% static "echos2015/img/5.acces/thumb/5.jpg" %}">
+    </a>
+  </div>
+  <p>
+    {% if lang == "fr" %}
+      <mark>Une fois arrivés au village du Saix, rejoignez le festival à pieds en suivant
+      <a href="https://www.google.com/maps/d/edit?mid=zKYLbscTxwkE.kziE4Um3htPA" target="_blank">le parcours fléché</a></mark>.<br>
+      Cette petite heure de marche (traversée du village puis montée dans les gorges) sera ponctuée par des
+      installations sonores à partir de votre entrée dans les gorges. Un bon moyen de vous mettre dans l’ambiance.
+    {% else %}
+      <mark>When you get to Le Saix,
+      <a href="https://www.google.com/maps/d/edit?mid=zKYLbscTxwkE.kziE4Um3htPA" target="_blank">follow the marks</a>
+      to reach the festival location</mark>.<br>
+      You’ll walk for a small hour through the village and the canyon; audio installations will put you in the mood for
+      the festival during your walk toward <em>échos</em>.
+    {% endif %}
+  </p><br>
+  <p>
+    {% if lang == "fr" %}
+      Une navette sera mise en place à partir du parking pour vous décharger de vos affaires.
+    {% else %}
+      A shuttle will carry your luggage from the parking to the farm.
+    {% endif %}
+  </p><br>
+  <p>
+    {% if lang == "fr" %}
+      <mark>Prévoyez des vêtements chauds et des lampes-torche</mark>,
+      au cas où vous voudriez redescendre des gorges à la nuit tombée.
+    {% else %}
+      <mark>Please consider taking warm clothes and flashlights with you</mark>
+      in case you need to walk down the canyon during the night.
+    {% endif %}
+  </p><br>
+  <p>
+    {% if lang == "fr" %}
+      Pour les personnes à mobilité réduite, afin de mieux organiser votre accueil sur le festival,
+      merci de nous contacter au préalable au 06 59 60 84 93 (Camille).
+    {% else %}
+      For people with disabilities, please contact us to help you plan your arrival at the festival location : +33 (0)6
+      59 60 84 93 (Camille).
+    {% endif %}
+  </p><br>
+{% endblock %}

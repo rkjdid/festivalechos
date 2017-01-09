@@ -1,0 +1,32 @@
+$ft_default: 14px;
+$ft_default: 12pt;
+$ft_caviar: 24px;
+$ft_small: 0.75*$ft_caviar;
+
+@mixin hGroup($txt: 400%, $txt2: 100%, $a:center, $m:-15px){
+  hgroup {
+    text-align: $a;
+
+    h2#date {
+      text-transform: uppercase;
+      font-size: $txt2;
+    }
+  }
+}
+
+@mixin transition($val) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val;
+  -o-transition: $val;
+  transition: $val;
+}
+
+@mixin rendering() {
+  //image-rendering: optimizeSpeed;              /* Legal fallback                 */
+  //image-rendering: -moz-crisp-edges;           /* Firefox                        */
+  //image-rendering: -o-crisp-edges;             /* Opera                          */
+  image-rendering: -webkit-optimize-contrast;  /* Chrome (and eventually Safari) */
+  //image-rendering: crisp-edges;                /* CSS3 Proposed                  */
+  -ms-interpolation-mode: bicubic;
+}

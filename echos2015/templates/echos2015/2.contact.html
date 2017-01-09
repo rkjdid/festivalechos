@@ -1,0 +1,62 @@
+{% extends "echos2015/layout.html" %}
+{% load static %}
+
+{% block content %}
+  <p class="sair">
+    {% if lang == "fr" %}
+    Pour toute demande d'information supplémentaire, vous pouvez nous joindre :
+    {% else %}
+    For more information, you can join us:
+    {% endif %}
+  </p>
+  <p class="sair">
+    <mark>{% if lang == "fr" %}Par mail {% else %}by e-mail{% endif %}</mark>: <a href="mailto:contact@festivalechos.fr">contact@festivalechos.fr</a><br>
+    <mark>{% if lang == "fr" %}Par téléphone {% else %}by phone{% endif %}</mark>:
+    <a href="tel:+33659608493">+33(0)659608493</a> Camille {% if lang == "fr" %}(présidente Dôme){% else %}(Dôme chieftain){% endif %} <br>
+    <mark>{% if lang == "fr" %}Par courrier postal {% else %}by mail{% endif %}</mark>: Association Dôme / 12 avenue Paul Krüger / 69100 Villeurbanne<br>
+  </p>
+  <p class="sair">
+    {% if lang == "fr" %}
+    Retrouvez nos actualités sur
+    {% else %}
+    Follow us on
+    {% endif %}
+    <a target="_blank" href="https://www.facebook.com/association.dome">
+      facebook
+    </a>
+  </p>
+  <p class="sair">
+    Webdesign - <a href="http://hugosaugier.tumblr.com/">Hugo</a><br>
+    Webmaster - <a href="mailto:rk@jdid.co">rk</a>
+  </p>
+  <p class="air">
+    {% if lang == "fr" %}
+    <mark>Envie de faire partie de l'aventure ?</mark> Nous recherchons des bénévoles pour le jour J (accueil, bar,
+    logistique, ...) ! Contactez-nous si vous êtes intéressés. <br>
+    {% else %}
+    <mark>Want to be part of échos 2015?</mark> We're looking for volunteers: reception, bar, logistics...
+    Please contact us if you're interested!
+    {% endif %}
+  <p class="sair">
+    {% if lang == "fr" %}
+    Tous les participants sont par ailleurs les bienvenus pour filer un coup de main pendant le festival (nettoyage,
+    tournoi de Scrabble…).
+    {% else %}
+    Everybody is also welcome to give us a hand during the festival!
+    {% endif %}
+  </p>
+
+  <p class="sair">
+    {% if lang == "fr" %}
+    Pour jouer sur le système acoustique le samedi après-midi, inscrivez-vous impérativement sur le mail de
+    l'association.
+    {% else %}
+    If you want to play on the acoustic system on saturday afternoon, don't forget to register via the association's
+    e-mail.
+    {% endif %}
+  </p>
+
+  <p class="air tcenter">
+    <img class="col85" alt="sweet dôme team" src="{% static "echos2015/img/2.contact/team.jpg" %}"/>
+  </p>
+{% endblock %}

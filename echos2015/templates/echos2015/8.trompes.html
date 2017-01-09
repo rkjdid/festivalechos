@@ -1,0 +1,139 @@
+{% extends "echos2015/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block extracss %}
+  {{ block.super }}
+  <link href="{% static "echos2015/js/lib/fancybox/jquery.fancybox.css" %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block extrajs %}
+  {{ block.super }}
+  <script src="{% static "echos2015/js/lib/fancybox/jdidbox.v0.1.pack.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+  {% if lang == 'fr' %}
+    <p class="sair">
+      À quelques pas de la <a href="{% href request "lieu/ferme" %}">Ferme du Faï</a>, <mark>trois trompes géantes</mark> (basse, médium et
+      aiguë) sont reliées à un système
+      d'amplification. Celles-ci font face à une falaise concave de plus de <mark>120 hectares</mark> d’envergure,
+      accentuant ainsi les
+      échos inhérents au lieu. Grâce à la topographie de cet espace naturel, et à la disposition des trompes, l'auditeur
+      perçoit les échos différemment selon sa position dans la vallée, avec des variations d’amplitude et de
+      réverbération. L’ampleur des trompes et leur singularité architecturale ont façonné, depuis deux décennies,
+      l’identité du lieu.
+    </p>
+    <p class="sair">
+      <mark>échos 3</mark>, comme les précédentes éditions, sera l’occasion d’explorer les possibilités extraordinaires
+      offertes par les trompes, la falaise et l’environnement. Le festival permet aux artistes, au
+      terme d’une résidence d’une semaine, de questionner notre relation avec le son, sa spatialité, sa narration.
+    </p>
+  {% else %}
+    <p class="sair">
+      Just a few steps from <a href="{% href request "lieu/ferme" %}">Le Faï farm</a>, <mark>three giant horns</mark> (bass, medium & treble)
+      are linked to an amplification system. The horns are facing a concave cliff, enhancing the natural echoes of the
+      location. Through the specific shape of the surroundings and the arrangement of the horns, the listener will
+      perceive a variety of echoes depending on where he or she is inside the valley, the sound changing in intensity,
+      deepness and reverberation. The dimensions of the horns and their particular shape have created the place's spirit
+      since a couple of decades.
+    </p>
+    <p class="sair">
+      <mark>échos 3</mark>, as it was the case the previous years, will explore the tremendous acoustic possibilities
+      of the horns, the cliff and the environment. This event allows the artists to question our relationship with
+      sound, it’s movement, it’s dialog.
+    </p>
+  {% endif %}
+
+  <div class="air break gallery box">
+    <a rel="trompes-description"
+       href="{% static "echos2015/img/8.trompes/description/1.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/1.jpg" %}">
+    </a>
+    <a rel="trompes-description" data-boxtitle="{% if lang == 'fr' %}La falaise{% else %}The cliff{% endif %}<br>Copyright <em>As Human Pattern</em>"
+       href="{% static "echos2015/img/8.trompes/description/2.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/2.jpg" %}">
+    </a>
+    <a rel="trompes-description" data-boxtitle="{% if lang == 'fr' %}Trompes medium et aiguë{% else %}Medium & high horns{% endif %}<br>Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/description/3.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/3.jpg" %}">
+    </a>
+    <a rel="trompes-description" data-boxtitle="Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/description/4.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/4.jpg" %}">
+    </a>
+    <a rel="trompes-description"
+       data-boxtitle="{% if lang == 'fr' %}Trompe basse{% else %}Low horn{% endif %}<br>Copyright <em>As Human Pattern</em>"
+       href="{% static "echos2015/img/8.trompes/description/5.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/5.jpg" %}">
+    </a>
+    <a rel="trompes-description"
+       data-boxtitle="Copyright <em>Chloé Chagnaud</em>"
+       href="{% static "echos2015/img/8.trompes/description/6.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/6.jpg" %}">
+    </a>
+    <a rel="trompes-description"
+       {% if lang == 'fr' %}
+       data-boxtitle="<em>Michel Stievenart</em>, <em>Jean-Michel Pillone</em> et <em>René Dupré</em> vérifiant les haut-parleurs de la trompe basse"
+       {% else %}
+       data-boxtitle="<em>Michel Stievenart</em>, <em>Jean-Michel Pillone</em> and <em>René Dupré</em> checking the speakers inside the low horn"
+       {% endif %}
+       href="{% static "echos2015/img/8.trompes/description/7.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/7.jpg" %}">
+    </a>
+    <a rel="trompes-description" href="{% static "echos2015/img/8.trompes/description/8.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/8.jpg" %}">
+    </a>
+    <a rel="trompes-description" href="{% static "echos2015/img/8.trompes/description/9.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/description/thumb/9.jpg" %}">
+    </a>
+  </div>
+
+  {% if lang == 'fr' %}
+    <p class="sair">
+      Cet ensemble de trompes a été créé dans les années 1990 par un groupe d’acousticiens, enthousiasmés
+      par l’écho naturel du lieu. Après recherches et tests (puissance et direction), ils installèrent les trompes médium
+      et aiguë en 1994, selon des plans de Michel Stievenart. Construites en bois, elles reposent sur un support mobile
+      qui permet de modifier la direction du son. En 1997, le système fut complété par une gigantesque trompe basse en
+      acier et béton voilé. Créée par Jacques Châtaigner, elle fut construite légèrement en contrebas, avec le concours
+      des bénévoles de l’association <a target="_blank" href="http://villagesdesjeunes.org">Village des Jeunes</a>.
+    </p>
+  {% else %}
+    <p class="sair">
+      These three horns have been created in the 90's by a group of acousticians, true enthusiasts of the natural echo of
+      the place. After some research and tests (power and projection), in 1994 they set up the medium and treble horns
+      based on plans by Michel Stievenart. A third horn for the bass frequencies, made of steel with a concrete shell,
+      completed this setup in 1997. This gigantic bass horn, created by Jacques Châtaigner, was built with the help of the
+      association <a target="_blank" href="http://villagesdesjeunes.org">Village des Jeunes</a>.
+    </p>
+  {% endif %}
+
+  <div class="air break gallery box">
+    <a rel="trompes-histoire" data-boxtitle="{% if lang == 'fr' %}Ossature de la trompe basse{% else %}Low horn's frame{% endif %}<br>Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/historique/1.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/historique/thumb/1.jpg" %}">
+    </a>
+    <a rel="trompes-histoire" data-boxtitle="{% if lang == 'fr' %}Construction de la trompe basse{% else %}Building of the low horn{% endif %}<br>Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/historique/2.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/historique/thumb/2.jpg" %}">
+    </a>
+    <a rel="trompes-histoire" data-boxtitle="{% if lang == 'fr' %}Construction de la trompe basse{% else %}Building of the low horn{% endif %}<br>Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/historique/3.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/historique/thumb/3.jpg" %}">
+    </a>
+    <a rel="trompes-histoire" data-boxtitle="{% if lang == 'fr' %}Mise en place des trompes medium et aiguë{% else %}Set-up of medium & high horns{% endif %}<br>Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/historique/4.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/historique/thumb/4.jpg" %}">
+    </a>
+    <a rel="trompes-histoire"
+       data-boxtitle="{% if lang == 'fr' %}Mise en place des trompes medium et aiguë{% else %}Set-up of medium & high horns{% endif %}<br>Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/historique/5.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/historique/thumb/5.jpg" %}">
+    </a>
+    <a rel="trompes-histoire"
+       data-boxtitle="{% if lang == 'fr' %}Mise en place des trompes medium et aiguë{% else %}Set-up of medium & high horns{% endif %}<br>Copyright <em>VDJ</em>"
+       href="{% static "echos2015/img/8.trompes/historique/6.jpg" %}">
+      <img src="{% static "echos2015/img/8.trompes/historique/thumb/6.jpg" %}">
+    </a>
+  </div>
+{% endblock %}
