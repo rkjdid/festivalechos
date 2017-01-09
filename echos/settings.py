@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 
 	'common',
 	'echos2013',
-	# 'echos2014',
+	'echos2014',
 	# 'echos2015',
 	'echos2016',
 ]

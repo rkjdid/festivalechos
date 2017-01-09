@@ -1,0 +1,27 @@
+{% extends "echos2014/base.html" %}
+{% load static %}
+{% load tags %}
+
+{% block extracss %}
+  <link rel="stylesheet" type="text/css" href="{% static "echos2014/css/0.home.css" %}"/>
+{% endblock %}
+
+{% block extrajs %}
+  <script type="text/javascript" src="{% static "echos2014/js/0.home.js" %}"></script>
+{% endblock %}
+
+
+{% block body %}
+  <header>
+    <section id="artists" class="caps noie">
+      <p class="tcenter caviar">DUO ANNE-LAURE PIGACHE ET PASCAL THOLLET / AUTRENOIR / ROMAIN DE FERRON / TANZ MEIN HERZ
+        / WATT / XAVIER CHARLES / YANNIS FRIER</p>
+    </section>
+  </header>
+
+  <section id="photo">
+    <a href="{% href request "echos/presentation/" %}">
+      <img src="{% static "echos2014/img/1.home/home.jpg" %}"/>
+    </a>
+  </section>
+{% endblock %}

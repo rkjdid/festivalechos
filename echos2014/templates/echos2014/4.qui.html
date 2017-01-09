@@ -1,0 +1,21 @@
+{% extends "echos2014/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block contentTitle %}{% endblock %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{% static "echos2014/css/jquery.mCustomScrollbar.min.css" %}"  />
+    <link rel="stylesheet" type="text/css" href="{% static "echos2014/css/4.qui.css" %}" />
+{% endblock %}
+
+{% block extrajs %}
+    {{ block.super }}
+    <script src="{% static "echos2014/js/lib/jquery-ui.min.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <a href="{% static "echos2014/misc/FiatMusica.pdf" %}" target="_blank">
+        <img src="{% static "echos2014/img/4.qui/FiatMusica.png" %}" />
+    </a>
+{% endblock %}

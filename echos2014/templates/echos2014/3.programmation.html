@@ -1,0 +1,81 @@
+{% extends "echos2014/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block extracss %}
+  {{ block.super }}
+  <link href="{% static "echos2014/js/lib/fancybox/jquery.fancybox.css" %}" type="text/css" rel="stylesheet" />
+  <link href="{% static "echos2014/css/3.programmation.css" %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block extrajs %}
+  {{ block.super }}
+  <script src="{% static "echos2014/js/lib/jquery.history.min.js" %}"></script>
+  <script src="{% static "echos2014/js/lib/fancybox/jdidbox.v0.1.pack.js" %}"></script>
+  <script src="{% static "echos2014/js/3.progra.v1.js" %}"></script>
+{% endblock %}
+
+{% block gdesc %}ACID KRUGER KREW / AUTRENOIR / DUO ANNE-LAURE PIGACHE ET PASCAL THOLLET / MR MARCAILLE / ROMAIN DE
+  FERRON / TANZ MEIN HERZ / USÉ / WATT / XAVIER CHARLES / YANNIS FRIER{% endblock %}
+
+{% block content %}
+  <h2 style="margin-top: 3px;">
+    <time datetime="2014-06-28">Samedi 28 juin</time>
+  </h2>
+  <p class="dateflow samedi sair sbreak">
+    <time><mark>17h00</mark></time> - Ouverture des portes<br> <time><mark>21h00</mark></time> - Concert sur les trompes<br>
+  </p>
+  <div id="lineup" class="sair lineup1">
+    <div class="tcenter">
+      <a rel="artists" data-boxtitle="{% include "echos2014/parts/artists/1.html" %}"
+         data-anchor="dalpept" href="{% static "echos2014/img/3.programmation/1.jpg" %}">
+        DUO ANNE-LAURE PIGACHE ET PASCAL THOLLET</a><br>
+      <a rel="artists" data-boxtitle="{% include "echos2014/parts/artists/2.html" %}"
+         data-anchor="a" href="{% static "echos2014/img/3.programmation/2.jpg" %}">
+        AUTRENOIR</a><br>
+      <a rel="artists" data-boxtitle="{% include "echos2014/parts/artists/3.html" %}"
+         data-anchor="rdf" href="{% static "echos2014/img/3.programmation/3.jpg" %}">
+        ROMAIN DE FERRON</a><br>
+      <a rel="artists" data-boxtitle="{% include "echos2014/parts/artists/4.html" %}"
+         data-anchor="tmh" href="{% static "echos2014/img/3.programmation/4.jpg" %}">
+        TANZ MEIN HERZ</a><br>
+      <a rel="artists" data-boxtitle="{% include "echos2014/parts/artists/5.html" %}"
+         data-anchor="w" href="{% static "echos2014/img/3.programmation/5.jpg" %}">
+        WATT</a><br>
+      <a rel="artists" data-boxtitle="{% include "echos2014/parts/artists/6.html" %}"
+         data-anchor="xc" href="{% static "echos2014/img/3.programmation/6.jpg" %}">
+        XAVIER CHARLES</a><br>
+      <a rel="artists" data-boxtitle="{% include "echos2014/parts/artists/7.html" %}"
+         data-anchor="yf" href="{% static "echos2014/img/3.programmation/7.jpg" %}">
+        YANNIS FRIER</a><br>
+    </div>
+  </div>
+  <h2>
+    <time datetime="2014-06-29">Dimanche 29 juin 2013</time>
+  </h2>
+  <p class="dateflow dimanche sair sbreak">
+    <time><mark>Après-midi</mark></time> - Testez le système acoustique avec vos instruments -
+    <mark>C"est complet !</mark><br>Balades et baignades<br> <time
+     class="sair"><mark>Soir</mark></time> - Concert à la ferme du Faï<br>
+  </p>
+  <div id="lineup" class="sair lineup2">
+    <div class="tcenter">
+      <a rel="artists2" data-boxtitle="{% include "echos2014/parts/artists/8.html" %}"
+         data-anchor="u" href="{% static "echos2014/img/3.programmation/8.jpg" %}">
+        USÉ</a><br>
+      <a rel="artists2" data-boxtitle="{% include "echos2014/parts/artists/9.html" %}"
+         data-anchor="akkf" href="{% static "echos2014/img/3.programmation/9.jpg" %}">
+        ACID KRUGER KREW</a><br>
+      <a rel="artists2" data-boxtitle="{% include "echos2014/parts/artists/10.html" %}"
+         data-anchor="mm" href="{% static "echos2014/img/3.programmation/10.jpg" %}">
+        MR MARCAILLE</a><br>
+    </div>
+  </div>
+  <h2>
+    <time datetime="2014-06-30">Lundi 30 juin 2013</time>
+  </h2>
+  <p class="dateflow lundi sair sbreak">
+    <time><mark>12h00</mark></time> - Fermeture des portes
+  </p>
+{% endblock %}
+

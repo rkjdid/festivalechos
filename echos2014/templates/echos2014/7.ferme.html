@@ -1,0 +1,88 @@
+{% extends "echos2014/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block extracss %}
+  {{ block.super }}
+  <link href="{% static "echos2014/js/lib/fancybox/jquery.fancybox.css" %}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block extrajs %}
+  {{ block.super }}
+  <script src="{% static "echos2014/js/lib/fancybox/jdidbox.v0.1.pack.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+  <p class="sair">
+    L’évènement <mark>Échos</mark> se déroule autour de la Ferme-gîte du Faï, à plus de 1000 mètres d’altitude.
+    Au-dessus du <a target="_blank" href="http://www.le-saix-village.fr/">village du Saix</a>, le site est un lieu
+    ouvert, niché au pied de la falaise et de la montagne d’Aujour, que vous serez libres d’arpenter tout au long du
+    festival.
+  </p>
+  <p class="sair">
+    Vous découvrirez un grand environnement sauvage, qui entoure le gîte, son esplanade, et ses <a
+     href="{% href request "lieu/trompes/" %}">trompes</a>.<br>Vous pourrez vous baigner dans la rivière, située à deux pas de la
+    ferme, ou profiter des nombreux itinéraires de balade et de randonnée, sur le chemin de l’abbaye de Clausonne ou du
+    lac de Peyssier.
+  </p>
+  <div class="air break gallery box">
+    <a rel="ferme" href="{% static "echos2014/img/7.ferme/1.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/1.jpg" %}">
+    </a>
+    <a rel="ferme" href="{% static "echos2014/img/7.ferme/2.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/2.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyright <em>As Human Pattern</em>" href="{% static "echos2014/img/7.ferme/3.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/3.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyright <em>As Human Pattern</em>" href="{% static "echos2014/img/7.ferme/4.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/4.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Une oeuvre de la compagnie <em>La Rumeur</em><br>Copyright <em>As Human Pattern</em>"
+       href="{% static "echos2014/img/7.ferme/5.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/5.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyright <em>As Human Pattern</em>" href="{% static "echos2014/img/7.ferme/6.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/6.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="La Ferme du Faï<br>Copyrigth <em>VDJ</em>" href="{% static "echos2014/img/7.ferme/7.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/7.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyrigth <em>As Human Pattern</em>" href="{% static "echos2014/img/7.ferme/8.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/8.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="La Ferme du Faï<br>Copyrigth <em>VDJ</em>" href="{% static "echos2014/img/7.ferme/9.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/9.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Jean-Michel Pillone et René Dupré, deux figures emblématiques du lieu" href="{% static "echos2014/img/7.ferme/10.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/10.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyrigth <em>As Human Pattern</em>" href="{% static "echos2014/img/7.ferme/11.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/11.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Copyrigth <em>As Human Pattern</em>" href="{% static "echos2014/img/7.ferme/12.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/12.jpg" %}">
+    </a>
+    <a rel="ferme" data-boxtitle="Lac de Peyssier" href="{% static "echos2014/img/7.ferme/13.jpg" %}">
+      <img src="{% static "echos2014/img/7.ferme/thumb/13.jpg" %}">
+    </a>
+  </div>
+  <p class="sair">
+    Grâce à l’association <a target="_blank" href="http://villagesdesjeunes.org/">Villages des Jeunes</a>, la Ferme du Faï est devenue
+    un lieu d'accueil alternatif et dynamique dont les principales activités sont réparties en trois domaines :
+  </p>
+  <p class="sair">
+    <mark>La rénovation, l'entretien et le développement de la ferme</mark> ainsi que de l'abbaye de Clausonne située à proximité.
+    L’association pilote des chantiers de jeunes internationaux, dans le cadre de programmes d'échange basés sur le
+    volontariat.
+  </p>
+  <p class="sair">
+    <mark>l'accueil et l'accompagnement de personnes en situation difficile et/ou handicapées</mark>, par le biais de chantiers de
+    réinsertion ou de séjours à vocation sociale.
+  </p>
+  <p class="sair sbreak">
+    <mark>La valorisation d'activités culturelles</mark>, en accueillant plusieurs événements artistiques, résidences et festivals
+    chaque année. <mark>Échos</mark> bénéficie à ce titre d'un soutien tout particulier des responsables locaux sans qui rien
+    n’aurait été possible.
+  </p>
+{% endblock %}

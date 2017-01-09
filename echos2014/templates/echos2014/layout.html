@@ -1,0 +1,45 @@
+{% extends "echos2014/base.html" %}
+{% load static %}
+{% load tags %}
+
+{% block title %}{% if contentTitle %}{{ block.super }} - {{ contentTitle|capfirst }}{% endif %}{% endblock %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{% static "echos2014/css/layout.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "echos2014/css/jquery.mCustomScrollbar.css" %}"  />
+{% endblock %}
+
+{% block extrajs %}
+    <script type="text/javascript" src="{% static "echos2014/js/layout.js" %}"></script>
+    {% if debug %}
+    <script type="text/javascript" src="{% static "echos2014/js/lib/jquery.mCustomScrollbar.js" %}"></script>{% else %}
+    <script type="text/javascript" src="{% static "echos2014/js/lib/jquery.mCustomScrollbar.concat.min.js" %}"></script>{% endif %}
+{% endblock %}
+
+
+{% block body %}
+    <header>
+        <section class="leftCol" id="logo">
+            <a href="{% href request "" %}">
+                <img src="{% static "echos2014/img/layout/echos.2014.png" %}"/>
+            </a>
+        </section>
+
+        {% include "echos2014/parts/nav.html" %}
+    </header>
+
+    <section id="contentRow">
+        <section class="leftCol" id="sideImg">
+            {% block freebie %}{% endblock %}
+            <img class="drag" src="/static/echos2014/img/layout/side/2014/{{ banner }}.jpg" />
+        </section>
+        <section id="contentFrame" class="rightCol {{ contentTitle }}">
+            {% block contentTitle %}<h1 class="caviar caps">{{ contentTitle }}</h1>{% endblock %}
+            <section class="content {{ page }} {% block contentClass %}tjustify{% endblock %}">{% block content %}{% endblock %}</section>
+        </section>
+    </section>
+
+    <footer>
+        {% include "echos2014/parts/footer.html" %}
+    </footer>
+{% endblock %}

@@ -1,0 +1,106 @@
+@import "mixins";
+
+section#page {
+  position: relative;
+
+  width: 50%;
+  min-width: 600px;
+  margin: auto;
+
+  opacity: .75;
+
+  cursor: pointer;
+  @include transition(all .15s ease);
+  -moz-backface-visibility: hidden;
+}
+
+section#page:hover {
+  a {
+    display: block;
+  }
+  opacity: 1;
+}
+
+header, section#photo, footer {
+    width: 100%;
+    margin: auto;
+}
+
+/***Header - artists***/
+header {
+  position: relative;
+  display: none; /* Replaced by img */
+
+  section#artists {
+    position: absolute;
+    z-index: 0;
+    height: $ft_default;
+  }
+}
+
+
+
+/***Photo***/
+section#photo {
+  img {
+    width: 100%;
+    position: relative;
+  }
+
+}
+
+/***Footer***/
+footer {
+  position: relative;
+
+  .caviar {
+    font-size: $ft_caviar;
+  }
+
+  section#presents {
+    position: absolute;
+    left: 0;
+    p.caps {
+      margin-bottom: 15px;
+    }
+    .small {
+      font-size: $ft_small;
+    }
+  }
+
+  @include hGroup;
+  hgroup {
+    margin: auto;
+  }
+
+  section#fai {
+    position: absolute;
+    right: 0; top: 0;
+  }
+}
+
+/** IECRAP */
+.ieTune {position: fixed;}
+
+#echos.ieTune {
+  left: 41%;
+  top: 41%;
+}
+
+#date.ieTune {
+  left: 51%;
+  top: 41%;
+}
+
+img.ieTune {
+  left: 45%;
+  top: 65%;
+}
+
+p.ieTune.small {
+  top: 66.5%;
+  left: 48%;
+
+  font-size: 14pt;
+}
+

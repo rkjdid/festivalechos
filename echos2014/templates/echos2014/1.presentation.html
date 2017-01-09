@@ -1,0 +1,38 @@
+{% extends "echos2014/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block content %}
+  <p class="sair">
+    Pour sa deuxième édition, le festival échos déploie l’expérience sonore sur un <mark>week-end de musique
+    improvisée</mark> au cœur d’un vaste espace naturel à l’acoustique exceptionnelle.
+  </p>
+  <p class="sair">
+    <mark>Samedi 28 juin, de la fin d’après-midi au lever du jour,</mark> <a href="{% href request "echos/programmation/" %}">nos
+    artistes</a> développeront des improvisations libres, amplifiées par <a href="{% href request "lieu/trompes/" %}"><mark>trois trompes
+    géantes</mark></a>. Ce système acoustique fait face à une somptueuse falaise concave et sublimera l’écho naturel du
+    lieu, au timbre de créations audacieuses.
+  </p>
+  <p>
+    Au terme d’une résidence d’une semaine, les musiciens feront vibrer <a href="{% href request "lieu/ferme/" %}">la Ferme du Faï</a> par une
+    approche personnelle, selon un travail narratif dédié au lieu. Continuums, accidents et textures sonores
+    s’infiltreront à travers les trompes, iront rencontrer la falaise, et se diffuser dans l’ensemble de la vallée :
+    vous serez libres <mark>d’arpenter cet espace sauvage</mark> sous la nuit étoilée, à la recherche des points
+    d’écoute qui éveilleront le mieux vos sensations.
+  </p>
+  <p class="sair">
+    Loin du milieu urbain, nous vous invitons à <a href="{% href request "modalites/zzz/" %}">dormir sur place</a>, en plein air.
+  </p>
+  <p class="sair">
+    <mark>Le lendemain</mark>, vous pourrez tester le système acoustique avec vos instruments (<a href="{% href request "contact" %}">inscription
+    obligatoire</a>). Nous vous inviterons également à vous balader au gré de vos envies, et à découvrir les coins de
+    randonnée ou de baignade des environs.
+  </p>
+  <p>
+    Le soir, nous conclurons le week-end par <mark>une soirée à la ferme</mark> pour se remettre de l’expérience
+    forte des trompes de la vieille.
+  </p>
+  <p class="sair sbreak">
+    Après une nouvelle nuit sur place, <mark>le festival fermera ses portes le lundi matin.</mark>
+  </p>
+{% endblock %}

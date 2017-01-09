@@ -1,0 +1,52 @@
+{% load static %}
+{% load tags %}
+
+<nav class="caviar rightCol">
+    <ul id="mainList">
+        <li class="echos">
+            <img class="vertLine" src="{% static "echos2014/img/layout/vertLine.2014.png" %}" />
+            <ul class="menuItem">
+                <li class="{% active request.path "/echos/pres" %}">
+                    <a href="{% href request "echos/presentation" %}">Présentation</a>
+                </li>
+                <li class="{% active request.path "/echos/prog" %}">
+                    <a href="{% href request "echos/programmation" %}">Programmation</a>
+                </li>
+                <li class="{% active request.path "/echos/res" %}">
+                    <a>Merci à tous !</a>
+                </li>
+            </ul>
+            <div class="header {% active request.path "/echos" %}">échos</div>
+        </li>
+        <li class="lieu">
+            <img class="vertLine" src="{% static "echos2014/img/layout/vertLine.2014.png" %}" />
+            <ul class="menuItem">
+                <li>
+                    <a href="{% href request "lieu/ferme" %}">La Ferme du Faï</a>
+                </li>
+                <li>
+                    <a href="{% href request "lieu/trompes" %}">Le système acoustique</a>
+                </li>
+            </ul>
+            <div class="header {% active request.path "/echos" %}">le lieu</div>
+        </li>
+        <li class="mod">
+            <img class="vertLine" src="{% static "echos2014/img/layout/vertLine.2014.png" %}" />
+            <ul class="menuItem">
+                <li class="{% active request.path "/echos/res" %}">
+                    <a href="{% href request "modalites/acces" %}">Comment venir ?</a>
+                </li>
+                <li>
+                    <a href="{% href request "modalites/zzz" %}">Se loger / Se restaurer</a>
+                </li>
+            </ul>
+            <div class="header {% active request.path "/echos" %}">modalités</div>
+        </li>
+        <li class="dome">
+            <a href="{% href request "dome" %}"><div class="header {% active request.path "/dome" %}">dôme</div></a>
+        </li>
+        <li class="contact">
+            <a href="{% href request "contact" %}"><div class="header {% active request.path "/contact" %}">contact</div></a>
+        </li>
+    </ul>
+</nav>

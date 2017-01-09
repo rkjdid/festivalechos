@@ -1,0 +1,115 @@
+{% extends "echos2014/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block extracss %}
+  {{ block.super }}
+  <link href="{% static "echos2014/js/lib/fancybox/jquery.fancybox.css" %}" type="text/css" rel="stylesheet"/>
+{% endblock %}
+
+{% block extrajs %}
+  {{ block.super }}
+  <script src="{% static "echos2014/js/lib/fancybox/jdidbox.v0.1.pack.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+  <p class="air">
+    L'évenement <em>échos</em> se déroule à la Ferme du Faï, <mark>sur les hauteurs du village du Saix</mark>,
+    dans le département des Hautes-Alpes (05).
+  </p><br>
+  <p class="tcenter">
+    <iframe style="width: 90%"
+       width="661"
+       height="360"
+       frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+       src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en-US&amp;geocode=&amp;q=Le+Fai,+05400+Le+Saix,+France&amp;aq=&amp;sll=44.462938,5.830136&amp;sspn=0.021532,0.045447&amp;t=h&amp;gl=US&amp;ie=UTF8&amp;hq=&amp;hnear=Le+Fai,+05400+Le+Saix,+France&amp;z=14&amp;ll=44.462938,5.830136&amp;output=embed">
+    </iframe>
+    <br/>
+    <small><a target="_blank"
+       href="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en-US&amp;geocode=&amp;q=Le+Fai,+05400+Le+Saix,+France&amp;aq=&amp;sll=44.462938,5.830136&amp;sspn=0.021532,0.045447&amp;t=h&amp;gl=US&amp;ie=UTF8&amp;hq=&amp;hnear=Le+Fai,+05400+Le+Saix,+France&amp;z=14&amp;ll=44.462938,5.830136">
+      agrandir le plan
+    </a></small>
+  </p><br>
+  <p>
+    Pour se rendre au festival, la première étape sera de rejoindre le village du Saix. Depuis le village,
+    vous rejoindrez le lieu du festival à pieds.
+  </p>
+  <h2>Jusqu'au Saix</h2>
+  <h3>En voiture</h3>
+  <p>
+    Une fois arrivés au Saix, se garer sur
+    <a target="_blank"
+       href="https://www.google.fr/maps/place/44°28%2733.3%22N+5°48%2757.4%22E/@44.4759167,5.8159444,15z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0">
+      le parking</a> prévu à cet effet, sur la D49, à l’entrée du village du Saix.
+    Pour des raisons de sécurité, les voitures ne pourront aller plus loin.
+  </p><br>
+  <h3>En train</h3>
+  <p>
+    Vous pouvez aller <mark>jusqu'à Veynes</mark> en train, la ville la plus proche du Saix.<br>
+    <a target="_blank"
+       href="http://telechargement.ter-sncf.com/Images/Paca/Tridion/FH_15_Briancon_Gap_Grenoble_dec2013_tcm-27-95524.pdf">
+      Horaires sncf</a> depuis Briançon Gap ou Grenoble<br>
+    <a target="_blank"
+       href="http://telechargement.ter-sncf.com/Images/Paca/Tridion/FH14_Valence_Veynes_Gap_BrianconV2_Janv2014_tcm-27-95523.pdf">
+      Horaires sncf</a> depuis Valence<br>
+    <a target="_blank"
+       href="http://telechargement.ter-sncf.com/Images/Paca/Tridion/FH13_Marseille_Manosque_Gap_Briancon_V6_Janv2014_tcm-27-96801.pdf">
+      Horaires sncf</a> depuis Marseille<br>
+    Une fois à Veynes, rejoindre le village du Saix en stop, gyropode ou covoiturage (page dédiée à venir).
+  </p><br>
+  <p>
+    <mark>Un car de 60 places fera le trajet de la gare de Veynes jusqu'au Saix samedi à 18h15</mark> (départ unique).
+    Le trajet coûte la modique somme de 2€ et nécessite une <b>inscription préalable obligatoire</b> sur
+    <a href="mailto:association.dome@gmail.com">association.dome@gmail.com</a> (les places sont limitées quoi). Pour
+    ceux qui ne veulent pas prendre le car, il vous reste l'option "gyropode" ou "marche à pied de 3h".<br>
+    <mark>Attention !</mark> En cas de retard de votre train, vous pourrez joindre la personne en charge au
+    06.59.60.84.93. Un car retour est prévu du Saix vers la gare de Veynes le lundi 30 à 10h15.
+  </p><br>
+  <h3><a target="_blank" href="http://echovoiturage.forumouf.com/" style="color: inherit; text-decoration: none;"
+     class="unfancy">Covoiturage <img src="{% static "echos2014/img/5.acces/2cv.png" %}" class="2cv"
+     style="display: inline; vertical-align: bottom; width: 10%;"></a></h3>
+  <p>
+    Rendez vous sur notre forum improvisé
+    <a target="_blank" href="http://echovoiturage.forumouf.com/">http://echovoiturage.forumouf.com/</a>
+    pour vous coordonner physiquement dans votre planning !
+  </p><br>
+  <h2>Du Saix jusqu"à la Ferme du Faï</h2>
+  <div class="air break gallery box">
+    <a rel="acces" data-boxtitle="L'entrée du village du Saix"
+       href="{% static "echos2014/img/5.acces/1.jpg" %}">
+      <img src="{% static "echos2014/img/5.acces/thumb/1.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="Des indications vous guideront tout au long de votre route à pied"
+       href="{% static "echos2014/img/5.acces/2.jpg" %}">
+      <img src="{% static "echos2014/img/5.acces/thumb/2.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="Copyright <em>As Human Pattern</em>"
+       href="{% static "echos2014/img/5.acces/3.jpg" %}">
+      <img src="{% static "echos2014/img/5.acces/thumb/3.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="Entrée des gorges"
+       href="{% static "echos2014/img/5.acces/4.jpg" %}">
+      <img src="{% static "echos2014/img/5.acces/thumb/4.jpg" %}">
+    </a>
+    <a rel="acces" data-boxtitle="Copyright <em>As Human Pattern</em>"
+       href="{% static "echos2014/img/5.acces/5.jpg" %}">
+      <img src="{% static "echos2014/img/5.acces/thumb/5.jpg" %}">
+    </a>
+  </div>
+  <p>
+    Une fois arrivés au village du Saix, <mark>rejoignez le festival à pieds en suivant le parcours fléché</mark>.<br>
+    Cette petite heure de marche (traversée du village puis montée dans les gorges) sera ponctuée par des
+    installations sonores à partir de votre entrée dans les gorges. Un bon moyen de vous mettre dans l’ambiance.
+  </p><br>
+  <p>
+    Une navette sera mise en place à partir du parking pour vous décharger de vos affaires.
+  </p><br>
+  <p>
+    <mark>Prévoyez des vêtements chauds et des lampes-torche</mark>,
+    au cas où vous voudriez redescendre des gorges à la nuit tombée.
+  </p><br>
+  <p>
+    Pour les personnes à mobilité réduite, afin de mieux organiser votre accueil sur le festival,
+    merci de nous contacter au préalable au 06 59 60 84 93 (Camille).
+  </p><br>
+{% endblock %}
