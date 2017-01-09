@@ -33,7 +33,7 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 
 	'common',
-	# 'echos2013',
+	'echos2013',
 	# 'echos2014',
 	# 'echos2015',
 	'echos2016',

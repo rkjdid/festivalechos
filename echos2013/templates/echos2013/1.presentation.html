@@ -1,0 +1,31 @@
+{% extends "echos2013/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block content %}
+    <p class="air tcenter">Une expérience sonore au sein d’un environnement naturel à l’acoustique hors-norme.</p>
+    <br>
+    <p class="air tcenter"><mark>Samedi 29 juin, à partir de 20 heures et jusque dans la nuit</mark>, la Haute Vallée de Maraize,
+        près de Gap, résonnera au son de six improvisations.</p>
+    <br>
+    <p class="air">
+        Dans ce complexe au milieu de la vallée, <a href="{% href request "lieu/trompes" %}"><mark>trois trompes géantes</mark></a>, une basse, une médium et une aigüe,
+        font face à une falaise circulaire de plus de 120 hectares. Elles amplifient l’écho naturel du lieu et
+        créent dans toute la vallée un effet de résonance inouï.</p>
+    <br>
+    <p><a href="{% href request "echos/programmation" %}"><mark>Nos artistes</mark></a>, au terme d’une résidence d’une semaine, se laisseront aller à l’expérience de l’improvisation libre,
+        tentant de faire vibrer le système acoustique unique du lieu par une approche personnelle et audacieuse.
+        Venant d’horizons musicaux différents, ils vous plongeront dans une trame musicale progressive de six heures,
+        travaillant sur les textures sonores, la narration, l’instant.</p>
+    <br>
+    <p><a href="{% href request "lieu/ferme" %}"><mark>Au cœur d’un espace sauvage</mark></a>, nous tenterons de faire respirer la musique en dehors du milieu urbain.
+        Vous serez libre de vous déplacer pour trouver le point d’écoute correspondant à votre ressenti des
+        improvisations, dans un espace naturel ouvert baigné par le son, entre la roche et le ciel étoilé.
+        L’événement se prolongera jusque dans la nuit, vous invitant à
+        <a href="{% href request "modalites/zzz" %}"><mark>dormir sur place</mark></a>, en plein air.
+    </p>
+    <br>
+    <p class="sbreak"><mark>Le lendemain</mark>, nous vous proposons de profiter avec nous de cet environnement unique en passant vos disques
+        préférés sur le système des trompes, ou simplement en vous indiquant les meilleurs coins de randonnée
+        et de baignade des environs.</p>
+{% endblock %}

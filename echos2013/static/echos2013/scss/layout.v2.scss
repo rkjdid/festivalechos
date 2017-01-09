@@ -1,0 +1,25 @@
+@import "commonlayout";
+
+section#page {
+  /** Content **/
+  section#contentRow {
+    section#contentFrame {
+      section.content {
+        $content_margin : 3.5%;
+        $content_height: 88% - 3*$content_margin;
+        height: $content_height;
+        margin: 1.5*$content_margin $content_margin 1.5*$content_margin $content_margin;
+        overflow: auto;
+        position: relative;
+      }
+    }
+  }
+
+  // override scroll buttons for malihu scrollbar
+  .mCS-dark.mCSB_scrollTools .mCSB_buttonUp {
+    background-position: -96px 0;
+  }
+  .mCS-dark > .mCSB_scrollTools .mCSB_buttonDown {
+    background-position: -96px -20px;
+  }
+}

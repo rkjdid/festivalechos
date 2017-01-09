@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>
+<html lang="fr" class="iebad oldie">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="fr" class="js{% block html_class %}{% endblock %}">
+<!--<![endif]-->
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="description" content="{% block gdesc %}Samedi 29 juin, à partir de 20 heures et jusque dans la nuit, la Haute Vallée de Maraize,
+        près de Gap, résonnera au son de six improvisations{% endblock %}" />
+    <meta name="keywords" content="echos, echos2013, dome, fai, ambiant, ambient, expérimentation, noise, cascade, saaad, saÅad, yann gourdon, antez, tamagawa, insiden">
+
+    <meta property="og:title" content="échos 2013" />
+    <meta property="og:url" content="http://echos2013.fr/" />
+    <meta property="og:description" content="CASCADE // SAÅAD // YANN GOURDON // INSIDEN // ANTEZ // TAMAGAWA" />
+    <meta property="og:image" content="http://echos2013.fr/static/img/misc/thumbnails/petithomme.png" />
+    <meta property="og:image" content="http://echos2013.fr/static/img/misc/thumbnails/site.png" />
+    <meta property="og:image" content="http://echos2013.fr/static/img/misc/thumbnails/vertical.png" />
+
+    <title>{% block title %}Échos 2013{% endblock %}</title>
+
+    <link rel="shortcut icon" href="{% static "echos2013/img/favicon.png" %}" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="{% static "echos2013/css/base.css" %}" />
+    {% block extracss %}{% endblock %}
+
+    <script>var e;e="mark nav header footer section aside hgroup figure".split(" ");var i; var l; for(i=0,l=e.length;i<l;i++)document.createElement(e[i]);</script>
+</head>
+<body>
+    <section class="screen"></section>
+
+    <section id="page">
+        {% block body %}{% endblock %}
+    </section>
+
+    {% block extrabody %}{% endblock %}
+
+    <script src="{% static "echos2013/js/lib/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "echos2013/js/base.v2.js" %}"></script>
+    {% block extrajs %}{% endblock %}
+
+    {# Google Analytics #}
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36455896-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</body>
+</html>

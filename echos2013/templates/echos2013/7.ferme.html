@@ -1,0 +1,63 @@
+{% extends "echos2013/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block content %}
+    <p>
+        C"est au-dessus du <a target="_blank" href="https://maps.google.fr/maps?oe=utf-8&client=firefox-a&q=le+saix&ie=UTF-8&hq=&hnear=0x12cb1bc3670710d3:0x40819a5fd97a190,Le+Saix&gl=fr&ei=bRBHUafdGdCh7AaN6oFo&ved=0CKgBELYD">village du Saix</a>,
+        petit village Haut-Alpin niché au pied de la montagne d"Aujour,
+        que se trouve <mark>la Ferme-gîte du Faï</mark>. À plus de 1000 mètres d"altitude, dans un environnement naturel et sauvage,
+        le lieu fait face à une large falaise circulaire d"une beauté vertigineuse.
+    </p><br>
+    <p>
+        Un endroit isolé de tout où vous serez libre de déambuler pour profiter à votre manière de
+        l’événement <mark>échos</mark>.
+    </p><br>
+    <p>
+        <img class="col85" src="{% static "echos2013/img/7.ferme/1.jpg" %}" />
+    </p><br>
+    <p>
+        Sur le chemin de l"abbaye de Clausonne ou du lac de Peyssier, son emplacement privilégié en fait un point
+        d"étape idéal pour les randonneurs. Pour agrémenter votre venue, nous vous conseillons à ce titre plusieurs
+        <mark>balades</mark> dans le secteur, présentées de manière détaillée sur le
+        <a target="_blank" href="http://www.le-saix-village.fr">site du village du Saix</a> dans
+        « randonnées pédestres » (à droite). Également possible dans les environs : <a href="http://vttrack.fr/" target="_blank">balades en VTT</a> ou <mark>baignade</mark>
+        dans la Maraize.
+    </p><br>
+    <p>
+        <img class="col85" src="{% static "echos2013/img/7.ferme/2.jpg" %}" />
+    </p><br>
+    <p>
+        L"association <a target="_blank" href="http://villagesdesjeunes.org/">Villages des Jeunes</a> a fait
+        de la Ferme du Faï au fil des années un lieu d"accueil alternatif et dynamique dont les principales
+        activités sont réparties en trois domaines :
+    </p><br>
+    <p>
+        <mark>La rénovation, l"entretien et le développement de la ferme</mark> ainsi que de l"abbaye de Clausonne
+        située à proximité. Cela essentiellement grâce à des chantiers de jeunes internationaux, dans le cadre de
+        programmes d"échange basés sur le volontariat.
+    </p><br>
+    <p>
+        <mark>L"accueil et l"accompagnement de personnes en situation difficile et/ou handicapées</mark>,
+        par le biais de chantiers de réinsertion ou de séjours à vocation sociale.
+    </p><br>
+    <p>
+        <mark>La valorisation d"activités culturelles</mark>, en accueillant plusieurs événements artistiques,
+        résidences et festivals chaque année. <mark>échos</mark> bénéficie à ce titre d"un soutien tout particulier des
+        responsables locaux sans qui rien n’aurait été possible.
+    </p><br>
+    <p>
+        <img class="col85" src="{% static "echos2013/img/7.ferme/3.jpg" %}" />
+    </p><br>
+    <p>
+        L"emplacement et la configuration topologique singulière de la ferme en font un véritable puits d"inspiration
+        suscitant, avec le concours d"esprits sans limites, la création de diverses curiosités parmi lesquelles le
+        « théâtre de verdure ». Cette scène en extérieur, sur pilotis au-dessus d"un petit étang, fait face à des
+        gradins taillés directement dans le sol, offrant un cadre hors du commun et des possibilités scéniques
+        exceptionnelles.
+    </p><br>
+    <p class="sbreak">
+        Mais la plus importante de ces curiosités est sans conteste ce qui est à l"origine même de l’événement
+        <mark>échos</mark> : <a href="{% href request "lieu/trompes" %}">les trompes</a>.
+    </p>
+{% endblock %}

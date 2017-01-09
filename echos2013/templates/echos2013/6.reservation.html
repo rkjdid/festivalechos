@@ -1,0 +1,75 @@
+{% extends "echos2013/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block content %}
+    <p class="tcenter">L’événement coûte <mark>7€ en prévente, 10€ sur place</mark>.</p><br>
+
+    <p class="tcenter">Le prix comprend l’accès au site pour le concert, la nuit en camping,
+        et l’adhésion à l’association Dôme pour l’année 2013.</p><br>
+
+    <p>Pour ceux qui souhaitent soutenir les actions de notre association,
+        <mark>plusieurs tarifs sont proposés</mark> en ligne, avec des bonus…</p><br>
+
+    {% include "echos2013/parts/paypal.html" %}
+
+    <section class="tarif bigAir">
+        <h3>7€ - TARIF « COSTANZA »</h3>
+        <p>Inclus :</p>
+        <p class="indent">
+            -	1 place pour <mark>échos</mark><br>
+            -	1 an d’adhésion à Dôme<br>
+        </p><br>
+    </section>
+
+    <section class="tarif bigAir">
+        <h3>10€ - TARIF « SAIX ADDICT »</h3>
+        <p>Inclus :</p>
+        <p class="indent">
+            -	1 place pour <mark>échos</mark><br>
+            -	1 an d’adhésion à Dôme<br>
+            -	1 carte d"adhérent stylée qui rendra jaloux tes amis<br>
+        </p><br>
+    </section>
+
+    <section class="tarif bigAir">
+        <h3>15€ - TARIF « KRAMER »</h3>
+        <p>Inclus :</p>
+        <p class="indent">
+            -	1 place pour <mark>échos</mark><br>
+            -	1 an d’adhésion à Dôme<br>
+            -	1 carte d"adhérent stylée qui rendra jaloux tes amis<br>
+            -	<mark>1 bouteille (0,75L) de bière artisanale</mark> brassin limité réalisée par un membre de Dôme<br>
+        </p><br>
+    </section>
+
+    <section class="tarif bigAir">
+        <h3>25€ - TARIF « FLANGER HOAX »</h3>
+        <p>Inclus :</p>
+        <p class="indent">
+            -	1 place pour <mark>échos</mark><br>
+            -	1 an d’adhésion à Dôme<br>
+            -	1 carte d"adhérent stylée qui rendra jaloux tes amis<br>
+            -	<mark>1 bouteille (0,75L) de bière artisanale</mark> brassin limité réalisée par un membre de Dôme<br>
+            -	<mark>1 K7 infinie</mark> d"un drone réalisé pour l"occasion par les membres de Dôme, en édition limitée<br>
+        </p><br>
+    </section>
+
+    <section class="tarif bigAir">
+        <h3>50€ - TARIF « BIG V »</h3>
+        <p>Inclus :</p>
+        <p class="indent">
+            -	2 places pour <mark>échos</mark><br>
+            -	1 an d’adhésion à Dôme pour les deux<br>
+            -	2 cartes d"adhérent stylées qui rendront jaloux tes amis<br>
+            -	<mark>2 bouteilles de bière artisanale</mark> brassin limité réalisée par un membre de Dôme<br>
+            -	<mark>2 K7 infinies</mark> d"un drone réalisé pour l"occasion par les membres de Dôme, en édition limitée<br>
+            -	<mark>Le petit déjeuner offert</mark> sur place le lendemain pour deux personnes<br>
+        </p><br>
+    </section>
+
+    {% include "echos2013/parts/paypal.html" %}<br>
+
+    <p class="tcenter sbreak"><em>Les cartes d’adhérent, K7 et bières vous seront également remis le jour du concert,
+        à votre entrée, sur présentation de vos nom et prénom.</em></p>
+{% endblock %}

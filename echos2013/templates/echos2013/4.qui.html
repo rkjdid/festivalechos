@@ -1,0 +1,16 @@
+{% extends "echos2013/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block contentTitle %}{% endblock %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{% static "echos2013/css/jquery.mCustomScrollbar.css" %}"  />
+    <link rel="stylesheet" type="text/css" href="{% static "echos2013/css/4.qui.v2.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <a href="{% static "echos2013/misc/FiatMusica.pdf" %}" target="_blank">
+        <img class="col1" src="{% static "echos2013/img/4.qui/FiatMusica.png" %}" />
+    </a>
+{% endblock %}

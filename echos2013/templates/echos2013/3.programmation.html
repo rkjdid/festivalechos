@@ -1,0 +1,119 @@
+{% extends "echos2013/layout.html" %}
+{% load static %}
+{% load tags %}
+
+{% block extrajs %}
+    {{ block.super }}
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#dateflow').find('a').click(function () {
+          var artistId = $(this).attr('class');
+          $('.content').mCustomScrollbar("scrollTo", "#" + artistId);
+        });
+      });
+    </script>
+{% endblock %}
+
+{% block gdesc %}CASCADE // SAÅAD // YANN GOURDON // INSIDEN // ANTEZ // TAMAGAWA{% endblock %}
+
+{% block content %}
+    <h2><time datetime="2013-06-29">Samedi 29 juin 2013</time></h2>
+    <p id="dateflow">
+        <time>20h00</time> <a class="cascade">Cascade</a><br>
+        <time>21h00</time> <a class="ygourdon">Yann Gourdon</a><br>
+        <time>22h00</time> <a class="saaad">Saåad</a><br>
+        <time>23h00</time> <a class="insiden">Insiden</a><br>
+        <time>00h00</time> <em>pause</em><br>
+        <time>00h30</time> <a class="antez">Antez</a><br>
+        <time>01h30</time> <a class="tamagawa">Tamagawa</a>
+    </p><br>
+    <h2><time datetime="2013-06-30">Dimanche 30 juin 2013</time></h2>
+    <p class="break">
+        <mark>A partir de 10h30</mark> nous vous proposons de venir tester le son des trompes avec vos instruments ou
+        vos disques (inscription nécessaire via
+        <a href="mailto:association.dome@gmail.com?subject=J"ai%20un%20cédé%20c"est%20la%20bombe%20!">association.dome@gmail.com</a>).
+        Vous pourrez aussi, à votre guise, parcourir les nombreux <a href="{% href request "lieu/ferme" %}">chemins de randonnées</a>.
+    </p><br>
+
+    <section id="cascade" class="artist bigAir break">
+        <h4>cascade{% include "echos2013/parts/top.html" %}</h4><br>
+        <p><a target="_blank" href="http://cascadecascade.bandcamp.com">http://cascadecascade.bandcamp.com</a></p><br>
+        <p><img class="col85" src="{% static "echos2013/img/3.progra/1.jpg" %}"/></p><br>
+        <p>
+            Composé de Ernest Bergez (électronique) et Julien Grosjean (percussions) <mark>Cascade</mark> fabrique des
+            espaces sonores denses et polymorphes : un amalgame de sonorités âpres, granuleuses ou planes
+            que l’écoute et les accidents de jeu rassemblent. Avec radicalité et un goût certain pour l"épure,
+            le duo combine une électronique brute et rustique et les timbres complexes des instruments à percussion.
+        </p><br>
+    </section>
+
+    <section id="ygourdon" class="artist break">
+        <h4>yann gourdon{% include "echos2013/parts/top.html" %}</h4><br>
+        <p><a target="_blank" href="http://ygourdon.net">http://ygourdon.net</a></p><br>
+        <p><img class="col85" src="{% static "echos2013/img/3.progra/2.jpg" %}"/></p><br>
+        <p>
+            En tant que musicien et compositeur, <mark>Yann Gourdon</mark> envisage les champs vibratoires et la perception
+            sonore comme un médium. Son travail privilégie l"observation de phénomènes acoustiques en relation
+            dynamique avec l"environnement – architecture/paysage. Pour <mark>échos</mark>, il improvisera sur une
+            "Boîte à Bourdons", un instrument fonctionnant sur le principe de cordes frottées par une roue motorisée.
+        </p><br>
+    </section>
+
+    <section id="saaad" class="artist break">
+        <h4>saåad{% include "echos2013/parts/top.html" %}</h4><br>
+        <p><a target="_blank" href="http://saaad.bandcamp.com">http://saaad.bandcamp.com</a></p><br>
+        <p><img class="col85" src="{% static "echos2013/img/3.progra/3.jpg" %}"/></p><br>
+        <p>
+            Les contours de la musique de <mark>Saåad</mark> flottent et évoquent plus qu"ils ne pointent précisément,
+            laissant l’esprit divaguer dans un voyage sonore propice à l"introspection, fait de bourdons musicaux et
+            d"improvisations. Depuis 2009 le duo toulousain enchaîne les sorties sur de nombreux labels (BLWBCK,
+            Hands In the Dark, FeedBack Loop, Heat Death) enchaînant avec une série de concerts aux cotés de groupes
+            comme Tim Hecker, Nadja, James Blackshaw, Wolves In the Throne Room ... Comme lors de leur travail sur la
+            confluence de l"Ariège et de la Garonne (Confluences, 2012) Romain Barbot & Greg Buffier viendront
+            poser leur micros et leurs instruments durant une semaine dans les gorges Gouravour pour une
+            création in situ.
+        </p><br>
+    </section>
+
+    <section id="insiden" class="artist break">
+        <h4>insiden{% include "echos2013/parts/top.html" %}</h4><br>
+        <p><a target="_blank" href="https://www.facebook.com/insiden.band">https://www.facebook.com/insiden.band</a></p><br>
+        <p><img class="col85" src="{% static "echos2013/img/3.progra/4.jpg" %}"/></p><br>
+        <p>
+            <mark>Insiden</mark> est un groupe d’ambient improvisée. Le trio produit des improvisations pleines de tension qui
+            naviguent entre musique drone et noise. À travers des sonorités brutes et violentes, ou d"autres plus
+            sombres et mélancoliques, ils cherchent à immerger de force le spectateur dans leur univers crépusculaire.
+        </p><br>
+    </section>
+
+    <section id="antez" class="artist break">
+        <h4>antez{% include "echos2013/parts/top.html" %}</h4><br>
+        <p><a target="_blank" href="http://www.antez.org">http://www.antez.org</a></p><br>
+        <p><img class="col85" src="{% static "echos2013/img/3.progra/5.jpg" %}"/></p><br>
+        <p>
+            <mark>Antez</mark> est percussionniste, c"est un sculpteur qui explore la matière sonore en interrogeant les
+            perceptions physiques du son. Ses instruments sont pour lui des dispositifs, il détourne des objets
+            de leurs fonctions. Il pratique l"improvisation et propose des installations sonore. Il a côtoyé le
+            théâtre, la danse, le cinéma.
+        </p><br>
+        <p>
+            Pour <mark>échos</mark>, Antez jouera sa performance solo pour percussion frotté, Continuum. <br>
+            « Mes Continuums sont des pièces pour percussions frottées. Ils se caractérisent par l"émission de
+            sons acoustique, produits par mes seuls gestes. J"ai premièrement utilisé des cymbales, mais je me suis
+            rapidement mis en quête de toute sorte d"objets, souvent de récupération et de compositions différentes;
+            parfois ils subissent quelques transformations, me permettant de continuer de développer ce travail sur
+            la matière sonore et le geste. »
+        </p><br>
+    </section>
+
+    <section id="tamagawa" class="artist sbreak">
+        <h4>tamagawa{% include "echos2013/parts/top.html" %}</h4><br>
+        <p><a target="_blank" href="http://www.myspace.com/tamagaywa">http://www.myspace.com/tamagaywa</a></p><br>
+        <p><img class="colTAMA" src="{% static "echos2013/img/3.progra/6.jpg" %}"/></p><br>
+        <p>
+            « Toujours profondément obsédé par Spacemen 3 et le tétrahydrocannabinol, <mark>Tamagawa</mark> continue de creuser
+            la même veine minimale et répétitive, hypnotique et lancinante. » Hazam
+        </p>
+    </section>
+{% endblock %}
+

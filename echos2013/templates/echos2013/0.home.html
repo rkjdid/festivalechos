@@ -1,0 +1,43 @@
+{% extends 'echos2013/base.html' %}
+{% load static %}
+{% load tags %}
+
+{% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{% static "echos2013/css/0.home.css" %}" />
+{% endblock %}
+
+{% block extrajs %}
+    <script type="text/javascript" src="{% static "echos2013/js/0.home.js" %}"></script>
+{% endblock %}
+
+
+{% block body %}
+    <header>
+        <section id="artists" class="caps noie">
+            <p class="tcenter caviar">CASCADE / SAÅAD / YANN GOURDON / INSIDEN / ANTEZ / TAMAGAWA</p>
+        </section>
+    </header>
+
+    <section id="photo">
+        <a href="{% href request "echos/presentation" %}">
+            <img src="{% static "echos2013/img/1.home/home_artists.v2.jpg" %}" />
+        </a>
+    </section>
+
+    <footer>
+        <section id="presents">
+            <p class="caps tleft caviar white">
+                <a href="{% href request "echos/presentation" %}">dôme présente</a>
+            </p>
+        </section>
+        <hgroup class="caviar white">
+            <h1 id="echos"><a href="{% href request "echos/presentation" %}">échos</a></h1>
+            <h2 id="date"><a href="{% href request "echos/presentation" %}">samedi 29 juin 2013</a></h2>
+        </hgroup>
+        <section id="fai">
+            <p class="caps tright caviar white">
+                <a href="{% href request "echos/presentation" %}">le saix, hautes-alpes</a>
+            </p>
+        </section>
+    </footer>
+{% endblock %}

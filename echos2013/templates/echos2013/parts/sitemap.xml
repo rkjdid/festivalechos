@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <url>
+        <loc>http://echos2013.fr/</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/echos/presentation/</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/echos/presentation</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/echos/programmation</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/echos/reservation</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/lieu/ferme</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/lieu/trompes</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/modalites/acces</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/modalites/zzz</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/dome</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/contact</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://echos2013.fr/static/FiatMusica.pdf</loc>
+        <lastmod>2013-04-01T11:33:46+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+</urlset>
