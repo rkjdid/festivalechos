@@ -17,3 +17,4 @@ _debug.py
 /static
 
 *.db
+*.pid
