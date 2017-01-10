@@ -1,7 +1,7 @@
 if (typeof(wait) === 'undefined')
   var wait = true;
 
-window.onload = function () {
+$(window).on("load", function () {
   if (typeof(preload) === 'function')
     preload();
 
@@ -10,7 +10,7 @@ window.onload = function () {
   });
 
   wait = false;
-};
+});
 
 $(document).ready(function () {
   if ($('html').hasClass('iebad')) {

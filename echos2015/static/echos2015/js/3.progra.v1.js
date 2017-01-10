@@ -1,10 +1,48 @@
+var default_state = {title: document.title, url: document.location.pathname };
+var loading = false;      // determine if we're loading a new anchor next
+var from_state = false;   // determine if next action is coming from browser navigation
+var anchors = {};
+
+function loadState(onload) {
+  // hack to avoid infinite loops
+  setTimeout(function() {
+    var init_state = History.getState();
+    var hash = init_state.hash.substr(document.location.pathname.length + 1);
+
+    // Remove weird "&_suid" string
+    if (hash.indexOf("&_suid") > -1)
+      hash = hash.substr(0, hash.indexOf("&_suid"));
+
+    if (hash in anchors) {
+      if (onload) {
+        var $a = $(anchors[hash]);
+        document.title = $a.html().trim();
+      }
+
+      from_state = true;
+      $(anchors[hash]).click();
+    } else if (hash === "" && ! onload) {
+      from_state = true;
+      $.fancybox.close();
+    } else if (hash !== "") {
+      History.replaceState(default_state.data, default_state.title, default_state.url);
+    }
+  }, 0);
+}
+
+// onload handler, load current state and bind statechange event
+$(window).on("load", function() {
+  loadState(true);
+
+  History.Adapter.bind(window,'statechange', function() {
+      loadState(false);
+  });
+});
+
 $(document).ready(function(){
   if (typeof($.fancybox) === 'undefined')
     return;
 
-  var default_state = {title: document.title, url: document.location.pathname };
-  var loading = false;      // determine if we're loading a new anchor next
-  var from_state = false;   // determine if next action is coming from browser navigation
 
   $(".lineup1").find('a').fancybox ({
       prevEffect	: 'none',
@@ -95,7 +133,6 @@ $(document).ready(function(){
   });
 
   // Store available anchors
-  var anchors = {};
   $(".lineup1").find('a').each(function() {
     anchors[$(this).data('anchor')] = $(this);
   });
@@ -104,40 +141,5 @@ $(document).ready(function(){
     anchors[$(this).data('anchor')] = $(this);
   });
 
-  // onload handler, load current state and bind statechange event
-  $(window).load(function() {
-    loadState(true);
-
-    History.Adapter.bind(window,'statechange', function() {
-        loadState(false);
-    });
-  });
-
-  function loadState(onload) {
-    // hack to avoid infinite loops
-    setTimeout(function() {
-      var init_state = History.getState();
-      var hash = init_state.hash.substr(document.location.pathname.length + 1);
-
-      // Remove weird "&_suid" string
-      if (hash.indexOf("&_suid") > -1)
-        hash = hash.substr(0, hash.indexOf("&_suid"));
-
-      if (hash in anchors) {
-        if (onload) {
-          var $a = $(anchors[hash]);
-          document.title = $a.html().trim();
-        }
-
-        from_state = true;
-        $(anchors[hash]).click();
-      } else if (hash === "" && ! onload) {
-        from_state = true;
-        $.fancybox.close();
-      } else if (hash !== "") {
-        History.replaceState(default_state.data, default_state.title, default_state.url);
-      }
-    }, 0);
-  }
 });
 
