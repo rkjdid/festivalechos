@@ -14,24 +14,17 @@
   // DOM ready
   $(function() {
     ready = true;
-    $images = $("img:not(.async)");
-    var toLoad = $images.length;
-    $images.imagesLoaded(function() {
-      toLoad--;
+    $("img:not(.async)").imagesLoaded(function() {
+      refresh();
+      loaded = true;
+      var $c = $("#curtain");
+      $c.find(".loading").addClass("out")
+        .delay(300)
+        .animate({left: "110%"}, 750, function () {
+          $("#curtain").hide();
+          $("body").removeClass("loading");
+        });
     });
-  });
-
-  // onload
-  $(window).on("load", function() {
-    refresh();
-    loaded = true;
-    var $c = $("#curtain");
-    $c.find(".loading").addClass("out")
-      .delay(300)
-      .animate({left: "110%"}, 750, function() {
-        $("#curtain").hide();
-        $("body").removeClass("loading");
-      });
   });
 
   // onresize
