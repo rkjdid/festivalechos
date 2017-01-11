@@ -5,10 +5,9 @@ from django.views.generic import RedirectView
 # robots.txt & sitemap.xml
 urlpatterns = [
   url(r'^robots.txt', lambda r: HttpResponse("User-agent: *\nDisallow:",
-                                             mimetype="text/plain")),
+                                             content_type="text/plain")),
   url(r'^sitemap.xml', lambda r: HttpResponse(
-    "http://festivalechos.fr/", mimetype="text/plain"
-  )),
+    "http://festivalechos.fr/", content_type="text/plain")),
 ]
 
 # route to specific editions
