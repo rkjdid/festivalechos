@@ -1,11 +1,6 @@
 *.pyc
 
-_paths.py
-_credentials.py
-_debug.py
-
 .idea/
-.sass-cache
 
 **/node_modules
 **/bower_components
@@ -18,3 +13,5 @@ _debug.py
 
 *.db
 *.pid
+uwsgi.ini
+
