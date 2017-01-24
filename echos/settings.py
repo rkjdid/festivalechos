@@ -22,6 +22,12 @@ ALLOWED_HOSTS = [
 	'.192.168.1.1',
 	'.festivalechos.fr',
 ]
+INERNAL_IPS = [
+	'127.0.0.1',
+]
+ADMINS = [
+	('rkj', 'rk@jdid.co'),
+]
 
 
 INSTALLED_APPS = [
