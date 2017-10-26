@@ -20,14 +20,14 @@ urlpatterns += [
   url(r'^2013$', RedirectView.as_view(url="2013/")),
   url(r'^2014$', RedirectView.as_view(url="2014/")),
   url(r'^2015$', RedirectView.as_view(url="2015/")),
-  url(r'^2016$', RedirectView.as_view(url="/")),
+  url(r'^2016$', RedirectView.as_view(url="2016/")),
 ]
 
 urlpatterns += [
   url(r'^2013/', include(echos2013.urls)),
   url(r'^2014/', include(echos2014.urls)),
   url(r'^2015/', include(echos2015.urls)),
-  url(r'^', include(echos2016.urls)),
+  url(r'^2016/', include(echos2016.urls)),
 
   # catch'em all
   url(r'^.*$', RedirectView.as_view(url="/"))
