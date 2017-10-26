@@ -1,4 +1,5 @@
 (function ($) {
+  var uriPrefix = '/2016';
   var width, height, mapw, maph, row1_extraw, menuh, zoom;
   var mapw_natural = 760;
   var ready = false, loaded = false;
@@ -310,6 +311,7 @@
   };
 
   var setUri = function(uri) {
+    uri = uriPrefix + uri;
     window.history.replaceState({
       "html": uri,
       "pageTitle": uri
