@@ -25,4 +25,7 @@ urls = [
 	url(r'^ferme$',         views.home),
 	url(r'^programmation$', views.home),
 	url(r'^acces$',         views.home),
+
+	# nevermind, just catch everybody (artists bitchz)
+	url(r'^',               views.home),
 ]
